@@ -2,40 +2,25 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <meta name = "viewport" content = "width=device-width, initial-scale = 1, maximum-scale = 1,
+        minimum-scale = 1,user-scalable = no">
+    <meta name = "apple-mobile-web-app-capable" content ="yes">
+    <meta name = "mobile-web-app-capable" content = "yes">
+    <title>ThugBird</title>
+    <style>
+        canvas {
+            display : block;
+            position : absolute;
+            margin : auto;
+            top : 0;
+            bottom : 0;
+            left : 0;
+            right : 0;
+        }
+    </style>
 </head>
 <body>
-<script>
-    var canvas,
-            ctx,
-            width,
-            height,
-
-            states = {Menu: 0, Game : 1, FinalScreen :2};
-
-    function main() {
-        canvas = document.createElement("canvas");
-
-        width = window.innerWidth;
-        height = window.innerHeight;
-
-        if(width >= 500){ /* Decrease the window size in case it's too big */
-            width = 320;
-            height = 480;
-            canvas.style.border = "1px solid =000";
-        }
-
-        canvas.width = width;
-        canvas.height = height;
-        ctx = canvas.getContext("2d");
-
-        document.body.appendChild(canvas);
-    }
-    function run() {
-    }
-
-    main();
-
+<script src = GamePlay.js>
 </script>
 </body>
 </html>
