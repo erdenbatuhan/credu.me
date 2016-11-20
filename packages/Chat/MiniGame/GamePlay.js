@@ -3,9 +3,10 @@
  */
 
 var canvas,
-ctx,
+ctx, /* center x */
 width,
 height,
+floorPosition = 0,
 frames = 0,
 score = 0,
 bestScore = 0,
@@ -29,17 +30,32 @@ function main() {
     ctx = canvas.getContext("2d");
 
     document.body.appendChild(canvas);
+
+    var img = new Image();
+    img.onload = function() {
+        initEnvironment(this);
+        run();
+    };
+    img.src = "res/imageSprite.png";
 }
+
 function run() {
-/* Omer burayı dolduracak xd */
+    var loop = function(){
+        update();
+        render();
+        window.requestAnimationFrame(loop,canvas);
+    };
+    window.requestAnimationFrame(loop,canvas);
 }
 
 function update() {
-/* Ekrem Burayi dolduracak */
+    frames ++;
+    floorPosition = (floorPosition - 2) % 25; /* This is used for moving the floor */
 }
 
 function render() {
-
+    backgroundImage.draw(ctx,0,0);
+    floorImage.draw(ctx,floorPosition,320);
 }
 
 main();
