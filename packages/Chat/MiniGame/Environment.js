@@ -29,9 +29,9 @@ Environment.prototype.draw = function(ctx,x,y){
 function initEnvironment(img) {
     backgroundImage = new Environment(img, 0, 0, 320,490);
     floorImage = new Environment(img,0,510,400,161);
-    birdImage = new Environment(img,0,687,80,80);
-    redPointImage = new Environment(img,0,787,80,80);
-    tenPointImage = new Environment(img,80,787,80,80);
-    pointImage = new Environment(img,165,787,80,80);
-    bombImage = new Environment(img,248,787,80,80);
+    birdImage = new Environment(img,0,701,30,30);
+    redPointImage = new Environment(img,0,701,30,30);
+    tenPointImage = new Environment(img,61,701,30,30);
+    pointImage = new Environment(img,91,701,30,30);
+    bombImage = new Environment(img,123,701,30,30);
 }

@@ -3,13 +3,14 @@
  */
 
 var canvas,
-ctx, /* center x */
+ctx, /* context */
 width,
 height,
 floorPosition = 0,
 frames = 0,
 score = 0,
 bestScore = 0,
+currentState,
 
 states = {Menu: 0, Game : 1, FinalScreen :2};
 
@@ -28,6 +29,8 @@ function main() {
     canvas.width = width;
     canvas.height = height;
     ctx = canvas.getContext("2d");
+
+    currentState = states.Menu;
 
     document.body.appendChild(canvas);
 
@@ -51,10 +54,12 @@ function run() {
 function update() {
     frames ++;
     floorPosition = (floorPosition - 2) % 25; /* This is used for moving the floor */
+    bird.update();
 }
 
 function render() {
     backgroundImage.draw(ctx,0,0);
+    bird.draw(ctx);
     floorImage.draw(ctx,floorPosition,320);
 }
 
