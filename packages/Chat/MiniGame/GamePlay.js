@@ -31,6 +31,7 @@ function main() {
     document.body.appendChild(canvas);
 }
 function run() {
+/* Omer burayı dolduracak xd */
 }
 
 function update() {
