@@ -33,6 +33,14 @@ function main() {
 function run() {
 }
 
+function update() {
+
+}
+
+function render() {
+
+}
+
 main();
 
 
