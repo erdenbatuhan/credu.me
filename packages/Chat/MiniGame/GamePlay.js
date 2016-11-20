@@ -35,7 +35,7 @@ function run() {
 }
 
 function update() {
-
+/* Ekrem Burayi dolduracak */
 }
 
 function render() {
