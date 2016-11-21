@@ -76,12 +76,16 @@ function update() {
         floorPosition = (floorPosition - 2) % 20;
         /* This is used for moving the floor in Menu and Game states */
     }
+    if(currentState === states.Game){
+        Item.update();
+    }
     bird.update();
 }
 
 function render() {
     backgroundImage.draw(ctx,0,0);
     bird.draw(ctx);
+    Item.draw(ctx);
     floorImage.draw(ctx,floorPosition,320);
 }
 

@@ -24,10 +24,18 @@ var bird = {
         else {
             this.velocity += this.gravity;
             this.yPos += this.velocity;
-            /* Stopping the bird movement */
+            /* Stopping the bird movement - hitting floor*/
             if(this.yPos >= height - floorImage.height - 20){
                 this.yPos = height - floorImage.height - 20;
                 if(currentState === states.Game) {
+                    currentState = states.FinalScreen;
+                }
+                this.velocity = this.jumpPower;
+            }
+            /* hitting top */
+            if(this.yPos <= -20){
+                this.yPos = 0;
+                if(currentState === states.Game){
                     currentState = states.FinalScreen;
                 }
                 this.velocity = this.jumpPower;
