@@ -14,17 +14,35 @@ currentState,
 
 states = {Menu: 0, Game : 1, FinalScreen :2};
 
+/* eventListener function */
+function onpress(event) {
+    switch(currentState){
+        case states.Menu:
+            currentState = states.Game;
+            bird.jump();
+            break;
+        case states.Game:
+            bird.jump();
+            break;
+        case states.FinalScreen:
+            break;
+    }
+}
+
 function main() {
     canvas = document.createElement("canvas");
 
     width = window.innerWidth;
     height = window.innerHeight;
 
+    var event = "touchstart";
     if(width >= 500){ /* Decrease the window size in case it's too big */
         width = 320;
         height = 480;
         canvas.style.border = "1px solid #000000";
+        event = "mousedown";
     }
+    document.addEventListener(event,onpress);
 
     canvas.width = width;
     canvas.height = height;
@@ -34,6 +52,7 @@ function main() {
 
     document.body.appendChild(canvas);
 
+    /* Loading sprite */
     var img = new Image();
     img.onload = function() {
         initEnvironment(this);
@@ -53,7 +72,10 @@ function run() {
 
 function update() {
     frames ++;
-    floorPosition = (floorPosition - 1) % 80; /* This is used for moving the floor */
+    if(currentState !== states.FinalScreen) {
+        floorPosition = (floorPosition - 2) % 20;
+        /* This is used for moving the floor in Menu and Game states */
+    }
     bird.update();
 }
 
