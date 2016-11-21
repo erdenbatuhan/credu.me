@@ -53,7 +53,7 @@ function run() {
 
 function update() {
     frames ++;
-    floorPosition = (floorPosition - 2) % 25; /* This is used for moving the floor */
+    floorPosition = (floorPosition - 1) % 80; /* This is used for moving the floor */
     bird.update();
 }
 
