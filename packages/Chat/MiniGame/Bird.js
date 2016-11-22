@@ -6,6 +6,7 @@ var bird = {
         yPos : 0,
         velocity : 0,
         frame : 0,
+        birdRadius : 12.5,
         rotation : 0,
         gravity : 0.25,
         jumpPower : 4.6,
@@ -25,15 +26,15 @@ var bird = {
             this.velocity += this.gravity;
             this.yPos += this.velocity;
             /* Stopping the bird movement - hitting floor*/
-            if(this.yPos >= height - floorImage.height - 20){
-                this.yPos = height - floorImage.height - 20;
+            if(this.yPos >= height - floorImage.height ){
+                this.yPos = height - floorImage.height ;
                 if(currentState === states.Game) {
                     currentState = states.FinalScreen;
                 }
                 this.velocity = this.jumpPower;
             }
             /* hitting top */
-            if(this.yPos <= -20){
+            if(this.yPos <= 0){
                 this.yPos = 0;
                 if(currentState === states.Game){
                     currentState = states.FinalScreen;
@@ -41,7 +42,6 @@ var bird = {
                 this.velocity = this.jumpPower;
             }
         }
-
     },
 
     draw: function(ctx) {
@@ -49,7 +49,11 @@ var bird = {
         ctx.translate(this.xPos, this.yPos);
         ctx.rotate(this.rotation);
 
-        birdImage.draw(ctx, birdImage.width / 2, birdImage.height / 2);
+        ctx.beginPath();
+        ctx.arc(0,0,this.birdRadius,0, 2*Math.PI);
+        ctx.stroke();
+
+        birdImage.draw(ctx, -birdImage.width/2, -birdImage.height/2);
         ctx.restore();
     }
 };

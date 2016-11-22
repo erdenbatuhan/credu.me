@@ -36,7 +36,7 @@ function main() {
     height = window.innerHeight;
 
     var event = "touchstart";
-    if(width >= 500){ /* Decrease the window size in case it's too big */
+    if(width >= 500){ /* Decrease the window birdRadius in case it's too big */
         width = 320;
         height = 480;
         canvas.style.border = "1px solid #000000";
