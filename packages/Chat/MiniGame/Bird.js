@@ -6,7 +6,7 @@ var bird = {
         yPos : 0,
         velocity : 0,
         frame : 0,
-        birdRadius : 12.5,
+        birdRadius : 12,
         rotation : 0,
         gravity : 0.25,
         jumpPower : 4.6,

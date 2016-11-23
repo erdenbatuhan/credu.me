@@ -96,5 +96,5 @@ var Item = {
             var point = this.points[i];
             pointImage.draw(ctx,point.x,point.y);
         }
-    },
+    }
 }
