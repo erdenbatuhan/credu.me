@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="327c788e-0819-44ad-8715-ed0d6b6f2893" name="Default" comment="+= ChatRoomCreator.php along with the created directories">
+    <list default="true" id="327c788e-0819-44ad-8715-ed0d6b6f2893" name="Default" comment="">
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/credu.me.iml" afterPath="$PROJECT_DIR$/.idea/credu.me.iml" />
     </list>
     <ignored path="credu.me.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -269,7 +268,7 @@
       <workItem from="1479897782674" duration="107000" />
       <workItem from="1480022165158" duration="3546000" />
       <workItem from="1480029604193" duration="756000" />
-      <workItem from="1480030431394" duration="72000" />
+      <workItem from="1480030431394" duration="113000" />
     </task>
     <task id="LOCAL-00001" summary="+= ChatRoomCreator.php along with the created directories">
       <created>1480029154843</created>
@@ -278,11 +277,18 @@
       <option name="project" value="LOCAL" />
       <updated>1480029154844</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="+= ChatRoomCreator.php along with the created directories">
+      <created>1480030513226</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1480030513226</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="6551000" />
+    <option name="totallyTimeSpent" value="6592000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="89" y="45" width="1126" height="632" extended-state="0" />
