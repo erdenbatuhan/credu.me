@@ -8,6 +8,9 @@ var backgroundImage,
     redPointImage,
     tenPointImage,
     pointImage,
+    GameOverImage,
+    thugBirdImage,
+    scoreBoard,
     bombImage;
 
 /* This is used for retrieving images from single PNG file */
@@ -34,4 +37,8 @@ function initEnvironment(img) {
     tenPointImage = new Environment(img,61,701,30,30);
     pointImage = new Environment(img,91,701,30,30);
     bombImage = new Environment(img,123,701,30,30);
+    thugBirdImage = new Environment(img,0,750,150,50);
+    GameOverImage = new Environment(img,0,820,190,50);
+    scoreBoard = new Environment(img,0,870,250,200);
+
 }
