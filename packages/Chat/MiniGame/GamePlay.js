@@ -87,6 +87,12 @@ function render() {
     bird.draw(ctx);
     Item.draw(ctx);
     floorImage.draw(ctx,floorPosition,320);
+
+    if(currentState === states.FinalScreen){
+
+        GameOverImage.draw(ctx,(width/2)- GameOverImage.width/2,height-400);
+        scoreBoard.draw(ctx,(width/2)- scoreBoard.width/2,height-340);
+    }
 }
 
 main();
