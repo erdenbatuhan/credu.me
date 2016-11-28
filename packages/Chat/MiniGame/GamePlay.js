@@ -91,7 +91,9 @@ function render() {
     if(currentState === states.FinalScreen){
 
         GameOverImage.draw(ctx,(width/2)- GameOverImage.width/2,height-400);
-        scoreBoard.draw(ctx,(width/2)- scoreBoard.width/2,height-340);
+        scoreBoardImage.draw(ctx,(width/2)- scoreBoardImage.width/2,height-340);
+        playAgainImage.draw(ctx,(width/2)- playAgainImage.width/2,height-220);
+
     }
 }
 
