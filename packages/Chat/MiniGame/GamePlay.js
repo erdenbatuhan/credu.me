@@ -25,6 +25,8 @@ function onpress(event) {
             bird.jump();
             break;
         case states.FinalScreen:
+            currentState = states.Menu;
+            Item.reset();
             break;
     }
 }
@@ -44,6 +46,7 @@ function main() {
     }
     document.addEventListener(event,onpress);
 
+
     canvas.width = width;
     canvas.height = height;
     ctx = canvas.getContext("2d");
@@ -58,6 +61,7 @@ function main() {
         initEnvironment(this);
         run();
     };
+
     img.src = "res/imageSprite.png";
 }
 
@@ -88,7 +92,12 @@ function render() {
     Item.draw(ctx);
     floorImage.draw(ctx,floorPosition,320);
 
-    if(currentState === states.FinalScreen){
+    if(currentState === states.Menu){
+
+        tapToPlayImage.draw(ctx,(width/2)- tapToPlayImage.width/2,height-330);
+    }
+
+    else if(currentState === states.FinalScreen){
 
         GameOverImage.draw(ctx,(width/2)- GameOverImage.width/2,height-400);
         scoreBoardImage.draw(ctx,(width/2)- scoreBoardImage.width/2,height-340);
