@@ -12,6 +12,7 @@ var backgroundImage,
     tenPointImage,
     thugBirdImage,
     scoreBoardImage,
+    tapToPlayImage,
     bombImage;
 
 /* This is used for retrieving images from single PNG file */
@@ -41,6 +42,7 @@ function initEnvironment(img) {
     thugBirdImage = new Environment(img,0,750,150,50);
     GameOverImage = new Environment(img,0,820,190,50);
     scoreBoardImage = new Environment(img,0,870,250,150);
-    playAgainImage = new Environment(img,0,1020,100,100);
+    playAgainImage = new Environment(img,0,1000,250,50);
+    tapToPlayImage = new Environment(img,0,1050,150,150);
 
 }
