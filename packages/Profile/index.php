@@ -21,9 +21,9 @@
     /* Get the query results and store them in arrays - FriendList and CoursesTaken */
     $userInfoQuery = "SELECT FIRST_NAME,LAST_NAME,EMAIL,PHONE_NO FROM USERS WHERE ID ='".$profileId."'";
     $userInfoQueryResult = mysqli_query($connection,$userInfoQuery);
-    $friendQuery = "SELECT SECOND_USER_ID FROM FRIENDSHIP WHERE FIRST_USER_ID ='".$profileId."'";;
+    $friendQuery = "SELECT SECOND_USER_ID FROM FRIENDSHIP WHERE FIRST_USER_ID ='".$profileId."'";
     $friendQueryResult = mysqli_query($connection, $friendQuery);
-    $courseQuery = "SELECT COURSE_ID FROM COURSESTAKEN WHERE USER_ID ='".$profileId."'";;
+    $courseQuery = "SELECT COURSE_ID FROM COURSESTAKEN WHERE USER_ID ='".$profileId."'";
     $courseQueryResult = mysqli_query($connection, $courseQuery);
 
     if(!$userInfoQueryResult){
