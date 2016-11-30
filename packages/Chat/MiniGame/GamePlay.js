@@ -7,6 +7,7 @@ ctx, /* context */
 width,
 height,
 floorPosition = 0,
+okbtn,
 frames = 0,
 score = 0,
 bestScore = 0,
@@ -25,6 +26,17 @@ function onpress(event) {
             bird.jump();
             break;
         case states.FinalScreen:
+
+            var mx = event.offsetX, my = event.offsetY;
+
+            if(okbtn.x < mx && mx < okbtn.x + okbtn.width &&
+                okbtn.y < my && my < okbtn.y + okbtn.height)
+            {
+
+                currentState = states.Menu;
+                Item.reset();
+                score = 0;
+            }
             break;
     }
 }
@@ -44,6 +56,7 @@ function main() {
     }
     document.addEventListener(event,onpress);
 
+
     canvas.width = width;
     canvas.height = height;
     ctx = canvas.getContext("2d");
@@ -56,8 +69,18 @@ function main() {
     var img = new Image();
     img.onload = function() {
         initEnvironment(this);
+
+        okbtn = {
+
+            x: (width - playAgainImage.width)/2,
+            y: height - 200,
+            width: playAgainImage.width,
+            height: playAgainImage.height
+        };
+
         run();
     };
+
     img.src = "res/imageSprite.png";
 }
 
@@ -87,6 +110,25 @@ function render() {
     bird.draw(ctx);
     Item.draw(ctx);
     floorImage.draw(ctx,floorPosition,320);
+
+    if(currentState === states.Menu){
+
+        tapToPlayImage.draw(ctx,(width/2)- tapToPlayImage.width/2,height-330);
+    }
+
+    else if(currentState === states.FinalScreen){
+
+        GameOverImage.draw(ctx,(width/2)- GameOverImage.width/2,height-400);
+        scoreBoardImage.draw(ctx,(width/2)- scoreBoardImage.width/2,height-340);
+        playAgainImage.draw(ctx,(width/2)- playAgainImage.width/2,height-220);
+
+    }
+
+    else{
+        //need to be fixed in the Environment
+        smallNumberImage.draw(ctx,null,20,4,width/2);
+
+    }
 }
 
 main();
