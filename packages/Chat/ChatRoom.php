@@ -37,7 +37,7 @@ class ChatRoom {
 
     public function printAll() {
         for ($i = 0; $i < count($this->messages); $i++) {
-            echo $this->messages[$i] . '<br>';
+            echo 'User: ' . $this->senders[$i] . ' said (' . $this->dates[$i] . ') ' . $this->messages[$i] . '<br>';
         }
     }
 }
