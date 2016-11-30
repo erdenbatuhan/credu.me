@@ -7,6 +7,7 @@ ctx, /* context */
 width,
 height,
 floorPosition = 0,
+okbtn,
 frames = 0,
 score = 0,
 bestScore = 0,
@@ -25,8 +26,17 @@ function onpress(event) {
             bird.jump();
             break;
         case states.FinalScreen:
-            currentState = states.Menu;
-            Item.reset();
+
+            var mx = event.offsetX, my = event.offsetY;
+
+            if(okbtn.x < mx && mx < okbtn.x + okbtn.width &&
+                okbtn.y < my && my < okbtn.y + okbtn.height)
+            {
+
+                currentState = states.Menu;
+                Item.reset();
+                score = 0;
+            }
             break;
     }
 }
@@ -59,6 +69,15 @@ function main() {
     var img = new Image();
     img.onload = function() {
         initEnvironment(this);
+
+        okbtn = {
+
+            x: (width - playAgainImage.width)/2,
+            y: height - 200,
+            width: playAgainImage.width,
+            height: playAgainImage.height
+        };
+
         run();
     };
 
@@ -102,6 +121,12 @@ function render() {
         GameOverImage.draw(ctx,(width/2)- GameOverImage.width/2,height-400);
         scoreBoardImage.draw(ctx,(width/2)- scoreBoardImage.width/2,height-340);
         playAgainImage.draw(ctx,(width/2)- playAgainImage.width/2,height-220);
+
+    }
+
+    else{
+        //need to be fixed in the Environment
+        smallNumberImage.draw(ctx,null,20,4,width/2);
 
     }
 }
