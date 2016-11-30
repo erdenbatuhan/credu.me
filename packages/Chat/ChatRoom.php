@@ -23,7 +23,7 @@ class ChatRoom {
         $this->databaseConnection->initiateConnection();
         $connection = $this->databaseConnection->getConnection();
 
-        $sql_query = "SELECT * FROM MESSAGES WHERE COURSE_ID = '" . $this->course_id . "';";
+        $sql_query = "SELECT * FROM MESSAGES WHERE COURSE_ID = '" . $this->course_id . "'";
         $sql_result = mysqli_query($connection, $sql_query);
 
         while ($row = mysqli_fetch_assoc($sql_result)) {
