@@ -13,10 +13,13 @@
     $profileId = "S001146"; /* $_GET['id'] */
     $friendList = array();
     $courseList = array();
-    $userInfo = array();
+    $userName;
+    $userSurname;
+    $userMail;
+    $userPhone;
 
     /* Get the query results and store them in arrays - FriendList and CoursesTaken */
-    $userInfoQuery = "SELECT * FROM USERS WHERE ID ='".$profileId."'";
+    $userInfoQuery = "SELECT FIRST_NAME,LAST_NAME,EMAIL,PHONE_NO FROM USERS WHERE ID ='".$profileId."'";
     $userInfoQueryResult = mysqli_query($connection,$userInfoQuery);
     $friendQuery = "SELECT SECOND_USER_ID FROM FRIENDSHIP WHERE FIRST_USER_ID ='".$profileId."'";;
     $friendQueryResult = mysqli_query($connection, $friendQuery);
@@ -35,6 +38,12 @@
         throw new Exception("Course query error");
     }
 
+    while ($row = mysqli_fetch_assoc($userInfoQueryResult)){
+        $userName = $row["FIRST_NAME"];
+        $userSurname = $row["LAST_NAME"];
+        $userMail = $row["EMAIL"];
+        $userPhone = $row["PHONE_NO"];
+    }
 
     while ($row = mysqli_fetch_assoc($friendQueryResult)){
         array_push($friendList,$row["SECOND_USER_ID"]);
@@ -44,14 +53,18 @@
         array_push($courseList,$row["COURSE_ID"]);
     }
 
+    /* Display for Testing */
+    echo("Name : ".$userName." ".$userSurname."<br/>");
+    echo("Mail : ".$userMail."<br/>");
+    echo("Phone : ".$userPhone."<br/>");
     echo("Friends: "."<br/>");
     foreach($friendList as $key => $value){
         echo $key.":".$value."<br/>";
     }
     echo("Courses: "."<br/>");
     foreach($courseList as $key => $value){
-    echo $key.":".$value."<br/>";
-}
+        echo $key.":".$value."<br/>";
+    }
     mysqli_close($connection);
     /**/
 ?>
