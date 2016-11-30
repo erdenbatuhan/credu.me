@@ -7,19 +7,21 @@
 
     $connection = new mysqli($hostName, $hostUser, $hostPw, $dbName);
 
-    if (!$connection)
-        die("Connection Failed!");
     /**/
     $profileId = "S001146"; /* $_GET['id'] */
     $friendList = array();
 
-    $friendQuery = "SELECT second_user_id FROM FRIENDSHIP WHERE FIRST_USER_ID = '".$profileId."'";;
-    $friendQueryResult = $connection -> query($friendQuery);
+    $friendQuery = "SELECT second_user_id FROM FRIENDSHIP";
+    $friendQueryResult = mysqli_query($connection, $friendQuery);
+
     if(!$friendQueryResult){
         throw new Exception("Database error ");
     }
-    while ($row = $friendQueryResult -> fetch_assoc()){
-        echo($row);
-        array_push($friendList,$friendQueryResult);
+
+    while ($row = mysqli_fetch_assoc($friendQueryResult)){
+        echo($row["second_user_id"]);
+        echo("bn");
     }
+    mysqli_close($connection);
+
 ?>
