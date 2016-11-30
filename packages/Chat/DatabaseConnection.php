@@ -1,10 +1,5 @@
 <?php
 
-const HOST_NAME = "localhost";
-const HOST_USER = "root";
-const HOST_PASSWORD = "3448";
-const DATABASE_NAME = "credu.me";
-
 class DatabaseConnection {
 
     private $connection = null;
@@ -19,7 +14,7 @@ class DatabaseConnection {
 
     public function initiateConnection() {
         $this->connection = new mysqli($this->hostName, $this->hostUser, $this->hostPassword, $this->databaseName);
-        
+
         if (!$this->connection)
             die("Connection Failed!");
     }
