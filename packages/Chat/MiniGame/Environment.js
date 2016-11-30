@@ -50,8 +50,8 @@ function initEnvironment(img) {
     birdImage = new Environment(img,0,701,30,30);
     redPointImage = new Environment(img,0,701,30,30);
     tenPointImage = new Environment(img,61,701,30,30);
-    pointImage = new Environment(img,91,701,31,31);
-    bombImage = new Environment(img,123,701,30,32);
+    pointImage = new Environment(img,123,701,30,32);
+    bombImage = new Environment(img,91,701,31,31);
     thugBirdImage = new Environment(img,6,752,150,50);
     GameOverImage = new Environment(img,6,817,180,45);
     scoreBoardImage = new Environment(img,0,864,226,119);
