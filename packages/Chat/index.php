@@ -4,8 +4,8 @@
     include "ChatRoom.php";
 
 	$databaseConnection = new DatabaseConnection();
-	$chatRoom = new ChatRoom($databaseConnection, 'BUS118');
+	$chatRoom = new ChatRoom($databaseConnection, 'BUS158');
 
     $chatRoom->fetchMessages();
-	$chatRoom->printAll();
+	$chatRoom->printMessages();
 ?>

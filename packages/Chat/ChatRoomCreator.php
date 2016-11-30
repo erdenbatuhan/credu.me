@@ -9,7 +9,7 @@
     if (!$connection)
         die("Connection Failed!");
 
-    $sql_query = "SELECT ID FROM COURSES";
+    $sql_query = "SELECT ID FROM COURSES;";
     $sql_result = mysqli_query($connection, $sql_query);
 
     while ($row = mysqli_fetch_assoc($sql_result)) {

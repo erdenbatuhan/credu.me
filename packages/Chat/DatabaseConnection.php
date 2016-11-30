@@ -19,7 +19,7 @@ class DatabaseConnection {
 
     public function initiateConnection() {
         $this->connection = new mysqli($this->hostName, $this->hostUser, $this->hostPassword, $this->databaseName);
-
+        
         if (!$this->connection)
             die("Connection Failed!");
     }

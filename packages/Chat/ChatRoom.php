@@ -23,7 +23,7 @@ class ChatRoom {
         $this->databaseConnection->initiateConnection();
         $connection = $this->databaseConnection->getConnection();
 
-        $sql_query = "SELECT * FROM MESSAGES";
+        $sql_query = "SELECT * FROM MESSAGES WHERE COURSE_ID = '" . $this->course_id . "';";
         $sql_result = mysqli_query($connection, $sql_query);
 
         while ($row = mysqli_fetch_assoc($sql_result)) {
@@ -35,7 +35,7 @@ class ChatRoom {
         $this->databaseConnection->killConnection();
     }
 
-    public function printAll() {
+    public function printMessages() {
         for ($i = 0; $i < count($this->messages); $i++) {
             echo 'User: ' . $this->senders[$i] . ' said (' . $this->dates[$i] . ') ' . $this->messages[$i] . '<br>';
         }
