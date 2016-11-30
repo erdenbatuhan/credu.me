@@ -72,10 +72,10 @@ function main() {
 
         okbtn = {
 
-            x: (width - playAgainImage.width)/2,
+            x: (width - okImage.width)/2,
             y: height - 200,
-            width: playAgainImage.width,
-            height: playAgainImage.height
+            width: okImage.width,
+            height: okImage.height
         };
 
         run();
@@ -96,7 +96,7 @@ function run() {
 function update() {
     frames ++;
     if(currentState !== states.FinalScreen) {
-        floorPosition = (floorPosition - 2) % 20;
+        floorPosition = (floorPosition - 2) % 70;
         /* This is used for moving the floor in Menu and Game states */
     }
     if(currentState === states.Game){
@@ -113,6 +113,7 @@ function render() {
 
     if(currentState === states.Menu){
 
+        thugBirdImage.draw(ctx,(width/2)- thugBirdImage.width/2,height-420);
         tapToPlayImage.draw(ctx,(width/2)- tapToPlayImage.width/2,height-330);
     }
 
@@ -120,13 +121,38 @@ function render() {
 
         GameOverImage.draw(ctx,(width/2)- GameOverImage.width/2,height-400);
         scoreBoardImage.draw(ctx,(width/2)- scoreBoardImage.width/2,height-340);
-        playAgainImage.draw(ctx,(width/2)- playAgainImage.width/2,height-220);
+        okImage.draw(ctx,okbtn.x,okbtn.y);
+        if(bestScore<score) bestScore=score;
+
+        smallNumberImage.draw(ctx,width/2 - 57,height-299,score,null,10);
+        smallNumberImage.draw(ctx,width/2 - 57,height-260,bestScore,null,10);
+
+        if(score < 10){
+
+            medalOneImage.draw(ctx,width/2 - 92,height-295);
+        }
+        else if(score > 10 && score < 20){
+
+            medalTwoImage.draw(ctx,width/2 - 92,height-295);
+
+        }
+        else if(score > 20 && score < 30){
+
+            medalThreeImage.draw(ctx,width/2 - 92,height-295);
+
+        }
+        else if(score > 30 ){
+
+            medalFourImage.draw(ctx,width/2 - 92,height-295);
+
+        }
+
 
     }
 
     else{
         //need to be fixed in the Environment
-        smallNumberImage.draw(ctx,null,20,4,width/2);
+        bigNumberImage.draw(ctx,null,20,score,width/2);
 
     }
 }

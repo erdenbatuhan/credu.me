@@ -6,7 +6,7 @@ var backgroundImage,
     floorImage,
     GameOverImage,
     birdImage,
-    playAgainImage,
+    okImage,
     redPointImage,
     pointImage,
     tenPointImage,
@@ -15,6 +15,17 @@ var backgroundImage,
     tapToPlayImage,
     smallNumberImage,
     bigNumberImage,
+    rateImage,
+    scoreImage,
+    menuImage,
+    startImage,
+    shareImage,
+    playButtonImage,
+    pauseButtonImage,
+    medalOneImage,
+    medalTwoImage,
+    medalThreeImage,
+    medalFourImage,
     bombImage;
 
 /* This is used for retrieving images from single PNG file */
@@ -27,7 +38,7 @@ function Environment(img,x,y,width,height){
     this.y = y;
     this.width = width;
     this.height = height;
-};
+}
 
 Environment.prototype.draw = function(ctx,x,y){
     ctx.drawImage(this.img,this.x,this.y,this.width,this.height,x,y,this.width,this.height);
@@ -39,17 +50,33 @@ function initEnvironment(img) {
     birdImage = new Environment(img,0,701,30,30);
     redPointImage = new Environment(img,0,701,30,30);
     tenPointImage = new Environment(img,61,701,30,30);
-    pointImage = new Environment(img,91,701,30,30);
-    bombImage = new Environment(img,123,701,30,30);
-    thugBirdImage = new Environment(img,0,750,150,50);
-    GameOverImage = new Environment(img,0,820,190,50);
-    scoreBoardImage = new Environment(img,0,870,250,150);
-    playAgainImage = new Environment(img,0,1000,250,50);
-    tapToPlayImage = new Environment(img,0,1050,150,100);
-    smallNumberImage = new Environment(img, 0, 1158, 152, 14);
-    bigNumberImage = new Environment(img, 0, 1181, 160, 18);
+    pointImage = new Environment(img,91,701,31,31);
+    bombImage = new Environment(img,123,701,30,32);
+    thugBirdImage = new Environment(img,6,752,150,50);
+    GameOverImage = new Environment(img,6,817,180,45);
+    scoreBoardImage = new Environment(img,0,864,226,119);
+    tapToPlayImage = new Environment(img,0,1058,120,66);
 
-    // Below is for writing score to the screen and converting numbers to image
+    smallNumberImage = new Environment(img, 0, 1157, 12, 15);
+    bigNumberImage = new Environment(img, 0, 1179, 14, 22);
+
+
+    okImage = new Environment(img,79,1029,83,28);
+    rateImage = new Environment(img,0,1001,81,28);
+    scoreImage = new Environment(img,0,1029,81,28);
+    menuImage = new Environment(img,79,1001,83,28);
+    startImage = new Environment(img,159,1001,83,28);
+    shareImage = new Environment(img,159,1029,83,28);
+    playButtonImage = new Environment(img,241,1001,28,28);
+    pauseButtonImage = new Environment(img,241,1029,28,28);
+
+    medalOneImage = new Environment(img,227,864,45,47);
+    medalTwoImage = new Environment(img,227,911,45,47);
+    medalThreeImage = new Environment(img,274,864,45,47);
+    medalFourImage = new Environment(img,274,911,45,47);
+
+
+    // Below function is for writing score to the screen and converting numbers to image
     smallNumberImage.draw = bigNumberImage.draw = function(ctx, x, y, num, center, offset) {
         num = num.toString();
 
@@ -64,7 +91,7 @@ function initEnvironment(img) {
 
         for (var i = 0, len = num.length; i < len; i++) {
             var n = parseInt(num[i]);
-            ctx.drawImage(img, step*n, this.y, this.width, this.height, x, y, this.width, this.height)
+            ctx.drawImage(img, step*n, this.y, this.width, this.height, x, y, this.width, this.height);
             x += step;
         }
     }
