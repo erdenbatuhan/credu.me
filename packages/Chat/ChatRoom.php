@@ -37,7 +37,10 @@ class ChatRoom {
 
     public function printMessages() {
         for ($i = 0; $i < count($this->messages); $i++) {
-            echo 'User: ' . $this->senders[$i] . ' said (' . $this->dates[$i] . ') ' . $this->messages[$i] . '<br>';
+            echo '<div class="jumbotron chatron">
+			        <h6> ' . $this->senders[$i] . ' - ' . $this->dates[$i] . '<h6>
+				    <p>' . $this->messages[$i] . '</p>
+			      </div>';
         }
     }
 }
