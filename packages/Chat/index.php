@@ -2,8 +2,8 @@
 <html lang="tr">
 
 <head>
-    <?php include "head.php"; ?>
     <title> Chat | credu.me </title>
+    <?php include ('../../head.php'); ?>
 </head>
 <?php
     include "DatabaseConnection.php";
