@@ -10,7 +10,7 @@
     if (!$connection)
         die("Connection Failed!");
     /**/
-    $profileId = "S001146"; /* $_GET['id'] */
+    $profileId = $_GET['id'];
     $friendList = array();
     $courseList = array();
     $userName;
