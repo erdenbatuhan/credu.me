@@ -2,7 +2,7 @@
     /* DB connection */
     $hostName = "localhost";
     $hostUser = "root";
-    $hostPw = "juventus";
+    $hostPw = "admin";
     $dbName = "credume";
 
     $connection = new mysqli($hostName, $hostUser, $hostPw, $dbName);
