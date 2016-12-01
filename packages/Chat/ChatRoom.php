@@ -35,13 +35,16 @@ class ChatRoom {
         $this->databaseConnection->killConnection();
     }
 
-    public function printMessages() {
-        for ($i = 0; $i < count($this->messages); $i++) {
-            echo '<div class="jumbotron chatron">
-			        <h6> ' . $this->senders[$i] . ' - ' . $this->dates[$i] . '<h6>
-				    <p>' . $this->messages[$i] . '</p>
-			      </div>';
-        }
+    public function getSenders() {
+        return $this->senders;
+    }
+
+    public function getDates() {
+        return $this->dates;
+    }
+
+    public function getMessages() {
+        return $this->messages;
     }
 }
 
