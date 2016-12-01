@@ -12,12 +12,30 @@
 </head>
 <body style="background-color: #ff0000;">
 
-<div class="navbar navbar-inverse" style="color: #fff;border-radius:0px;
+<nav class="navbar navbar-inverse" style="color: #fff;border-radius:0px;
     background-color: #669999;text-align: left; font-weight: bold; font-size: 25px; padding-top: 20px;"
-     onclick="window.location.href='http://localhost/credu.me/packages/Home/index.php'">CREDU.ME</div>
+">
 
+<form action="#" method="POST">
+    <a href="./"> CREDU.ME </a>
+    <input type="text" name="username" size="5" placeholder="Username" />
+    <input type="text" name="password" size="5" placeholder="Password" /><br /> <br />
+    <input type ="submit" name="submit" value="Sign Up!">
+</form>
+</nav>
 
+<div class="container">
 
+    <tr>
+        <td width="40%">
+            <form action="#" method="POST">
+                <input type="text" name="username" size="25" placeholder="Username" /><br /> <br />
+                <input type="text" name="password" size="25" placeholder="Password" /><br /> <br />
+                <input type ="submit" name="submit" value="Sign Up!">
+            </form>
+        </td>
+    </tr>
 
+</div>
 
 </body>
