@@ -21,7 +21,8 @@
     /* Get the query results and store them in arrays - FriendList and CoursesTaken */
     $userInfoQuery = "SELECT FIRST_NAME,LAST_NAME,EMAIL,PHONE_NO FROM USERS WHERE ID ='".$profileId."'";
     $userInfoQueryResult = mysqli_query($connection,$userInfoQuery);
-    $friendQuery = "SELECT SECOND_USER_ID FROM FRIENDSHIP WHERE FIRST_USER_ID ='".$profileId."'";
+    $friendQuery =  "SELECT SECOND_USER_ID,FIRST_NAME,LAST_NAME FROM FRIENDSHIP JOIN USERS ON SECOND_USER_ID = ID 
+                     WHERE FIRST_USER_ID = '".$profileId."'";
     $friendQueryResult = mysqli_query($connection, $friendQuery);
     $courseQuery = "SELECT COURSE_ID FROM COURSESTAKEN WHERE USER_ID ='".$profileId."'";
     $courseQueryResult = mysqli_query($connection, $courseQuery);
@@ -46,7 +47,9 @@
     }
 
     while ($row = mysqli_fetch_assoc($friendQueryResult)){
-        array_push($friendList,$row["SECOND_USER_ID"]);
+        /* Stores the friend Query result in array as FriendID = Key, First_name + Last_name = Value */
+        $friendID=array_shift($row);
+        $friendList[$friendID] = $row["FIRST_NAME"]." ".$row["LAST_NAME"];
     }
 
     while ($row = mysqli_fetch_assoc($courseQueryResult)){
@@ -59,7 +62,7 @@
     echo("Phone : ".$userPhone."<br/>");
     echo("Friends: "."<br/>");
     foreach($friendList as $key => $value){
-        echo $key.":".$value."<br/>";
+        echo $key.  ":".$value."<br/>";
     }
     echo("Courses: "."<br/>");
     foreach($courseList as $key => $value){
