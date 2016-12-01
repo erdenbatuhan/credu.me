@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost:8889
--- Generation Time: Nov 18, 2016 at 09:43 PM
+-- Generation Time: Dec 01, 2016 at 09:34 PM
 -- Server version: 5.5.42
 -- PHP Version: 7.0.0
 
@@ -11,7 +11,7 @@ SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
 
 --
--- Database: `credu.me`
+-- Database: `credume`
 --
 
 -- --------------------------------------------------------
@@ -6635,6 +6635,31 @@ INSERT INTO `Friendship` (`FIRST_USER_ID`, `SECOND_USER_ID`) VALUES
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `Messages`
+--
+
+CREATE TABLE `Messages` (
+  `ID` int(10) NOT NULL,
+  `COURSE_ID` varchar(10) NOT NULL,
+  `SENDER_ID` varchar(10) NOT NULL,
+  `DATE` date NOT NULL,
+  `MESSAGE` text NOT NULL
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `Messages`
+--
+
+INSERT INTO `Messages` (`ID`, `COURSE_ID`, `SENDER_ID`, `DATE`, `MESSAGE`) VALUES
+(1, 'BUS118', 'S001146', '2016-11-30', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut erat augue, tincidunt vitae volutpat eu, rutrum sit amet sem. Praesent vitae nibh egestas dolor cursus.'),
+(2, 'BUS118', 'S001146', '2016-11-30', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut erat augue, tincidunt vitae volutpat eu, rutrum sit amet sem. Praesent vitae nibh egestas dolor cursus.'),
+(3, 'BUS158', 'S001352', '2016-11-30', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut erat augue, tincidunt vitae volutpat eu, rutrum sit amet sem. Praesent vitae nibh egestas dolor cursus.'),
+(4, 'BUS158', 'S001352', '2016-11-30', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut erat augue, tincidunt vitae volutpat eu, rutrum sit amet sem. Praesent vitae nibh egestas dolor cursus.'),
+(5, 'BUS158', 'S001352', '2016-11-30', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut erat augue, tincidunt vitae volutpat eu, rutrum sit amet sem. Praesent vitae nibh egestas dolor cursus.');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `Universities`
 --
 
@@ -6664,164 +6689,165 @@ CREATE TABLE `Users` (
   `EMAIL` varchar(30) NOT NULL,
   `PASSWORD` varchar(20) NOT NULL,
   `PHONE_NO` varchar(20) NOT NULL,
-  `UNIVERSITY_ID` int(11) NOT NULL
+  `UNIVERSITY_ID` int(11) NOT NULL,
+  `HIGH_SCORE` int(11) NOT NULL DEFAULT '0'
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `Users`
 --
 
-INSERT INTO `Users` (`ID`, `FIRST_NAME`, `LAST_NAME`, `EMAIL`, `PASSWORD`, `PHONE_NO`, `UNIVERSITY_ID`) VALUES
-('S001146', 'Philip', 'James', 'philip.james@ozu.edu.tr', 'DPFBRc', '0543 587 7015', 1),
-('S001156', 'Janet', 'Jones', 'janet.jones@ozu.edu.tr', '3n0fydP', '0531 359 9119', 1),
-('S001305', 'Charles', 'Knight', 'charles.knight@ozu.edu.tr', '2E0OZXF551K7', '0557 410 1011', 1),
-('S001352', 'Margaret', 'George', 'margaret.george@ozu.edu.tr', 'v56cjM3GkcP', '0555 617 2670', 1),
-('S001383', 'Nicole', 'Cunningham', 'nicole.cunningham@ozu.edu.tr', 'clkdtMLI', '0552 816 4133', 1),
-('S001525', 'Carolyn', 'Andrews', 'carolyn.andrews@ozu.edu.tr', 'WvxGhQc3pfYj', '0537 826 8794', 1),
-('S001867', 'Sharon', 'Greene', 'sharon.greene@ozu.edu.tr', 'Eg6Hak2Xx', '0555 282 8276', 1),
-('S001908', 'Joan', 'George', 'joan.george@ozu.edu.tr', 'TS8ekwe7f9', '0535 185 6100', 1),
-('S001970', 'Jennifer', 'Turner', 'jennifer.turner@ozu.edu.tr', 'RJNreKED1gAv', '0555 200 5870', 1),
-('S001972', 'Roger', 'Rogers', 'roger.rogers@ozu.edu.tr', 'hg1gkIL', '0552 912 1575', 1),
-('S001996', 'Johnny', 'Gray', 'johnny.gray@ozu.edu.tr', 'B08hSFJzjZoC', '0540 246 2537', 1),
-('S002044', 'Jacqueline', 'Jacobs', 'jacqueline.jacobs@ozu.edu.tr', '5nrPOphO4', '0547 441 5221', 1),
-('S002071', 'Wanda', 'Murphy', 'wanda.murphy@ozu.edu.tr', 'PHfqkfe0L5', '0553 943 1656', 1),
-('S002213', 'Albert', 'Hicks', 'albert.hicks@ozu.edu.tr', '12XtG8ESP', '0553 628 9584', 1),
-('S002234', 'Doris', 'Ward', 'doris.ward@ozu.edu.tr', 'ZykZq0omV', '0557 155 3041', 1),
-('S002238', 'Carolyn', 'Hicks', 'carolyn.hicks@ozu.edu.tr', 'KC7YXq', '0552 134 1002', 1),
-('S002281', 'Timothy', 'Brown', 'timothy.brown@ozu.edu.tr', 'Ju7kMw', '0552 959 5050', 1),
-('S002414', 'Matthew', 'Wright', 'matthew.wright@ozu.edu.tr', 'dXAfl0IGf9U2', '0534 456 7960', 1),
-('S002460', 'Stephen', 'Jackson', 'stephen.jackson@ozu.edu.tr', 'e7h5WolybvF', '0550 966 3966', 1),
-('S002584', 'Jonathan', 'Frazier', 'jonathan.frazier@ozu.edu.tr', 'hDOsDktg', '0552 884 6566', 1),
-('S002750', 'Shawn', 'Turner', 'shawn.turner@ozu.edu.tr', 'gQKNgStnT', '0534 579 2708', 1),
-('S002814', 'Fred', 'Torres', 'fred.torres@ozu.edu.tr', '46EuVwMsu', '0545 115 2695', 1),
-('S002842', 'Dorothy', 'Stanley', 'dorothy.stanley@ozu.edu.tr', 'Zhh0qE', '0536 470 9732', 1),
-('S002909', 'Martha', 'Cole', 'martha.cole@ozu.edu.tr', 'ai6A5qTqqF', '0554 704 3007', 1),
-('S003014', 'Clarence', 'Carter', 'clarence.carter@ozu.edu.tr', 'nPrw2GDQ', '0542 921 7592', 1),
-('S003041', 'Craig', 'Daniels', 'craig.daniels@ozu.edu.tr', 'IKQ0WK77jdPX', '0540 432 1503', 1),
-('S003051', 'Judith', 'Cruz', 'judith.cruz@ozu.edu.tr', 'Ypp3V3Hchh', '0551 326 5735', 1),
-('S003052', 'Sandra', 'Jenkins', 'sandra.jenkins@ozu.edu.tr', 'v8dD3n7', '0533 454 4790', 1),
-('S003079', 'Patrick', 'Patterson', 'patrick.patterson@ozu.edu.tr', 'zbDvQm', '0542 903 9215', 1),
-('S003120', 'Dorothy', 'Watson', 'dorothy.watson@ozu.edu.tr', 'RZs6SB', '0538 647 8504', 1),
-('S003230', 'Jessica', 'Nguyen', 'jessica.nguyen@ozu.edu.tr', 'rYuv4q', '0538 856 7636', 1),
-('S003231', 'Thomas', 'Rice', 'thomas.rice@ozu.edu.tr', 'bkeRLe6', '0539 212 3944', 1),
-('S003307', 'Joyce', 'Morales', 'joyce.morales@ozu.edu.tr', 'JHuokB8puca1', '0559 334 1550', 1),
-('S003317', 'Brandon', 'Anderson', 'brandon.anderson@ozu.edu.tr', '8F52Xse', '0559 294 3460', 1),
-('S003373', 'Frank', 'Chapman', 'frank.chapman@ozu.edu.tr', 'eM7oP9U4o', '0559 929 4506', 1),
-('S003457', 'Roger', 'Roberts', 'roger.roberts@ozu.edu.tr', '7iBayGrGPAWi', '0550 973 6700', 1),
-('S003475', 'Diane', 'Stanley', 'diane.stanley@ozu.edu.tr', 'Osyxjt', '0532 595 8631', 1),
-('S003644', 'Martin', 'Pierce', 'martin.pierce@ozu.edu.tr', '1UoU6yA5HHE', '0540 537 9840', 1),
-('S003663', 'Philip', 'Henderson', 'philip.henderson@ozu.edu.tr', 'rf3ArXWD', '0555 508 6282', 1),
-('S003688', 'Dennis', 'Ellis', 'dennis.ellis@ozu.edu.tr', 'wBlHdKymYX9Z', '0536 524 1627', 1),
-('S003752', 'Bruce', 'Lawrence', 'bruce.lawrence@ozu.edu.tr', 'Ie6jFZ', '0542 127 6018', 1),
-('S003842', 'Eric', 'Henderson', 'eric.henderson@ozu.edu.tr', 'Cx7ENnII4h', '0556 674 4114', 1),
-('S003847', 'Jonathan', 'Diaz', 'jonathan.diaz@ozu.edu.tr', '9aQVJbdi', '0540 520 2080', 1),
-('S003865', 'Joe', 'Flores', 'joe.flores@ozu.edu.tr', 'qyODknO', '0538 142 3657', 1),
-('S003930', 'Larry', 'Lawrence', 'larry.lawrence@ozu.edu.tr', 'o33FFgGYmB', '0539 870 6807', 1),
-('S003931', 'Wanda', 'Watson', 'wanda.watson@ozu.edu.tr', 'CAVWiBQ7NKSZ', '0558 736 9449', 1),
-('S003954', 'Diane', 'Bailey', 'diane.bailey@ozu.edu.tr', 'uXULKdSNSicI', '0535 557 4418', 1),
-('S003977', 'Julie', 'Cooper', 'julie.cooper@ozu.edu.tr', 'Xk24Y2iu', '0538 204 1882', 1),
-('S004032', 'Mildred', 'Cunningham', 'mildred.cunningham@ozu.edu.tr', '83bElY5NLH', '0546 410 5605', 1),
-('S004070', 'Jerry', 'Murray', 'jerry.murray@ozu.edu.tr', 'ZXGOnlicJViH', '0541 787 6178', 1),
-('S004309', 'Jeffrey', 'Kelley', 'jeffrey.kelley@ozu.edu.tr', '1Nd9J4YTO', '0557 750 3564', 1),
-('S004351', 'Kathy', 'Chapman', 'kathy.chapman@ozu.edu.tr', 'n0SNbGu', '0543 247 5414', 1),
-('S004379', 'Heather', 'Nichols', 'heather.nichols@ozu.edu.tr', '4MC5fYO', '0542 949 2262', 1),
-('S004423', 'Johnny', 'Morales', 'johnny.morales@ozu.edu.tr', 'mWUJ67J', '0534 765 4594', 1),
-('S004429', 'Rose', 'Henderson', 'rose.henderson@ozu.edu.tr', 'Gsh3Aj1inINy', '0544 188 6393', 1),
-('S004440', 'Phillip', 'Sullivan', 'phillip.sullivan@ozu.edu.tr', 'lcTDh0W3oLy', '0531 873 4151', 1),
-('S004458', 'Joyce', 'Hernandez', 'joyce.hernandez@ozu.edu.tr', 'NzV7HRLW', '0535 142 7361', 1),
-('S004494', 'Carolyn', 'Reid', 'carolyn.reid@ozu.edu.tr', 'ZWxLbRGQ1y8', '0554 108 5940', 1),
-('S004500', 'Martha', 'Russell', 'martha.russell@ozu.edu.tr', 'BK7C8DAM', '0534 472 4529', 1),
-('S004648', 'Aaron', 'Olson', 'aaron.olson@ozu.edu.tr', 'uInDtsSLUP', '0530 814 5235', 1),
-('S004780', 'Randy', 'Scott', 'randy.scott@ozu.edu.tr', '7747nzvEL6eO', '0543 751 1957', 1),
-('S004809', 'Rebecca', 'Elliott', 'rebecca.elliott@ozu.edu.tr', 'C88oZngB', '0549 818 9497', 1),
-('S004848', 'Arthur', 'Hall', 'arthur.hall@ozu.edu.tr', 'k2B6qSWB1eiN', '0544 331 4940', 1),
-('S004898', 'Elizabeth', 'Warren', 'elizabeth.warren@ozu.edu.tr', '4KFgRHqRdjW9', '0541 294 9560', 1),
-('S004913', 'Walter', 'Matthews', 'walter.matthews@ozu.edu.tr', 'cezZHn74uE', '0532 335 9684', 1),
-('S004927', 'Richard', 'Walker', 'richard.walker@ozu.edu.tr', 'G9BtMcRPix', '0554 404 4712', 1),
-('S005080', 'Jack', 'Payne', 'jack.payne@ozu.edu.tr', 'DHx7joj', '0552 595 7783', 1),
-('S005098', 'Jason', 'Warren', 'jason.warren@ozu.edu.tr', 'yhCrT7v', '0550 410 1143', 1),
-('S005185', 'Patrick', 'Daniels', 'patrick.daniels@ozu.edu.tr', 'WGGceJ', '0546 116 1027', 1),
-('S005267', 'Ruby', 'Fuller', 'ruby.fuller@ozu.edu.tr', '4PKRJ03H', '0549 703 9475', 1),
-('S005273', 'Susan', 'Martinez', 'susan.martinez@ozu.edu.tr', 'jxHizJ4', '0553 137 5649', 1),
-('S005442', 'Peter', 'Taylor', 'peter.taylor@ozu.edu.tr', 'oPM3gAI1EMr', '0545 211 6925', 1),
-('S005535', 'Carolyn', 'Tucker', 'carolyn.tucker@ozu.edu.tr', '2lyrufFVP', '0538 680 7666', 1),
-('S005543', 'Christine', 'Lopez', 'christine.lopez@ozu.edu.tr', 'kYpl97x', '0548 680 4917', 1),
-('S005696', 'Timothy', 'Barnes', 'timothy.barnes@ozu.edu.tr', '8wzBZlFX', '0545 610 7480', 1),
-('S005876', 'Margaret', 'Williamson', 'margaret.williamson@ozu.edu.tr', 'AWuzKr', '0555 135 4784', 1),
-('S005982', 'Nicole', 'Lawrence', 'nicole.lawrence@ozu.edu.tr', 'kunXs3N', '0538 992 1337', 1),
-('S005987', 'Stephanie', 'Watkins', 'stephanie.watkins@ozu.edu.tr', 'M7VV4tH', '0539 660 8319', 1),
-('S006003', 'Martin', 'Price', 'martin.price@ozu.edu.tr', 'Hf1cs5', '0544 584 3409', 1),
-('S006031', 'Charles', 'Murray', 'charles.murray@ozu.edu.tr', 'xxM3rEhZ7', '0532 157 4532', 1),
-('S006147', 'Johnny', 'Moore', 'johnny.moore@ozu.edu.tr', '4n0sS8HLWN', '0545 272 4675', 1),
-('S006161', 'Arthur', 'Evans', 'arthur.evans@ozu.edu.tr', 'JYiptwtnXY', '0548 265 9614', 1),
-('S006198', 'Ann', 'Stevens', 'ann.stevens@ozu.edu.tr', '5w7kRz9DaPw', '0539 379 3966', 1),
-('S006270', 'Arthur', 'Graham', 'arthur.graham@ozu.edu.tr', 'IQJpgIvaTS4L', '0557 303 8120', 1),
-('S006329', 'Denise', 'Campbell', 'denise.campbell@ozu.edu.tr', 'FfL4aO', '0553 817 7514', 1),
-('S006460', 'Jimmy', 'Cruz', 'jimmy.cruz@ozu.edu.tr', 'tsYIBtw4i', '0543 804 1659', 1),
-('S006479', 'Jesse', 'Vasquez', 'jesse.vasquez@ozu.edu.tr', 'irk1QcR', '0554 590 8064', 1),
-('S006541', 'David', 'Oliver', 'david.oliver@ozu.edu.tr', 'BjQoZk9L', '0534 951 3164', 1),
-('S006728', 'Norma', 'Welch', 'norma.welch@ozu.edu.tr', 'fIHLWmiYr8ZA', '0544 144 9413', 1),
-('S006737', 'Alice', 'Robinson', 'alice.robinson@ozu.edu.tr', 't43XbeO', '0543 460 9606', 1),
-('S006777', 'Samuel', 'Owens', 'samuel.owens@ozu.edu.tr', 'ATzXYZj', '0530 743 7999', 1),
-('S006782', 'Julie', 'Spencer', 'julie.spencer@ozu.edu.tr', 'zt60s1dEHvJ', '0555 708 8652', 1),
-('S006976', 'Adam', 'Howard', 'adam.howard@ozu.edu.tr', 'jnOksohn', '0552 796 8527', 1),
-('S007050', 'Mildred', 'Harvey', 'mildred.harvey@ozu.edu.tr', 'XN9CgoXlqLb', '0550 756 7615', 1),
-('S007109', 'Karen', 'Evans', 'karen.evans@ozu.edu.tr', '2kX0HGAAQ39T', '0543 729 5020', 1),
-('S007148', 'Russell', 'Moreno', 'russell.moreno@ozu.edu.tr', 'wnichw', '0542 308 2258', 1),
-('S007149', 'Edward', 'Frazier', 'edward.frazier@ozu.edu.tr', 'OkukcgMsyprV', '0531 679 6701', 1),
-('S007217', 'Jacqueline', 'Rice', 'jacqueline.rice@ozu.edu.tr', 'DNq97N9i', '0556 114 4439', 1),
-('S007238', 'Linda', 'Cooper', 'linda.cooper@ozu.edu.tr', 'xvbueOLJ5uG6', '0556 563 5290', 1),
-('S007330', 'Aaron', 'Lewis', 'aaron.lewis@ozu.edu.tr', 'CmBpBo9TH1Od', '0557 768 4128', 1),
-('S007408', 'Donna', 'Perry', 'donna.perry@ozu.edu.tr', 'm8tjMO', '0547 691 2721', 1),
-('S007672', 'Andrew', 'Palmer', 'andrew.palmer@ozu.edu.tr', 's4sZJqUcr', '0559 410 9761', 1),
-('S007689', 'Jeremy', 'Sullivan', 'jeremy.sullivan@ozu.edu.tr', 'yqjbFvEvjF', '0544 262 5250', 1),
-('S007693', 'Frances', 'Phillips', 'frances.phillips@ozu.edu.tr', 'dCfMg1H3lyl', '0544 916 6698', 1),
-('S007701', 'Anthony', 'Burton', 'anthony.burton@ozu.edu.tr', '0aBgjScZDf8s', '0537 694 7308', 1),
-('S007813', 'Johnny', 'Mason', 'johnny.mason@ozu.edu.tr', 'wMG7FgyN', '0537 837 5570', 1),
-('S007884', 'Stephen', 'Clark', 'stephen.clark@ozu.edu.tr', 'nZRTYtminG0', '0557 329 6642', 1),
-('S007928', 'Cheryl', 'Ferguson', 'cheryl.ferguson@ozu.edu.tr', 'PX9rNfjPL', '0548 720 6865', 1),
-('S007929', 'Shirley', 'Hansen', 'shirley.hansen@ozu.edu.tr', 'Mc31uzZBBOqa', '0544 419 9350', 1),
-('S007934', 'Jerry', 'Reed', 'jerry.reed@ozu.edu.tr', 'RonX0dMz5H', '0548 778 6049', 1),
-('S007979', 'Jesse', 'Hamilton', 'jesse.hamilton@ozu.edu.tr', 'sRuJMd264tYO', '0547 790 8441', 1),
-('S007988', 'Karen', 'Alexander', 'karen.alexander@ozu.edu.tr', 'd0yDc2Gzr2', '0533 450 5195', 1),
-('S008085', 'Kevin', 'Price', 'kevin.price@ozu.edu.tr', 'IZYA3fy1x', '0544 237 3819', 1),
-('S008146', 'Michael', 'Garrett', 'michael.garrett@ozu.edu.tr', 'y4VT5B', '0551 811 1835', 1),
-('S008186', 'Kenneth', 'Jacobs', 'kenneth.jacobs@ozu.edu.tr', 'aOuTuQbZKZ7', '0538 743 4313', 1),
-('S008196', 'Michelle', 'Payne', 'michelle.payne@ozu.edu.tr', 'vVKBsHxV4', '0559 535 3913', 1),
-('S008244', 'Joe', 'Nelson', 'joe.nelson@ozu.edu.tr', 'p4wAlCu', '0533 327 5356', 1),
-('S008300', 'Deborah', 'Ryan', 'deborah.ryan@ozu.edu.tr', 'o7Udr7pE', '0557 133 3529', 1),
-('S008302', 'Norma', 'Patterson', 'norma.patterson@ozu.edu.tr', 'vN48qpkwdl', '0534 283 1428', 1),
-('S008343', 'Sean', 'Ortiz', 'sean.ortiz@ozu.edu.tr', 'Dyys1B', '0555 581 5092', 1),
-('S008361', 'Maria', 'Long', 'maria.long@ozu.edu.tr', 'fFf8BAfvBwCu', '0559 532 7338', 1),
-('S008369', 'Anne', 'Ryan', 'anne.ryan@ozu.edu.tr', 'C2npvDV', '0534 264 5462', 1),
-('S008394', 'Louis', 'Harris', 'louis.harris@ozu.edu.tr', '59SyBsx', '0552 455 3821', 1),
-('S008407', 'Theresa', 'Davis', 'theresa.davis@ozu.edu.tr', 'jNvWeKJM', '0535 304 8643', 1),
-('S008588', 'Michael', 'Moore', 'michael.moore@ozu.edu.tr', 'jcW5JdYh7', '0531 528 9901', 1),
-('S008774', 'Joan', 'Murray', 'joan.murray@ozu.edu.tr', 'KYiRjdrJRo', '0559 574 6046', 1),
-('S008905', 'Juan', 'Hughes', 'juan.hughes@ozu.edu.tr', 'uhH9194Cj4W', '0559 531 9278', 1),
-('S008929', 'Raymond', 'Porter', 'raymond.porter@ozu.edu.tr', 'Pl1so1Q', '0547 631 3135', 1),
-('S008940', 'Jesse', 'Ferguson', 'jesse.ferguson@ozu.edu.tr', 'k4hOZ2nSi', '0554 409 6452', 1),
-('S009155', 'Bonnie', 'Reynolds', 'bonnie.reynolds@ozu.edu.tr', '9GbmqAB8TOLM', '0544 755 3169', 1),
-('S009227', 'Janet', 'Ray', 'janet.ray@ozu.edu.tr', 'dlXU4dmR', '0538 999 5204', 1),
-('S009296', 'Judy', 'Martinez', 'judy.martinez@ozu.edu.tr', 'HE97zJN02pw', '0548 147 8287', 1),
-('S009322', 'Robin', 'Cunningham', 'robin.cunningham@ozu.edu.tr', 'UD1xTuHqKpU', '0557 264 9956', 1),
-('S009352', 'Kenneth', 'Larson', 'kenneth.larson@ozu.edu.tr', 'UaPy4pisB3', '0558 118 5410', 1),
-('S009379', 'Jeffrey', 'Burke', 'jeffrey.burke@ozu.edu.tr', 'vKsdGn4VJkq', '0542 902 9841', 1),
-('S009504', 'Joan', 'Reid', 'joan.reid@ozu.edu.tr', 'JBgDy9r', '0533 489 8699', 1),
-('S009601', 'Fred', 'Kelley', 'fred.kelley@ozu.edu.tr', 'kf4xvsi4DrqG', '0535 103 4663', 1),
-('S009603', 'Frances', 'Reynolds', 'frances.reynolds@ozu.edu.tr', 'N034176l', '0530 174 7053', 1),
-('S009604', 'Richard', 'Gray', 'richard.gray@ozu.edu.tr', 'piuIKZ', '0531 570 6173', 1),
-('S009632', 'Paul', 'Palmer', 'paul.palmer@ozu.edu.tr', 'Ed6IRjbbfh', '0542 732 7347', 1),
-('S009644', 'Joan', 'Marshall', 'joan.marshall@ozu.edu.tr', 'vgtnDlX', '0545 521 6834', 1),
-('S009693', 'Albert', 'Cooper', 'albert.cooper@ozu.edu.tr', 'alb160', '0532 454 9554', 1),
-('S009747', 'Ralph', 'Gordon', 'ralph.gordon@ozu.edu.tr', 'wQv53I', '0538 113 1635', 1),
-('S009754', 'Diana', 'Henry', 'diana.henry@ozu.edu.tr', 'IMe4zaU3Y', '0549 493 3474', 1),
-('S009769', 'Carolyn', 'Mendoza', 'carolyn.mendoza@ozu.edu.tr', 'XxcuRL0fGx', '0530 197 8600', 1),
-('S009795', 'Theresa', 'Chavez', 'theresa.chavez@ozu.edu.tr', 'KnT0RgmGa', '0547 436 8128', 1),
-('S009809', 'Marie', 'Evans', 'marie.evans@ozu.edu.tr', '3omwrDU', '0539 286 9854', 1),
-('S009839', 'Julie', 'Russell', 'julie.russell@ozu.edu.tr', 'YlaDUxF', '0558 790 9109', 1),
-('S009912', 'Larry', 'Ross', 'larry.ross@ozu.edu.tr', 'WaxyjWWKJV7', '0541 714 6622', 1),
-('S009964', 'Andrea', 'Powell', 'andrea.powell@ozu.edu.tr', 'BZK3W9CWZ5', '0531 804 9171', 1);
+INSERT INTO `Users` (`ID`, `FIRST_NAME`, `LAST_NAME`, `EMAIL`, `PASSWORD`, `PHONE_NO`, `UNIVERSITY_ID`, `HIGH_SCORE`) VALUES
+('S001146', 'Philip', 'James', 'philip.james@ozu.edu.tr', 'DPFBRc', '0543 587 7015', 1, 0),
+('S001156', 'Janet', 'Jones', 'janet.jones@ozu.edu.tr', '3n0fydP', '0531 359 9119', 1, 0),
+('S001305', 'Charles', 'Knight', 'charles.knight@ozu.edu.tr', '2E0OZXF551K7', '0557 410 1011', 1, 0),
+('S001352', 'Margaret', 'George', 'margaret.george@ozu.edu.tr', 'v56cjM3GkcP', '0555 617 2670', 1, 0),
+('S001383', 'Nicole', 'Cunningham', 'nicole.cunningham@ozu.edu.tr', 'clkdtMLI', '0552 816 4133', 1, 0),
+('S001525', 'Carolyn', 'Andrews', 'carolyn.andrews@ozu.edu.tr', 'WvxGhQc3pfYj', '0537 826 8794', 1, 0),
+('S001867', 'Sharon', 'Greene', 'sharon.greene@ozu.edu.tr', 'Eg6Hak2Xx', '0555 282 8276', 1, 0),
+('S001908', 'Joan', 'George', 'joan.george@ozu.edu.tr', 'TS8ekwe7f9', '0535 185 6100', 1, 0),
+('S001970', 'Jennifer', 'Turner', 'jennifer.turner@ozu.edu.tr', 'RJNreKED1gAv', '0555 200 5870', 1, 0),
+('S001972', 'Roger', 'Rogers', 'roger.rogers@ozu.edu.tr', 'hg1gkIL', '0552 912 1575', 1, 0),
+('S001996', 'Johnny', 'Gray', 'johnny.gray@ozu.edu.tr', 'B08hSFJzjZoC', '0540 246 2537', 1, 0),
+('S002044', 'Jacqueline', 'Jacobs', 'jacqueline.jacobs@ozu.edu.tr', '5nrPOphO4', '0547 441 5221', 1, 0),
+('S002071', 'Wanda', 'Murphy', 'wanda.murphy@ozu.edu.tr', 'PHfqkfe0L5', '0553 943 1656', 1, 0),
+('S002213', 'Albert', 'Hicks', 'albert.hicks@ozu.edu.tr', '12XtG8ESP', '0553 628 9584', 1, 0),
+('S002234', 'Doris', 'Ward', 'doris.ward@ozu.edu.tr', 'ZykZq0omV', '0557 155 3041', 1, 0),
+('S002238', 'Carolyn', 'Hicks', 'carolyn.hicks@ozu.edu.tr', 'KC7YXq', '0552 134 1002', 1, 0),
+('S002281', 'Timothy', 'Brown', 'timothy.brown@ozu.edu.tr', 'Ju7kMw', '0552 959 5050', 1, 0),
+('S002414', 'Matthew', 'Wright', 'matthew.wright@ozu.edu.tr', 'dXAfl0IGf9U2', '0534 456 7960', 1, 0),
+('S002460', 'Stephen', 'Jackson', 'stephen.jackson@ozu.edu.tr', 'e7h5WolybvF', '0550 966 3966', 1, 0),
+('S002584', 'Jonathan', 'Frazier', 'jonathan.frazier@ozu.edu.tr', 'hDOsDktg', '0552 884 6566', 1, 0),
+('S002750', 'Shawn', 'Turner', 'shawn.turner@ozu.edu.tr', 'gQKNgStnT', '0534 579 2708', 1, 0),
+('S002814', 'Fred', 'Torres', 'fred.torres@ozu.edu.tr', '46EuVwMsu', '0545 115 2695', 1, 0),
+('S002842', 'Dorothy', 'Stanley', 'dorothy.stanley@ozu.edu.tr', 'Zhh0qE', '0536 470 9732', 1, 0),
+('S002909', 'Martha', 'Cole', 'martha.cole@ozu.edu.tr', 'ai6A5qTqqF', '0554 704 3007', 1, 0),
+('S003014', 'Clarence', 'Carter', 'clarence.carter@ozu.edu.tr', 'nPrw2GDQ', '0542 921 7592', 1, 0),
+('S003041', 'Craig', 'Daniels', 'craig.daniels@ozu.edu.tr', 'IKQ0WK77jdPX', '0540 432 1503', 1, 0),
+('S003051', 'Judith', 'Cruz', 'judith.cruz@ozu.edu.tr', 'Ypp3V3Hchh', '0551 326 5735', 1, 0),
+('S003052', 'Sandra', 'Jenkins', 'sandra.jenkins@ozu.edu.tr', 'v8dD3n7', '0533 454 4790', 1, 0),
+('S003079', 'Patrick', 'Patterson', 'patrick.patterson@ozu.edu.tr', 'zbDvQm', '0542 903 9215', 1, 0),
+('S003120', 'Dorothy', 'Watson', 'dorothy.watson@ozu.edu.tr', 'RZs6SB', '0538 647 8504', 1, 0),
+('S003230', 'Jessica', 'Nguyen', 'jessica.nguyen@ozu.edu.tr', 'rYuv4q', '0538 856 7636', 1, 0),
+('S003231', 'Thomas', 'Rice', 'thomas.rice@ozu.edu.tr', 'bkeRLe6', '0539 212 3944', 1, 0),
+('S003307', 'Joyce', 'Morales', 'joyce.morales@ozu.edu.tr', 'JHuokB8puca1', '0559 334 1550', 1, 0),
+('S003317', 'Brandon', 'Anderson', 'brandon.anderson@ozu.edu.tr', '8F52Xse', '0559 294 3460', 1, 0),
+('S003373', 'Frank', 'Chapman', 'frank.chapman@ozu.edu.tr', 'eM7oP9U4o', '0559 929 4506', 1, 0),
+('S003457', 'Roger', 'Roberts', 'roger.roberts@ozu.edu.tr', '7iBayGrGPAWi', '0550 973 6700', 1, 0),
+('S003475', 'Diane', 'Stanley', 'diane.stanley@ozu.edu.tr', 'Osyxjt', '0532 595 8631', 1, 0),
+('S003644', 'Martin', 'Pierce', 'martin.pierce@ozu.edu.tr', '1UoU6yA5HHE', '0540 537 9840', 1, 0),
+('S003663', 'Philip', 'Henderson', 'philip.henderson@ozu.edu.tr', 'rf3ArXWD', '0555 508 6282', 1, 0),
+('S003688', 'Dennis', 'Ellis', 'dennis.ellis@ozu.edu.tr', 'wBlHdKymYX9Z', '0536 524 1627', 1, 0),
+('S003752', 'Bruce', 'Lawrence', 'bruce.lawrence@ozu.edu.tr', 'Ie6jFZ', '0542 127 6018', 1, 0),
+('S003842', 'Eric', 'Henderson', 'eric.henderson@ozu.edu.tr', 'Cx7ENnII4h', '0556 674 4114', 1, 0),
+('S003847', 'Jonathan', 'Diaz', 'jonathan.diaz@ozu.edu.tr', '9aQVJbdi', '0540 520 2080', 1, 0),
+('S003865', 'Joe', 'Flores', 'joe.flores@ozu.edu.tr', 'qyODknO', '0538 142 3657', 1, 0),
+('S003930', 'Larry', 'Lawrence', 'larry.lawrence@ozu.edu.tr', 'o33FFgGYmB', '0539 870 6807', 1, 0),
+('S003931', 'Wanda', 'Watson', 'wanda.watson@ozu.edu.tr', 'CAVWiBQ7NKSZ', '0558 736 9449', 1, 0),
+('S003954', 'Diane', 'Bailey', 'diane.bailey@ozu.edu.tr', 'uXULKdSNSicI', '0535 557 4418', 1, 0),
+('S003977', 'Julie', 'Cooper', 'julie.cooper@ozu.edu.tr', 'Xk24Y2iu', '0538 204 1882', 1, 0),
+('S004032', 'Mildred', 'Cunningham', 'mildred.cunningham@ozu.edu.tr', '83bElY5NLH', '0546 410 5605', 1, 0),
+('S004070', 'Jerry', 'Murray', 'jerry.murray@ozu.edu.tr', 'ZXGOnlicJViH', '0541 787 6178', 1, 0),
+('S004309', 'Jeffrey', 'Kelley', 'jeffrey.kelley@ozu.edu.tr', '1Nd9J4YTO', '0557 750 3564', 1, 0),
+('S004351', 'Kathy', 'Chapman', 'kathy.chapman@ozu.edu.tr', 'n0SNbGu', '0543 247 5414', 1, 0),
+('S004379', 'Heather', 'Nichols', 'heather.nichols@ozu.edu.tr', '4MC5fYO', '0542 949 2262', 1, 0),
+('S004423', 'Johnny', 'Morales', 'johnny.morales@ozu.edu.tr', 'mWUJ67J', '0534 765 4594', 1, 0),
+('S004429', 'Rose', 'Henderson', 'rose.henderson@ozu.edu.tr', 'Gsh3Aj1inINy', '0544 188 6393', 1, 0),
+('S004440', 'Phillip', 'Sullivan', 'phillip.sullivan@ozu.edu.tr', 'lcTDh0W3oLy', '0531 873 4151', 1, 0),
+('S004458', 'Joyce', 'Hernandez', 'joyce.hernandez@ozu.edu.tr', 'NzV7HRLW', '0535 142 7361', 1, 0),
+('S004494', 'Carolyn', 'Reid', 'carolyn.reid@ozu.edu.tr', 'ZWxLbRGQ1y8', '0554 108 5940', 1, 0),
+('S004500', 'Martha', 'Russell', 'martha.russell@ozu.edu.tr', 'BK7C8DAM', '0534 472 4529', 1, 0),
+('S004648', 'Aaron', 'Olson', 'aaron.olson@ozu.edu.tr', 'uInDtsSLUP', '0530 814 5235', 1, 0),
+('S004780', 'Randy', 'Scott', 'randy.scott@ozu.edu.tr', '7747nzvEL6eO', '0543 751 1957', 1, 0),
+('S004809', 'Rebecca', 'Elliott', 'rebecca.elliott@ozu.edu.tr', 'C88oZngB', '0549 818 9497', 1, 0),
+('S004848', 'Arthur', 'Hall', 'arthur.hall@ozu.edu.tr', 'k2B6qSWB1eiN', '0544 331 4940', 1, 0),
+('S004898', 'Elizabeth', 'Warren', 'elizabeth.warren@ozu.edu.tr', '4KFgRHqRdjW9', '0541 294 9560', 1, 0),
+('S004913', 'Walter', 'Matthews', 'walter.matthews@ozu.edu.tr', 'cezZHn74uE', '0532 335 9684', 1, 0),
+('S004927', 'Richard', 'Walker', 'richard.walker@ozu.edu.tr', 'G9BtMcRPix', '0554 404 4712', 1, 0),
+('S005080', 'Jack', 'Payne', 'jack.payne@ozu.edu.tr', 'DHx7joj', '0552 595 7783', 1, 0),
+('S005098', 'Jason', 'Warren', 'jason.warren@ozu.edu.tr', 'yhCrT7v', '0550 410 1143', 1, 0),
+('S005185', 'Patrick', 'Daniels', 'patrick.daniels@ozu.edu.tr', 'WGGceJ', '0546 116 1027', 1, 0),
+('S005267', 'Ruby', 'Fuller', 'ruby.fuller@ozu.edu.tr', '4PKRJ03H', '0549 703 9475', 1, 0),
+('S005273', 'Susan', 'Martinez', 'susan.martinez@ozu.edu.tr', 'jxHizJ4', '0553 137 5649', 1, 0),
+('S005442', 'Peter', 'Taylor', 'peter.taylor@ozu.edu.tr', 'oPM3gAI1EMr', '0545 211 6925', 1, 0),
+('S005535', 'Carolyn', 'Tucker', 'carolyn.tucker@ozu.edu.tr', '2lyrufFVP', '0538 680 7666', 1, 0),
+('S005543', 'Christine', 'Lopez', 'christine.lopez@ozu.edu.tr', 'kYpl97x', '0548 680 4917', 1, 0),
+('S005696', 'Timothy', 'Barnes', 'timothy.barnes@ozu.edu.tr', '8wzBZlFX', '0545 610 7480', 1, 0),
+('S005876', 'Margaret', 'Williamson', 'margaret.williamson@ozu.edu.tr', 'AWuzKr', '0555 135 4784', 1, 0),
+('S005982', 'Nicole', 'Lawrence', 'nicole.lawrence@ozu.edu.tr', 'kunXs3N', '0538 992 1337', 1, 0),
+('S005987', 'Stephanie', 'Watkins', 'stephanie.watkins@ozu.edu.tr', 'M7VV4tH', '0539 660 8319', 1, 0),
+('S006003', 'Martin', 'Price', 'martin.price@ozu.edu.tr', 'Hf1cs5', '0544 584 3409', 1, 0),
+('S006031', 'Charles', 'Murray', 'charles.murray@ozu.edu.tr', 'xxM3rEhZ7', '0532 157 4532', 1, 0),
+('S006147', 'Johnny', 'Moore', 'johnny.moore@ozu.edu.tr', '4n0sS8HLWN', '0545 272 4675', 1, 0),
+('S006161', 'Arthur', 'Evans', 'arthur.evans@ozu.edu.tr', 'JYiptwtnXY', '0548 265 9614', 1, 0),
+('S006198', 'Ann', 'Stevens', 'ann.stevens@ozu.edu.tr', '5w7kRz9DaPw', '0539 379 3966', 1, 0),
+('S006270', 'Arthur', 'Graham', 'arthur.graham@ozu.edu.tr', 'IQJpgIvaTS4L', '0557 303 8120', 1, 0),
+('S006329', 'Denise', 'Campbell', 'denise.campbell@ozu.edu.tr', 'FfL4aO', '0553 817 7514', 1, 0),
+('S006460', 'Jimmy', 'Cruz', 'jimmy.cruz@ozu.edu.tr', 'tsYIBtw4i', '0543 804 1659', 1, 0),
+('S006479', 'Jesse', 'Vasquez', 'jesse.vasquez@ozu.edu.tr', 'irk1QcR', '0554 590 8064', 1, 0),
+('S006541', 'David', 'Oliver', 'david.oliver@ozu.edu.tr', 'BjQoZk9L', '0534 951 3164', 1, 0),
+('S006728', 'Norma', 'Welch', 'norma.welch@ozu.edu.tr', 'fIHLWmiYr8ZA', '0544 144 9413', 1, 0),
+('S006737', 'Alice', 'Robinson', 'alice.robinson@ozu.edu.tr', 't43XbeO', '0543 460 9606', 1, 0),
+('S006777', 'Samuel', 'Owens', 'samuel.owens@ozu.edu.tr', 'ATzXYZj', '0530 743 7999', 1, 0),
+('S006782', 'Julie', 'Spencer', 'julie.spencer@ozu.edu.tr', 'zt60s1dEHvJ', '0555 708 8652', 1, 0),
+('S006976', 'Adam', 'Howard', 'adam.howard@ozu.edu.tr', 'jnOksohn', '0552 796 8527', 1, 0),
+('S007050', 'Mildred', 'Harvey', 'mildred.harvey@ozu.edu.tr', 'XN9CgoXlqLb', '0550 756 7615', 1, 0),
+('S007109', 'Karen', 'Evans', 'karen.evans@ozu.edu.tr', '2kX0HGAAQ39T', '0543 729 5020', 1, 0),
+('S007148', 'Russell', 'Moreno', 'russell.moreno@ozu.edu.tr', 'wnichw', '0542 308 2258', 1, 0),
+('S007149', 'Edward', 'Frazier', 'edward.frazier@ozu.edu.tr', 'OkukcgMsyprV', '0531 679 6701', 1, 0),
+('S007217', 'Jacqueline', 'Rice', 'jacqueline.rice@ozu.edu.tr', 'DNq97N9i', '0556 114 4439', 1, 0),
+('S007238', 'Linda', 'Cooper', 'linda.cooper@ozu.edu.tr', 'xvbueOLJ5uG6', '0556 563 5290', 1, 0),
+('S007330', 'Aaron', 'Lewis', 'aaron.lewis@ozu.edu.tr', 'CmBpBo9TH1Od', '0557 768 4128', 1, 0),
+('S007408', 'Donna', 'Perry', 'donna.perry@ozu.edu.tr', 'm8tjMO', '0547 691 2721', 1, 0),
+('S007672', 'Andrew', 'Palmer', 'andrew.palmer@ozu.edu.tr', 's4sZJqUcr', '0559 410 9761', 1, 0),
+('S007689', 'Jeremy', 'Sullivan', 'jeremy.sullivan@ozu.edu.tr', 'yqjbFvEvjF', '0544 262 5250', 1, 0),
+('S007693', 'Frances', 'Phillips', 'frances.phillips@ozu.edu.tr', 'dCfMg1H3lyl', '0544 916 6698', 1, 0),
+('S007701', 'Anthony', 'Burton', 'anthony.burton@ozu.edu.tr', '0aBgjScZDf8s', '0537 694 7308', 1, 0),
+('S007813', 'Johnny', 'Mason', 'johnny.mason@ozu.edu.tr', 'wMG7FgyN', '0537 837 5570', 1, 0),
+('S007884', 'Stephen', 'Clark', 'stephen.clark@ozu.edu.tr', 'nZRTYtminG0', '0557 329 6642', 1, 0),
+('S007928', 'Cheryl', 'Ferguson', 'cheryl.ferguson@ozu.edu.tr', 'PX9rNfjPL', '0548 720 6865', 1, 0),
+('S007929', 'Shirley', 'Hansen', 'shirley.hansen@ozu.edu.tr', 'Mc31uzZBBOqa', '0544 419 9350', 1, 0),
+('S007934', 'Jerry', 'Reed', 'jerry.reed@ozu.edu.tr', 'RonX0dMz5H', '0548 778 6049', 1, 0),
+('S007979', 'Jesse', 'Hamilton', 'jesse.hamilton@ozu.edu.tr', 'sRuJMd264tYO', '0547 790 8441', 1, 0),
+('S007988', 'Karen', 'Alexander', 'karen.alexander@ozu.edu.tr', 'd0yDc2Gzr2', '0533 450 5195', 1, 0),
+('S008085', 'Kevin', 'Price', 'kevin.price@ozu.edu.tr', 'IZYA3fy1x', '0544 237 3819', 1, 0),
+('S008146', 'Michael', 'Garrett', 'michael.garrett@ozu.edu.tr', 'y4VT5B', '0551 811 1835', 1, 0),
+('S008186', 'Kenneth', 'Jacobs', 'kenneth.jacobs@ozu.edu.tr', 'aOuTuQbZKZ7', '0538 743 4313', 1, 0),
+('S008196', 'Michelle', 'Payne', 'michelle.payne@ozu.edu.tr', 'vVKBsHxV4', '0559 535 3913', 1, 0),
+('S008244', 'Joe', 'Nelson', 'joe.nelson@ozu.edu.tr', 'p4wAlCu', '0533 327 5356', 1, 0),
+('S008300', 'Deborah', 'Ryan', 'deborah.ryan@ozu.edu.tr', 'o7Udr7pE', '0557 133 3529', 1, 0),
+('S008302', 'Norma', 'Patterson', 'norma.patterson@ozu.edu.tr', 'vN48qpkwdl', '0534 283 1428', 1, 0),
+('S008343', 'Sean', 'Ortiz', 'sean.ortiz@ozu.edu.tr', 'Dyys1B', '0555 581 5092', 1, 0),
+('S008361', 'Maria', 'Long', 'maria.long@ozu.edu.tr', 'fFf8BAfvBwCu', '0559 532 7338', 1, 0),
+('S008369', 'Anne', 'Ryan', 'anne.ryan@ozu.edu.tr', 'C2npvDV', '0534 264 5462', 1, 0),
+('S008394', 'Louis', 'Harris', 'louis.harris@ozu.edu.tr', '59SyBsx', '0552 455 3821', 1, 0),
+('S008407', 'Theresa', 'Davis', 'theresa.davis@ozu.edu.tr', 'jNvWeKJM', '0535 304 8643', 1, 0),
+('S008588', 'Michael', 'Moore', 'michael.moore@ozu.edu.tr', 'jcW5JdYh7', '0531 528 9901', 1, 0),
+('S008774', 'Joan', 'Murray', 'joan.murray@ozu.edu.tr', 'KYiRjdrJRo', '0559 574 6046', 1, 0),
+('S008905', 'Juan', 'Hughes', 'juan.hughes@ozu.edu.tr', 'uhH9194Cj4W', '0559 531 9278', 1, 0),
+('S008929', 'Raymond', 'Porter', 'raymond.porter@ozu.edu.tr', 'Pl1so1Q', '0547 631 3135', 1, 0),
+('S008940', 'Jesse', 'Ferguson', 'jesse.ferguson@ozu.edu.tr', 'k4hOZ2nSi', '0554 409 6452', 1, 0),
+('S009155', 'Bonnie', 'Reynolds', 'bonnie.reynolds@ozu.edu.tr', '9GbmqAB8TOLM', '0544 755 3169', 1, 0),
+('S009227', 'Janet', 'Ray', 'janet.ray@ozu.edu.tr', 'dlXU4dmR', '0538 999 5204', 1, 0),
+('S009296', 'Judy', 'Martinez', 'judy.martinez@ozu.edu.tr', 'HE97zJN02pw', '0548 147 8287', 1, 0),
+('S009322', 'Robin', 'Cunningham', 'robin.cunningham@ozu.edu.tr', 'UD1xTuHqKpU', '0557 264 9956', 1, 0),
+('S009352', 'Kenneth', 'Larson', 'kenneth.larson@ozu.edu.tr', 'UaPy4pisB3', '0558 118 5410', 1, 0),
+('S009379', 'Jeffrey', 'Burke', 'jeffrey.burke@ozu.edu.tr', 'vKsdGn4VJkq', '0542 902 9841', 1, 0),
+('S009504', 'Joan', 'Reid', 'joan.reid@ozu.edu.tr', 'JBgDy9r', '0533 489 8699', 1, 0),
+('S009601', 'Fred', 'Kelley', 'fred.kelley@ozu.edu.tr', 'kf4xvsi4DrqG', '0535 103 4663', 1, 0),
+('S009603', 'Frances', 'Reynolds', 'frances.reynolds@ozu.edu.tr', 'N034176l', '0530 174 7053', 1, 0),
+('S009604', 'Richard', 'Gray', 'richard.gray@ozu.edu.tr', 'piuIKZ', '0531 570 6173', 1, 0),
+('S009632', 'Paul', 'Palmer', 'paul.palmer@ozu.edu.tr', 'Ed6IRjbbfh', '0542 732 7347', 1, 0),
+('S009644', 'Joan', 'Marshall', 'joan.marshall@ozu.edu.tr', 'vgtnDlX', '0545 521 6834', 1, 0),
+('S009693', 'Albert', 'Cooper', 'albert.cooper@ozu.edu.tr', 'alb160', '0532 454 9554', 1, 0),
+('S009747', 'Ralph', 'Gordon', 'ralph.gordon@ozu.edu.tr', 'wQv53I', '0538 113 1635', 1, 0),
+('S009754', 'Diana', 'Henry', 'diana.henry@ozu.edu.tr', 'IMe4zaU3Y', '0549 493 3474', 1, 0),
+('S009769', 'Carolyn', 'Mendoza', 'carolyn.mendoza@ozu.edu.tr', 'XxcuRL0fGx', '0530 197 8600', 1, 0),
+('S009795', 'Theresa', 'Chavez', 'theresa.chavez@ozu.edu.tr', 'KnT0RgmGa', '0547 436 8128', 1, 0),
+('S009809', 'Marie', 'Evans', 'marie.evans@ozu.edu.tr', '3omwrDU', '0539 286 9854', 1, 0),
+('S009839', 'Julie', 'Russell', 'julie.russell@ozu.edu.tr', 'YlaDUxF', '0558 790 9109', 1, 0),
+('S009912', 'Larry', 'Ross', 'larry.ross@ozu.edu.tr', 'WaxyjWWKJV7', '0541 714 6622', 1, 0),
+('S009964', 'Andrea', 'Powell', 'andrea.powell@ozu.edu.tr', 'BZK3W9CWZ5', '0531 804 9171', 1, 0);
 
 --
 -- Indexes for dumped tables
@@ -6833,6 +6859,12 @@ INSERT INTO `Users` (`ID`, `FIRST_NAME`, `LAST_NAME`, `EMAIL`, `PASSWORD`, `PHON
 ALTER TABLE `Courses`
   ADD PRIMARY KEY (`ID`),
   ADD UNIQUE KEY `ID` (`ID`);
+
+--
+-- Indexes for table `Messages`
+--
+ALTER TABLE `Messages`
+  ADD PRIMARY KEY (`ID`);
 
 --
 -- Indexes for table `Universities`
@@ -6854,6 +6886,11 @@ ALTER TABLE `Users`
 -- AUTO_INCREMENT for dumped tables
 --
 
+--
+-- AUTO_INCREMENT for table `Messages`
+--
+ALTER TABLE `Messages`
+  MODIFY `ID` int(10) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=6;
 --
 -- AUTO_INCREMENT for table `Universities`
 --
