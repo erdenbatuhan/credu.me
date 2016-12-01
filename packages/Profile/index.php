@@ -61,6 +61,7 @@
     echo("Mail : ".$userMail."<br/>");
     echo("Phone : ".$userPhone."<br/>");
     echo("Friends: "."<br/>");
+    echo("background-color:#ffbf80");
     foreach($friendList as $key => $value){
         echo $key.  ":".$value."<br/>";
     }
