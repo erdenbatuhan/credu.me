@@ -47,21 +47,18 @@
 
 
 
-<div class="container " >
+<div class="container" >
 
-
-    <tr>
-        <td width="40%">
-            <form action="#" method="POST" >
-                <h1>JOIN US !</h1>
-                <input type="text" name="username" size="25" placeholder="Username" /><br /> <br />
-                <input type="text" name="password" size="25" placeholder="Password" /><br /> <br />
-                <input type="text" name="mail" size="25" placeholder="Mail" /><br /> <br />
-                <input type="text" name="phone" size="25" placeholder="Phone" /><br /> <br />
-                <input type ="submit" name="submit" value="Sign Up!">
-            </form>
-        </td>
-    </tr>
+    <form class="navbar-form navbar-right" role="search">
+        <div class="form-group">
+            <h1>JOIN US !</h1>
+            <input type="text" class="form-control" placeholder="Username" /><br /> <br />
+            <input type="text" class="form-control" placeholder="Password" /><br /> <br />
+            <input type="text" class="form-control" placeholder="Mail" /><br /> <br />
+            <input type="text" class="form-control" placeholder="Phone" /><br /> <br />
+            <button type="submit" class="btn btn-default">Sign Up</button>
+        </div>
+    </form>
 
 </div>
 
