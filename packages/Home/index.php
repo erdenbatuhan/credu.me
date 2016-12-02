@@ -48,7 +48,12 @@
 
 
 <div class="container" >
-
+    <div class = "navbar-left">
+        <br> </br>
+        <h2>Sign Up.</h2>
+        <h2>Start Chatting with Your Classmates.</h2>
+        <h2>Advance Your Network.</h2>
+    </div>
     <form class="navbar-form navbar-right" role="search">
         <div class="form-group">
             <h1>JOIN US !</h1>
