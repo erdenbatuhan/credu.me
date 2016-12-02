@@ -1,3 +1,4 @@
+
 <head>
 
     <title>Credu.me</title>
@@ -8,8 +9,6 @@
     <link rel="stylesheet"  href="homepage.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-
-
 
 </head>
 <body background= "http://blog.flywire.com/wp-content/uploads/2012/11/Happy-Student.jpg">
@@ -37,7 +36,7 @@
             <form class="navbar-form navbar-right">
                 <div class="form-group">
                     <input type="text" class="form-control" placeholder="Username">
-                    <input type="text" class="form-control" placeholder="Password">
+                    <input type="password" class="form-control" placeholder="Password" name="password">
                 </div>
                 <button type="submit" class="btn btn-primary">Sign In</button>
             </form>
@@ -46,24 +45,26 @@
 </nav>
 
 
-
+<h2>Sign Up.</h2>
+<h2>Start Chatting with Your Classmates.</h2>
+<h2>Advance Your Network.</h2>
 <div class="container" >
     <div class = "navbar-left">
         <br> </br>
-        <h2>Sign Up.</h2>
-        <h2>Start Chatting with Your Classmates.</h2>
-        <h2>Advance Your Network.</h2>
+
     </div>
     <form class="navbar-form navbar-right" role="search">
-        <div class="form-group">
-            <h1>JOIN US !</h1>
+        <div class="form-input">
+            <h1>JOIN US</h1>
             <input type="text" class="form-control" placeholder="Username" /><br /> <br />
-            <input type="text" class="form-control" placeholder="Password" /><br /> <br />
+            <input type="password" class="form-control" placeholder="Password" /><br /> <br />
             <input type="text" class="form-control" placeholder="Mail" /><br /> <br />
             <input type="text" class="form-control" placeholder="Phone" /><br /> <br />
             <button type="submit" class="btn btn-default">Sign Up</button>
         </div>
     </form>
-
 </div>
+
 </body>
+
+
