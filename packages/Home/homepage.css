@@ -1,4 +1,5 @@
 body{
+    background: "http://blog.flywire.com/wp-content/uploads/2012/11/Happy-Student.jpg";
     background-color: #FAAC58;
     font-family:arial,sans-serif;
 
@@ -9,8 +10,8 @@ h1{
     font-family:"Serif";
 }
 h2{
-    color:#122b40;
-    font-size: 55px;
+    color: #761c19;
+    font-size: 45px;
     font-style: italic;
-    font-family: Serif;
+    font-family: "Arial Black";
 }

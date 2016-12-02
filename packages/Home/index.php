@@ -12,7 +12,7 @@
 
 
 </head>
-<body>
+<body background= "http://blog.flywire.com/wp-content/uploads/2012/11/Happy-Student.jpg">
 <nav class="navbar navbar-default navbar-inverse">
     <div class="container-fluid">
         <!-- Brand and toggle get grouped for better mobile display -->
