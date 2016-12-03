@@ -16,14 +16,12 @@ class ChatRoom {
         $this->databaseConnection = $databaseConnection;
         $this->course_id = $course_id;
 
-        $this->senders = array();
-        $this->dates = array();
-        $this->messages = array();
-
         $this->fetchMessages();
     }
 
     private function fetchMessages() {
+        $this->clearArrays();
+
         $this->databaseConnection->initiateConnection();
         $connection = $this->databaseConnection->getConnection();
 
@@ -38,6 +36,12 @@ class ChatRoom {
         }
 
         $this->databaseConnection->killConnection();
+    }
+
+    private function clearArrays() {
+        $this->senders = array();
+        $this->dates = array();
+        $this->messages = array();
     }
 
     public function getTimeDiff($date) {
