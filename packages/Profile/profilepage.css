@@ -25,7 +25,8 @@ body{
     border-radius: 4px;
     background-color: #efefef;
     top: 100px;
-    left: 110px;
+    left: 50px;
     text-align: center;
+position: absolute;
     align:center;
 }
