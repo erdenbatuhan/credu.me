@@ -42,7 +42,11 @@
                 <li class="w3-hide-small"><a href="#" class="w3-padding-large w3-hover-white" title="Messages"><i class="fa fa-envelope"></i></a></li>
             </ul>
             <ul class="navbar-form navbar-right">
-                <li><a href="./index2.php">username</a></li>
+
+
+                    <button type="button" class="btn btn-default btn-sm">
+                        <span class="glyphicon glyphicon-log-out"></span> Log Out
+                    </button>
             </ul>
         </div>
     </div>
