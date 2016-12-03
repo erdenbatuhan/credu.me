@@ -25,26 +25,45 @@
     include "DatabaseConnection.php";
     include "User.php";
     include "ChatRoom.php";
+
+    $chatRoomName = $_GET['chatRoomName'];
 ?>
-<body id="chat-index">
+<body id="ChatRoom" style="background-color: whitesmoke;">
+<div class="text-center">
+    <h3 style="color: green;">Chat Room: <?php echo $chatRoomName ?></h3>
+    <hr>
+</div>
 <?php
     $databaseConnection = new DatabaseConnection();
-    $chatRoom = new ChatRoom($databaseConnection, 'BUS158');
+    $chatRoom = new ChatRoom($databaseConnection, $chatRoomName);
 
+    /** Test Case for accessing a User in a ChatRoom, and printing its information */
     /** @var User */
-    $user = $chatRoom->getSenders()[1];
-    $user->printUserInfo();
+    /** $user = $chatRoom->getSenders()[0]; */
+    /** $user->printUserInfo(); */
 ?>
-<br><br><br>
-<div class="container">
-    <?php for($i = 0; $i < count($chatRoom->getMessages()); $i++) { ?>
-        <div class="jumbotron chatron">
-            <i><?php echo $chatRoom->getTimeDiff($chatRoom->getDates()[$i]) ?>..</i>
-            <h5><?php /** @var User */ echo $chatRoom->getSenders()[$i]->getFullName() ?></h5>
-            <p><?php echo $chatRoom->getMessages()[$i] ?></p>
+<br>
+<div id="ChatArea" class="container">
+    <div class="row">
+        <div class="col-xs-3 text-center">
+            <h4 style="color: green;"> Students in chatroom </h4>
+            <hr>
+            <!-- DUMP VALUES -->
+            <?php for($i = 0; $i < 10; $i++) { ?>
+                <h5><?php /** @var User */ echo $chatRoom->getSenders()[0]->getFullName() ?></h5>
+            <?php } ?>
+            <!-- .DUMP VALUES -->
         </div>
-        <br>
-    <?php } ?>
+        <div id="DisplayArea" class="col-xs-9">
+            <br>
+            <?php for($i = count($chatRoom->getMessages()) - 1; $i >= 0; $i--) { ?>
+                <i><?php echo $chatRoom->getTimeDiff($chatRoom->getDates()[$i]) ?>..</i>
+                <h5><?php /** @var User */ echo $chatRoom->getSenders()[$i]->getFullName() ?></h5>
+                <p><?php echo $chatRoom->getMessages()[$i] ?></p>
+                <br>
+            <?php } ?>
+        </div>
+    </div>
 </div>
 </body>
 </html>

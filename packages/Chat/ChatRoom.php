@@ -3,7 +3,6 @@
 const TIME_DIFF = 1; // Time difference in hours
 
 class ChatRoom {
-
     /** @var DatabaseConnection */
     private $databaseConnection = null;
 
