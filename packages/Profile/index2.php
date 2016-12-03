@@ -58,9 +58,9 @@
         <h4 class="w3-center">Mark Zuckerberg</h4>
         <p class="w3-center"><img src="http://www.waiterrewards.com/waiterpic/user.jpg" class="w3-circle" style="height:106px;width:106px" alt="Avatar"></p>
         <hr>
-        <p><i class="fa fa-pencil fa-fw w3-margin-right w3-text-theme"></i> Student</p>
-        <p><i class="fa fa-home fa-fw w3-margin-right w3-text-theme"></i> Ozyegin University</p>
-        <p><i class="fa fa-birthday-cake fa-fw w3-margin-right w3-text-theme"></i> April 1, 1995</p>
+        <p><i class="fa fa-home fa-fw w3-margin-right w3-large w3-text-teal"></i>Özyeğin Üniversity</p>
+        <p><i class="fa fa-envelope fa-fw w3-margin-right w3-large w3-text-teal"></i>zuckerberg@ozu.edu.tr</p>
+        <p><i class="fa fa-phone fa-fw w3-margin-right w3-large w3-text-teal"></i>05375437754</p>
     </div>
 </div>
 <br>
@@ -68,7 +68,7 @@
 <div class="w3-card-2 w3-round">
     <ul class="nav navbar">
         <li class="dropdown">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">My Groups <span class="caret"></span></a>
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Courses Taken <span class="caret"></span></a>
             <ul class="dropdown-menu">
                 <li><a href="#">CS320</a></li>
                 <li><a href="#">CS321</a></li>
@@ -82,8 +82,23 @@
 </div>
 </div>
 <br>
-
 <div class="footer">Credu.me &copy; 2016</strong></div>
-</body>
 
+
+<div class="Friends">
+    <div class="w3-container w3-card-2 w3-white w3-margin-bottom">
+        <h2 class="w3-text-grey w3-padding-16"><i class="fa fa-suitcase fa-fw w3-margin-right w3-xxlarge w3-text-teal"></i>Friends</h2>
+        <div class="w3-container">
+            <p>View Their Profies</p><br>
+        </div>
+    </div>
+
+    <div id="tfheader">
+        <form id="tfnewsearch" method="get" action="http://credu.me">
+            <input type="text" class="tftextinput" name="q"  placeholder="Find Your Classmates" size="21" maxlength="120"><input type="submit" value="search" class="tfbutton">
+        </form>
+        <div class="tfclear"></div>
+    </div>
+
+</body>
 </html>
