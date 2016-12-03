@@ -16,7 +16,8 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
 </head>
-<body>
+
+<body background-color = #03465C>
 <nav class="navbar navbar-default navbar-inverse">
     <div class="container-fluid">
 
@@ -44,18 +45,18 @@
             <ul class="navbar-form navbar-right">
 
 
-                    <button type="button" class="btn btn-default btn-sm">
+                    <button type="button" onclick= "/credu.me/packages/Home/index.php"class="btn btn-default btn-sm">
                         <span class="glyphicon glyphicon-log-out"></span> Log Out
                     </button>
             </ul>
         </div>
     </div>
 </nav>
-
-<div class="container w3-card-2 w3-round w3-white">
+<div class = "container ">
+<div class="w3-card-2 w3-round w3-white">
     <div class="w3-container">
-        <h4 class="w3-center">My Profile</h4>
-        <p class="w3-center"><img src="http://www.pd4pic.com/images/home-user-man-profile-1.png" class="w3-circle" style="height:106px;width:106px" alt="Avatar"></p>
+        <h4 class="w3-center">Mark Zuckerberg</h4>
+        <p class="w3-center"><img src="http://www.waiterrewards.com/waiterpic/user.jpg" class="w3-circle" style="height:106px;width:106px" alt="Avatar"></p>
         <hr>
         <p><i class="fa fa-pencil fa-fw w3-margin-right w3-text-theme"></i> Student</p>
         <p><i class="fa fa-home fa-fw w3-margin-right w3-text-theme"></i> Ozyegin University</p>
@@ -64,15 +65,21 @@
 </div>
 <br>
 
-<div class="container w3-card-2 w3-round">
-    <div class="w3-accordion w3-white">
-        <button onclick="myFunction('Demo1')" class="w3-btn-block w3-theme-l1 w3-left-align"><i class="fa fa-circle-o-notch fa-fw w3-margin-right"></i> My Groups</button>
-        <div id="Demo1" class="w3-accordion-content w3-container">
-            <p>ENG302</p>
-            <p>CS320</p>
-        </div>
+<div class="w3-card-2 w3-round">
+    <ul class="nav navbar">
+        <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">My Groups <span class="caret"></span></a>
+            <ul class="dropdown-menu">
+                <li><a href="#">CS320</a></li>
+                <li><a href="#">CS321</a></li>
+                <li><a href="#">MATH212</a></li>
+            </ul>
+        </li>
+
+    </ul>
 
     </div>
+</div>
 </div>
 <br>
 

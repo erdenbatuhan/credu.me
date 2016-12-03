@@ -18,3 +18,14 @@ body{
     left:820px;
     top:2px;
 }
+
+.container{
+    width:200px;
+    height:350px;
+    border-radius: 4px;
+    background-color: #efefef;
+    top: 100px;
+    left: 110px;
+    text-align: center;
+    align:center;
+}
