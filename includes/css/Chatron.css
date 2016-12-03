@@ -1,4 +1,16 @@
-hr {
+#ChatRoom {
+    background-color: whitesmoke;
+}
+
+#ChatRoom h3 {
+    color: green;
+}
+
+#ChatRoom h4 {
+    color: green;
+}
+
+#ChatRoom hr {
   border-top-color: darkcyan;
 }
 
@@ -9,6 +21,15 @@ hr {
     overflow: auto;
 }
 
-.form-group {
-    left: 0px;
+#DisplayArea .form-group {
+    width: 92% !important;
+}
+
+#DisplayArea .form-group .form-control {
+    width: 100% !important;
+    border: 1px solid darkcyan;
+}
+
+#DisplayArea .form-inline .btn.btn-success {
+    border-color: darkcyan;
 }

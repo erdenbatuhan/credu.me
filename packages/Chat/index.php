@@ -28,9 +28,9 @@
 
     $chatRoomName = $_GET['chatRoomName'];
 ?>
-<body id="ChatRoom" style="background-color: whitesmoke;">
+<body id="ChatRoom">
 <div class="text-center">
-    <h3 style="color: green;">Chat Room: <?php echo $chatRoomName ?></h3>
+    <h3>Chat Room: <?php echo $chatRoomName ?></h3>
     <hr>
 </div>
 <?php
@@ -46,7 +46,7 @@
 <div id="ChatArea" class="container">
     <div class="row">
         <div class="col-xs-3 text-center" style="padding-right: 30px !important;">
-            <h4 style="color: green;"> Students in chatroom </h4>
+            <h4> Students in chatroom </h4>
             <hr>
             <!-- DUMP VALUES -->
             <?php for($i = 0; $i < 10; $i++) { ?>
@@ -56,12 +56,12 @@
         </div>
         <div id="DisplayArea" class="col-xs-9">
             <br>
-            <div class="input-group">
-                <input type="text" class="form-control" placeholder="Type a message" />
-                <a href="credu.me" class="input-group-addon">
-                    <i>Send</i>
-                </a>
-            </div>
+            <form class="form-inline">
+                <div class="form-group">
+                    <input id="message" type="message" class="form-control" placeholder="Type a message">
+                </div>
+                <button id="send" type="submit" class="btn btn-success"> Send </button>
+            </form>
             <br>
             <?php for($i = 0; $i < count($chatRoom->getMessages()); $i++) { ?>
                 <i><?php echo $chatRoom->getTimeDiff($chatRoom->getDates()[$i]) ?>..</i>
@@ -72,8 +72,30 @@
         </div>
     </div>
 </div>
-<script>
-    ///$("#FormGroup").attr("id", "newId").appendTo("#DisplayArea");
-</script>
 </body>
+<script>
+    setInterval(reloadChats, 500); // Call reloadChats every 500ms
+
+    // Call reloadChats as soon as the page is loaded
+    $(document).ready(function() {
+        reloadChats();
+    });
+
+    // Handle the click
+    $("#send").click(function() {
+        if($("#message").val().length > 0) {
+            $.post("post.php", {
+                text: $("#message").val()
+            });
+        }
+
+        $("#message").val("");
+        return false;
+    });
+
+    // Load the chat log
+    private function reloadChats() {
+
+    }
+</script>
 </html>
