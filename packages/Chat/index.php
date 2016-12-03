@@ -1,6 +1,3 @@
-<?php
-    const MAX_AMOUNT_OF_MESSAGES = 100; // Maximum amount of messages to be displayed
-?>
 <!DOCTYPE html>
 <html lang="tr">
 <head>
@@ -66,11 +63,7 @@
         </div>
         <div id="DisplayArea" class="col-xs-9">
             <br>
-            <?php
-            $upperBound = count($chatRoom->getMessages()) - 1;
-            $lowerBound = count($chatRoom->getMessages()) - MAX_AMOUNT_OF_MESSAGES;
-
-            for($i = $upperBound; $i >= 0 && $i >= $lowerBound; $i--) { ?>
+            <?php for($i = 0; $i < count($chatRoom->getMessages()); $i++) { ?>
                 <i><?php echo $chatRoom->getTimeDiff($chatRoom->getDates()[$i]) ?>..</i>
                 <h5><?php /** @var User */ echo $chatRoom->getSenders()[$i]->getFullName() ?></h5>
                 <p><?php echo $chatRoom->getMessages()[$i] ?></p>

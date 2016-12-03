@@ -1,6 +1,7 @@
 <?php
 
 const TIME_DIFF = 1; // Time difference in hours
+const MAX_AMOUNT_OF_MESSAGES = 100; // Maximum amount of messages to be displayed
 
 class ChatRoom {
     /** @var DatabaseConnection */
@@ -26,7 +27,8 @@ class ChatRoom {
         $this->databaseConnection->initiateConnection();
         $connection = $this->databaseConnection->getConnection();
 
-        $sql_query = "SELECT * FROM MESSAGES WHERE COURSE_ID = '" . $this->course_id . "'";
+        $sql_query = "SELECT * FROM MESSAGES WHERE COURSE_ID = '" . $this->course_id . "'
+                      ORDER BY ID DESC LIMIT " . MAX_AMOUNT_OF_MESSAGES;
         $sql_result = mysqli_query($connection, $sql_query);
 
         while ($row = mysqli_fetch_assoc($sql_result)) {
