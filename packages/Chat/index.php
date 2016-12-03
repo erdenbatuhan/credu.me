@@ -46,13 +46,6 @@
 <div id="ChatArea" class="container">
     <div class="row">
         <div class="col-xs-3 text-center" style="padding-right: 30px !important;">
-            <form class="form-inline">
-                <div class="form-group">
-                    <input id="message" type="message" class="form-control" placeholder="Enter your message..">
-                </div>
-                <button type="submit" class="btn btn-success"> Send </button>
-            </form>
-            <br>
             <h4 style="color: green;"> Students in chatroom </h4>
             <hr>
             <!-- DUMP VALUES -->
@@ -63,6 +56,13 @@
         </div>
         <div id="DisplayArea" class="col-xs-9">
             <br>
+            <div class="input-group">
+                <input type="text" class="form-control" placeholder="Type a message" />
+                <a href="credu.me" class="input-group-addon">
+                    <i>Send</i>
+                </a>
+            </div>
+            <br>
             <?php for($i = 0; $i < count($chatRoom->getMessages()); $i++) { ?>
                 <i><?php echo $chatRoom->getTimeDiff($chatRoom->getDates()[$i]) ?>..</i>
                 <h5><?php /** @var User */ echo $chatRoom->getSenders()[$i]->getFullName() ?></h5>
@@ -72,5 +72,8 @@
         </div>
     </div>
 </div>
+<script>
+    ///$("#FormGroup").attr("id", "newId").appendTo("#DisplayArea");
+</script>
 </body>
 </html>
