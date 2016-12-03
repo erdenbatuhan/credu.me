@@ -12,3 +12,9 @@ body{
     background-color: #efefef;
     text-align: center;
 }
+
+.w3-hide-small{
+    align:right;
+    left:820px;
+    top:2px;
+}
