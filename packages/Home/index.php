@@ -33,13 +33,14 @@
                         <li><a href="https://github.com/obukte">Ömer Said Bükte</a></li>
                     </ul>
                 </li>
+
             </ul>
             <form class="navbar-form navbar-right">
                 <div class="form-group">
-                    <input type="text" class="form-control" placeholder="Username">
-                    <input type="password" class="form-control" placeholder="Password" name="password">
+                    <input type="text" class="form-control" id="username" placeholder="Username">
+                    <input type="password" class="form-control" id="password" placeholder="Password" name="password">
                 </div>
-                <button type="submit" class="btn btn-primary">Sign In</button>
+                <button type="submit" href="/credu.me/packages/Profile/index2.php" class="btn btn-primary">Sign In</button>
             </form>
         </div>
     </div>
