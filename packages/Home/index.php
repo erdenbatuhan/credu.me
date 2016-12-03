@@ -11,6 +11,7 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
 </head>
+
 <body background= "http://blog.flywire.com/wp-content/uploads/2012/11/Happy-Student.jpg">
 <nav class="navbar navbar-default navbar-inverse">
     <div class="container-fluid">
@@ -65,6 +66,6 @@
     </form>
 </div>
 
+<div class="footer">Credu.me &copy; 2016</strong></div>
 </body>
-
 
