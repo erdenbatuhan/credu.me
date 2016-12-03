@@ -82,23 +82,31 @@
 </div>
 </div>
 <br>
+
 <div class="footer">Credu.me &copy; 2016</strong></div>
 
 
 <div class="Friends">
     <div class="w3-container w3-card-2 w3-white w3-margin-bottom">
-        <h2 class="w3-text-grey w3-padding-16"><i class="fa fa-suitcase fa-fw w3-margin-right w3-xxlarge w3-text-teal"></i>Friends</h2>
-        <div class="w3-container">
-            <p>View Their Profies</p><br>
-        </div>
+        <h2 class="w3-text-grey w3-padding-16"><i class="fa fa-user w3-xxlarge"></i>Friends</h2>
     </div>
+
+    <footer class="deneme">
+        <i class="fa fa-facebook-official w3-hover-text-indigo"></i>
+        <i class="fa fa-linkedin w3-hover-text-indigo"></i>
+    </footer>
 
     <div id="tfheader">
         <form id="tfnewsearch" method="get" action="http://credu.me">
             <input type="text" class="tftextinput" name="q"  placeholder="Find Your Classmates" size="21" maxlength="120"><input type="submit" value="search" class="tfbutton">
         </form>
         <div class="tfclear"></div>
+
+
     </div>
 
+    <div class="person">
+        <h1 class="w3-text-grey w3-padding-16"><i class="fa fa-user w3-xxlarge"></i>Eduardo Saverin</h1>
+    </div>
 </body>
 </html>
