@@ -48,7 +48,14 @@
 <br>
 <div id="ChatArea" class="container">
     <div class="row">
-        <div class="col-xs-3 text-center">
+        <div class="col-xs-3 text-center" style="padding-right: 30px !important;">
+            <form class="form-inline">
+                <div class="form-group">
+                    <input id="message" type="message" class="form-control" placeholder="Enter your message..">
+                </div>
+                <button type="submit" class="btn btn-success"> Send </button>
+            </form>
+            <br>
             <h4 style="color: green;"> Students in chatroom </h4>
             <hr>
             <!-- DUMP VALUES -->
