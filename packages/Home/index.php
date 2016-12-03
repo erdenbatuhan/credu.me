@@ -29,7 +29,7 @@
                         <li><a href="https://github.com/barisceylan">Barış Ceylan</a></li>
                         <li><a href="https://github.com/erdenbatuhan">Batuhan Erden</a></li>
                         <li><a href="https://github.com/ekremcet">Ekrem Çetinkaya</a></li>
-                        <li><a href="https://github.com/ErkAydogan">Erk Aydoğan</a></li>
+                        <li><a href="https://github.com/ErkAydogan">Sayım Erk Aydoğan</a></li>
                         <li><a href="https://github.com/obukte">Ömer Said Bükte</a></li>
                     </ul>
                 </li>
