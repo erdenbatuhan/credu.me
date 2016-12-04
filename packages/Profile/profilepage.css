@@ -20,11 +20,11 @@ body{
 }
 
 .container{
-    width:200px;
-    height:350px;
+    width:260px;
+    height:370px;
     border-radius: 4px;
     background-color: #efefef;
-    top: 100px;
+    top: 86px;
     left: 50px;
     text-align: center;
 position: absolute;
@@ -39,11 +39,27 @@ position: absolute;
     left:620px;
     bottom: 200px;
     top:85px;
+
 }
 p{
     text-decoration:underline;
 }
+h1{
+    position: absolute;
+    bottom: 320px;
+    left: 20px;
+    font-size: 20px;
+}
 
+h2{
+    text-decoration: underline;
+    text-decoration-color: #269abc;
+    font-size: 210%;
+    position: absolute;
+    left: 20px;
+    bottom: 315px;
+
+}
 #tfnewsearch{
     float:right;
     padding:20px;
@@ -83,3 +99,13 @@ p{
     background: -moz-linear-gradient(top,  #0095cc,  #00678e);
 }
 
+.person{
+    position: absolute;
+    bottom: 70px;
+    top: 450px;
+}
+.deneme{
+ position: absolute;
+    left: 580px;
+    bottom: 7px;
+}
