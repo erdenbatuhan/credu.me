@@ -66,7 +66,7 @@
     </div>
     <br>
 
-        <li><a href="#home">Edit Profile</a></li>
+        <li><a href="/credu.me/packages/Profile/editprofile.php">Edit Profile</a></li>
 
 </div>
 
