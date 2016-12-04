@@ -108,31 +108,35 @@
 <div class="friendlist" >
     <div id="bodyDiv">
         <div id="scrollbox3">
-    <div class="btn-group-vertical  " role="group" aria-label="...">
-        <button type="button" class="btn btn-primary"><img src="https://cdn2.iconfinder.com/data/icons/rcons-user/32/male-circle-512.png" style="width:10%">Steve Jobs</button>
-        <button type="button" class="btn btn-default"><img src="https://cdn2.iconfinder.com/data/icons/rcons-user/32/male-circle-512.png" alt="Avatar" style="width:10%">Chad Hurley</button>
-        <button type="button" class="btn btn-primary"><img src="https://cdn2.iconfinder.com/data/icons/rcons-user/32/male-circle-512.png" alt="Avatar" style="width:10%">Steve Chen</button>
-        <button type="button" class="btn btn-default"><img src="https://cdn2.iconfinder.com/data/icons/rcons-user/32/male-circle-512.png" alt="Avatar" style="width:10%"></i>Batuhan Erden</button>
-        <button type="button" class="btn btn-primary"><img src="https://cdn2.iconfinder.com/data/icons/rcons-user/32/male-circle-512.png" alt="Avatar" style="width:10%">Erk Aydoğan</button>
-        <button type="button" class="btn btn-default"><img src="https://cdn2.iconfinder.com/data/icons/rcons-user/32/male-circle-512.png" alt="Avatar" style="width:10%"></i>Ekrem Cetinkaya</button>
-        <button type="button" class="btn btn-primary"><img src="https://cdn2.iconfinder.com/data/icons/rcons-user/32/male-circle-512.png" alt="Avatar" style="width:10%"></i>Barış Ceylan</button>
-        <button type="button" class="btn btn-default"><img src="https://cdn2.iconfinder.com/data/icons/rcons-user/32/male-circle-512.png" alt="Avatar" style="width:10%"></i>Ömer Said Bukte</button>
-        <button type="button" class="btn btn-primary"><img src="https://cdn2.iconfinder.com/data/icons/rcons-user/32/male-circle-512.png" alt="Avatar" style="width:10%">Steve Jobs</button>
-        <button type="button" class="btn btn-default"><img src="https://cdn2.iconfinder.com/data/icons/rcons-user/32/male-circle-512.png" alt="Avatar" style="width:10%">Chad Hurley</button>
-        <button type="button" class="btn btn-primary"><img src="https://cdn2.iconfinder.com/data/icons/rcons-user/32/male-circle-512.png" alt="Avatar" style="width:10%">Steve Chen</button>
-        <button type="button" class="btn btn-default"><img src="https://cdn2.iconfinder.com/data/icons/rcons-user/32/male-circle-512.png" alt="Avatar" style="width:10%"></i>Batuhan Erden</button>
-        <button type="button" class="btn btn-primary"><img src="https://cdn2.iconfinder.com/data/icons/rcons-user/32/male-circle-512.png" alt="Avatar" style="width:10%">Erk Aydoğan</button>
-        <button type="button" class="btn btn-default"><img src="https://cdn2.iconfinder.com/data/icons/rcons-user/32/male-circle-512.png" alt="Avatar" style="width:10%"></i>Ekrem Cetinkaya</button>
-        <button type="button" class="btn btn-primary"><img src="https://cdn2.iconfinder.com/data/icons/rcons-user/32/male-circle-512.png" alt="Avatar" style="width:10%"></i>Barış Ceylan</button>
-        <button type="button" class="btn btn-default"><img src="https://cdn2.iconfinder.com/data/icons/rcons-user/32/male-circle-512.png" alt="Avatar" style="width:10%"></i>Ömer Said Bukte</button>
-        <button type="button" class="btn btn-primary"><img src="https://cdn2.iconfinder.com/data/icons/rcons-user/32/male-circle-512.png" alt="Avatar" style="width:10%">Steve Jobs</button>
-        <button type="button" class="btn btn-default"><img src="https://cdn2.iconfinder.com/data/icons/rcons-user/32/male-circle-512.png" alt="Avatar" style="width:10%">Chad Hurley</button>
-        <button type="button" class="btn btn-primary"><img src="https://cdn2.iconfinder.com/data/icons/rcons-user/32/male-circle-512.png" alt="Avatar" style="width:10%">Steve Chen</button>
-        <button type="button" class="btn btn-default"><img src="https://cdn2.iconfinder.com/data/icons/rcons-user/32/male-circle-512.png" alt="Avatar" style="width:10%"></i>Batuhan Erden</button>
-        <button type="button" class="btn btn-primary"><img src="https://cdn2.iconfinder.com/data/icons/rcons-user/32/male-circle-512.png" alt="Avatar" style="width:10%">Erk Aydoğan</button>
-        <button type="button" class="btn btn-default"><img src="https://cdn2.iconfinder.com/data/icons/rcons-user/32/male-circle-512.png" alt="Avatar" style="width:10%"></i>Ekrem Cetinkaya</button>
-        <button type="button" class="btn btn-primary"><img src="https://cdn2.iconfinder.com/data/icons/rcons-user/32/male-circle-512.png" alt="Avatar" style="width:10%"></i>Barış Ceylan</button>
-        <button type="button" class="btn btn-default"><img src="https://cdn2.iconfinder.com/data/icons/rcons-user/32/male-circle-512.png" alt="Avatar" style="width:10%"></i>Ömer Said Bukte</button>
+    <div class="btn-group-vertical " role="group" aria-label="...">
+        <button type="button" class="btn btn-primary"><img src="http://www.lovemarks.com/wp-content/uploads/profile-avatars/default-avatar-ginger-guy.png"class="img-circle" style="width:10%">Steve Jobs</button>
+        <button type="button" class="btn btn-default"><img src="http://www.lovemarks.com/wp-content/uploads/profile-avatars/default-avatar-ginger-guy.png" class="img-circle" style="width:10%">Chad Hurley</button>
+        <button type="button" class="btn btn-primary"><img src="https://landofblogging.files.wordpress.com/2014/01/bitstripavatarprofilepic.jpeg" class="img-circle" style="width:10%">Steve Chen</button>
+        <button type="button" class="btn btn-default"><img src="http://www.lovemarks.com/wp-content/uploads/profile-avatars/default-avatar-ginger-guy.png" class="img-circle" style="width:10%"></i>Batuhan Erden</button>
+        <button type="button" class="btn btn-primary"><img src="http://www.lovemarks.com/wp-content/uploads/profile-avatars/default-avatar-ginger-guy.png"class="img-circle" style="width:10%">Erk Aydoğan</button>
+        <button type="button" class="btn btn-default"><img src="http://www.lovemarks.com/wp-content/uploads/profile-avatars/default-avatar-ginger-guy.png" class="img-circle" style="width:10%"></i>Ekrem Cetinkaya</button>
+        <button type="button" class="btn btn-primary"><img src="http://www.lovemarks.com/wp-content/uploads/profile-avatars/default-avatar-ginger-guy.png" class="img-circle" style="width:10%"></i>Barış Ceylan</button>
+        <button type="button" class="btn btn-primary"><img src="http://www.lovemarks.com/wp-content/uploads/profile-avatars/default-avatar-ginger-guy.png"class="img-circle" style="width:10%">Steve Jobs</button>
+        <button type="button" class="btn btn-default"><img src="http://www.lovemarks.com/wp-content/uploads/profile-avatars/default-avatar-ginger-guy.png" class="img-circle" style="width:10%">Chad Hurley</button>
+        <button type="button" class="btn btn-primary"><img src="https://landofblogging.files.wordpress.com/2014/01/bitstripavatarprofilepic.jpeg" class="img-circle" style="width:10%">Steve Chen</button>
+        <button type="button" class="btn btn-default"><img src="http://www.lovemarks.com/wp-content/uploads/profile-avatars/default-avatar-ginger-guy.png" class="img-circle" style="width:10%"></i>Batuhan Erden</button>
+        <button type="button" class="btn btn-primary"><img src="http://www.lovemarks.com/wp-content/uploads/profile-avatars/default-avatar-ginger-guy.png"class="img-circle" style="width:10%">Erk Aydoğan</button>
+        <button type="button" class="btn btn-default"><img src="http://www.lovemarks.com/wp-content/uploads/profile-avatars/default-avatar-ginger-guy.png" class="img-circle" style="width:10%"></i>Ekrem Cetinkaya</button>
+        <button type="button" class="btn btn-primary"><img src="http://www.lovemarks.com/wp-content/uploads/profile-avatars/default-avatar-ginger-guy.png" class="img-circle" style="width:10%"></i>Barış Ceylan</button>
+        <button type="button" class="btn btn-primary"><img src="http://www.lovemarks.com/wp-content/uploads/profile-avatars/default-avatar-ginger-guy.png"class="img-circle" style="width:10%">Steve Jobs</button>
+        <button type="button" class="btn btn-default"><img src="http://www.lovemarks.com/wp-content/uploads/profile-avatars/default-avatar-ginger-guy.png" class="img-circle" style="width:10%">Chad Hurley</button>
+        <button type="button" class="btn btn-primary"><img src="http://www.lovemarks.com/wp-content/uploads/profile-avatars/default-avatar-ginger-guy.png"class="img-circle" style="width:10%">Steve Jobs</button>
+        <button type="button" class="btn btn-default"><img src="http://www.lovemarks.com/wp-content/uploads/profile-avatars/default-avatar-ginger-guy.png" class="img-circle" style="width:10%">Chad Hurley</button>
+        <button type="button" class="btn btn-primary"><img src="https://landofblogging.files.wordpress.com/2014/01/bitstripavatarprofilepic.jpeg" class="img-circle" style="width:10%">Steve Chen</button>
+        <button type="button" class="btn btn-default"><img src="http://www.lovemarks.com/wp-content/uploads/profile-avatars/default-avatar-ginger-guy.png" class="img-circle" style="width:10%"></i>Batuhan Erden</button>
+        <button type="button" class="btn btn-primary"><img src="http://www.lovemarks.com/wp-content/uploads/profile-avatars/default-avatar-ginger-guy.png"class="img-circle" style="width:10%">Erk Aydoğan</button>
+        <button type="button" class="btn btn-default"><img src="http://www.lovemarks.com/wp-content/uploads/profile-avatars/default-avatar-ginger-guy.png" class="img-circle" style="width:10%"></i>Ekrem Cetinkaya</button>
+        <button type="button" class="btn btn-primary"><img src="http://www.lovemarks.com/wp-content/uploads/profile-avatars/default-avatar-ginger-guy.png" class="img-circle" style="width:10%"></i>Barış Ceylan</button>
+        <button type="button" class="btn btn-primary"><img src="https://landofblogging.files.wordpress.com/2014/01/bitstripavatarprofilepic.jpeg" class="img-circle" style="width:10%">Steve Chen</button>
+        <button type="button" class="btn btn-default"><img src="http://www.lovemarks.com/wp-content/uploads/profile-avatars/default-avatar-ginger-guy.png" class="img-circle" style="width:10%"></i>Batuhan Erden</button>
+        <button type="button" class="btn btn-primary"><img src="http://www.lovemarks.com/wp-content/uploads/profile-avatars/default-avatar-ginger-guy.png"class="img-circle" style="width:10%">Erk Aydoğan</button>
+        <button type="button" class="btn btn-default"><img src="http://www.lovemarks.com/wp-content/uploads/profile-avatars/default-avatar-ginger-guy.png" class="img-circle" style="width:10%"></i>Ekrem Cetinkaya</button>
+        <button type="button" class="btn btn-primary"><img src="http://www.lovemarks.com/wp-content/uploads/profile-avatars/default-avatar-ginger-guy.png" class="img-circle" style="width:10%"></i>Barış Ceylan</button>
 
     </div>
         </div>
