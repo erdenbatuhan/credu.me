@@ -46,32 +46,33 @@
             <ul class="navbar-form navbar-right">
 
 
-                    <button type="button" onclick= "/credu.me/packages/Home/index.php"class="btn btn-default btn-sm">
-                        <span class="glyphicon glyphicon-log-out"></span> Log Out
-                    </button>
+                <button type="button" onclick= "/credu.me/packages/Home/index.php"class="btn btn-default btn-sm">
+                    <span class="glyphicon glyphicon-log-out"></span> Log Out
+                </button>
             </ul>
         </div>
     </div>
 </nav>
 <div class = "container ">
-<div class="w3-card-2 w3-round w3-white">
-    <div class="w3-container">
-        <h4 class="w3-center">Mark Zuckerberg</h4>
-        <p class="w3-center"><img src="http://www.waiterrewards.com/waiterpic/user.jpg" class="w3-circle" style="height:106px;width:106px" alt="Avatar"></p>
-        <hr>
-        <p><i class="fa fa-home fa-fw w3-margin-right w3-large w3-text-teal"></i>Ozyegin University</p>
-        <p><i class="fa fa-envelope fa-fw w3-margin-right w3-large w3-text-teal"></i>zuckerberg@ozu.edu.tr</p>
-        <p><i class="fa fa-phone fa-fw w3-margin-right w3-large w3-text-teal"></i>05375437754</p>
+    <div class="w3-card-2 w3-round w3-white">
+        <div class="w3-container">
+            <h4 class="w3-center">Mark Zuckerberg</h4>
+            <p class="w3-center"><img src="http://www.waiterrewards.com/waiterpic/user.jpg" class="w3-circle" style="height:106px;width:106px" alt="Avatar"></p>
+            <hr>
+            <p><i class="fa fa-home fa-fw w3-margin-right w3-large w3-text-teal"></i>Ozyegin University</p>
+            <p><i class="fa fa-envelope fa-fw w3-margin-right w3-large w3-text-teal"></i>zuckerberg@ozu.edu.tr</p>
+            <p><i class="fa fa-phone fa-fw w3-margin-right w3-large w3-text-teal"></i>05375437754</p>
+        </div>
     </div>
-</div>
-<br>
+    <br>
+
+        <li><a href="#home">Edit Profile</a></li>
 
 </div>
 
 <br>
 
 <div class="footer">Credu.me &copy; 2016</strong></div>
-
 <div class="courses">
 <h3>Courses Taken</h3>
     <div class="list-group">
