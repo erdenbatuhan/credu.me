@@ -38,7 +38,6 @@
                         <li><a href="https://github.com/obukte">Ömer Said Bükte</a></li>
                     </ul>
                 </li>
-                <li class="w3-hide-small"><a href="#" class="w3-padding-large w3-hover-white" title="News"><i class="fa fa-globe"></i></a></li>
                 <li class="w3-hide-small"><a href="#" class="w3-padding-large w3-hover-white" title="Account Settings"><i class="fa fa-user"></i></a></li>
                 <li class="w3-hide-small"><a href="#" class="w3-padding-large w3-hover-white" title="Messages"><i class="fa fa-envelope"><span class="badge">4</span></i></a></li>
             </ul>
@@ -87,21 +86,22 @@
 
 <div class="courses">
 <h3>Courses Taken</h3>
-    <div class="btn-group-vertical" role="group" aria-label="...">
-        <button type="button" class="btn btn-success">CS320</button>
-        <button type="button" class="btn btn-primary">CS321</button>
-        <button type="button" class="btn btn-primary">ENG320</button>
-        <button type="button" class="btn btn-primary">MATH212</button>
-        <button type="button" class="btn btn-primary">SPA101</button>
+    <div class="list-group">
+        <a href="#" class="list-group-item list-group-item-info">CS320</a>
+        <a href="lms.ozyegin.edu.tr" class="list-group-item list-group-item-info">CS321</a>
+        <a href="#" class="list-group-item list-group-item-info">ENG320</a>
+        <a href="#" class="list-group-item list-group-item-info">MATH212</a>
+        <a href="#" class="list-group-item list-group-item-info">SPA101</a>
     </div>
 
 </div>
 
 <div class="Friends">
+    <div class="tfbaseheader">
     <div class="w3-container w3-card-2 w3-white w3-margin-bottom">
         <h2 class="w3-text-grey w3-padding-16"><i class="fa fa-user w3-xxlarge"></i>Friends</h2>
     </div>
-
+    </div>
     <footer class="deneme">
         <i class="fa fa-facebook-official w3-hover-text-indigo"></i>
         <i class="fa fa-linkedin w3-hover-text-indigo"></i>
