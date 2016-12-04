@@ -12,6 +12,8 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
 
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins">
+
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
@@ -104,16 +106,36 @@
     </footer>
 
 <div class="friendlist" >
-    <div class="btn-group-vertical " role="group" aria-label="...">
-        <button type="button" class="btn btn-warning"><img src="http://lh6.googleusercontent.com/-HN-2rONuVKg/AAAAAAAAAAI/AAAAAAAAABw/_tdEEPKVtZc/s512-c/photo.jpg" alt="Avatar" style="width:10%">Steve Jobs</button>
-        <button type="button" class="btn btn-default"><i class="fa fa-user w3-xxlarge"></i>Chad Hurley</button>
-        <button type="button" class="btn btn-danger"><i class="fa fa-user w3-xxlarge"></i>Steve Chen</button>
-        <button type="button" class="btn btn-default"><i class="fa fa-user w3-xxlarge"></i>Batuhan Erden</button>
-        <button type="button" class="btn btn-info"><i class="fa fa-user w3-xxlarge"></i>Erk Aydoğan</button>
-        <button type="button" class="btn btn-default"><i class="fa fa-user w3-xxlarge"></i>Ekrem Cetinkaya</button>
-        <button type="button" class="btn btn-success"><i class="fa fa-user w3-xxlarge"></i>Barış Ceylan</button>
-        <button type="button" class="btn btn-default"><i class="fa fa-user w3-xxlarge"></i>Ömer Said Bukte</button>
+    <div id="bodyDiv">
+        <div id="scrollbox3">
+    <div class="btn-group-vertical  " role="group" aria-label="...">
+        <button type="button" class="btn btn-primary"><img src="https://cdn2.iconfinder.com/data/icons/rcons-user/32/male-circle-512.png" style="width:10%">Steve Jobs</button>
+        <button type="button" class="btn btn-default"><img src="https://cdn2.iconfinder.com/data/icons/rcons-user/32/male-circle-512.png" alt="Avatar" style="width:10%">Chad Hurley</button>
+        <button type="button" class="btn btn-primary"><img src="https://cdn2.iconfinder.com/data/icons/rcons-user/32/male-circle-512.png" alt="Avatar" style="width:10%">Steve Chen</button>
+        <button type="button" class="btn btn-default"><img src="https://cdn2.iconfinder.com/data/icons/rcons-user/32/male-circle-512.png" alt="Avatar" style="width:10%"></i>Batuhan Erden</button>
+        <button type="button" class="btn btn-primary"><img src="https://cdn2.iconfinder.com/data/icons/rcons-user/32/male-circle-512.png" alt="Avatar" style="width:10%">Erk Aydoğan</button>
+        <button type="button" class="btn btn-default"><img src="https://cdn2.iconfinder.com/data/icons/rcons-user/32/male-circle-512.png" alt="Avatar" style="width:10%"></i>Ekrem Cetinkaya</button>
+        <button type="button" class="btn btn-primary"><img src="https://cdn2.iconfinder.com/data/icons/rcons-user/32/male-circle-512.png" alt="Avatar" style="width:10%"></i>Barış Ceylan</button>
+        <button type="button" class="btn btn-default"><img src="https://cdn2.iconfinder.com/data/icons/rcons-user/32/male-circle-512.png" alt="Avatar" style="width:10%"></i>Ömer Said Bukte</button>
+        <button type="button" class="btn btn-primary"><img src="https://cdn2.iconfinder.com/data/icons/rcons-user/32/male-circle-512.png" alt="Avatar" style="width:10%">Steve Jobs</button>
+        <button type="button" class="btn btn-default"><img src="https://cdn2.iconfinder.com/data/icons/rcons-user/32/male-circle-512.png" alt="Avatar" style="width:10%">Chad Hurley</button>
+        <button type="button" class="btn btn-primary"><img src="https://cdn2.iconfinder.com/data/icons/rcons-user/32/male-circle-512.png" alt="Avatar" style="width:10%">Steve Chen</button>
+        <button type="button" class="btn btn-default"><img src="https://cdn2.iconfinder.com/data/icons/rcons-user/32/male-circle-512.png" alt="Avatar" style="width:10%"></i>Batuhan Erden</button>
+        <button type="button" class="btn btn-primary"><img src="https://cdn2.iconfinder.com/data/icons/rcons-user/32/male-circle-512.png" alt="Avatar" style="width:10%">Erk Aydoğan</button>
+        <button type="button" class="btn btn-default"><img src="https://cdn2.iconfinder.com/data/icons/rcons-user/32/male-circle-512.png" alt="Avatar" style="width:10%"></i>Ekrem Cetinkaya</button>
+        <button type="button" class="btn btn-primary"><img src="https://cdn2.iconfinder.com/data/icons/rcons-user/32/male-circle-512.png" alt="Avatar" style="width:10%"></i>Barış Ceylan</button>
+        <button type="button" class="btn btn-default"><img src="https://cdn2.iconfinder.com/data/icons/rcons-user/32/male-circle-512.png" alt="Avatar" style="width:10%"></i>Ömer Said Bukte</button>
+        <button type="button" class="btn btn-primary"><img src="https://cdn2.iconfinder.com/data/icons/rcons-user/32/male-circle-512.png" alt="Avatar" style="width:10%">Steve Jobs</button>
+        <button type="button" class="btn btn-default"><img src="https://cdn2.iconfinder.com/data/icons/rcons-user/32/male-circle-512.png" alt="Avatar" style="width:10%">Chad Hurley</button>
+        <button type="button" class="btn btn-primary"><img src="https://cdn2.iconfinder.com/data/icons/rcons-user/32/male-circle-512.png" alt="Avatar" style="width:10%">Steve Chen</button>
+        <button type="button" class="btn btn-default"><img src="https://cdn2.iconfinder.com/data/icons/rcons-user/32/male-circle-512.png" alt="Avatar" style="width:10%"></i>Batuhan Erden</button>
+        <button type="button" class="btn btn-primary"><img src="https://cdn2.iconfinder.com/data/icons/rcons-user/32/male-circle-512.png" alt="Avatar" style="width:10%">Erk Aydoğan</button>
+        <button type="button" class="btn btn-default"><img src="https://cdn2.iconfinder.com/data/icons/rcons-user/32/male-circle-512.png" alt="Avatar" style="width:10%"></i>Ekrem Cetinkaya</button>
+        <button type="button" class="btn btn-primary"><img src="https://cdn2.iconfinder.com/data/icons/rcons-user/32/male-circle-512.png" alt="Avatar" style="width:10%"></i>Barış Ceylan</button>
+        <button type="button" class="btn btn-default"><img src="https://cdn2.iconfinder.com/data/icons/rcons-user/32/male-circle-512.png" alt="Avatar" style="width:10%"></i>Ömer Said Bukte</button>
 
+    </div>
+        </div>
     </div>
 </div>
 
@@ -128,6 +150,7 @@
 
 
 </div>
+
 
 </body>
 </html>
