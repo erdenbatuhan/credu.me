@@ -34,11 +34,11 @@ body{
 .Friends {
     background-color:#efefef;
     position: absolute;
-    width: 47%;
+    width: 37%;
     height:520px;
     align:right;
     text-align: left;
-    left:675px;
+    left:800px;
     bottom: 200px;
     top:85px;
     border-radius: 4px;
@@ -103,7 +103,7 @@ h5{
     font-family: Arial, Helvetica, sans-serif;
     font-size:14px;
     position: absolute;
-    left:360px;
+    left:235px;
     top: 15px;
     border:1px solid #0076a3; border-right:0px;
     border-top-left-radius: 5px 5px;
@@ -113,7 +113,7 @@ h5{
     margin: 0;
     position: absolute;
     top: 15px;
-    left: 530px;
+    left: 390px;
     padding: 5px 15px;
     font-family: Arial, Helvetica, sans-serif;
     font-size:14px;
@@ -145,7 +145,7 @@ h5{
 .courses{
     background-color:#efefef;
     position:absolute;
-    left: 380px;
+    left: 505px;
     height:520px;
     width: 270px;
     top:85px;
@@ -167,7 +167,7 @@ h5{
 
 #scrollbox3 {
     overflow: auto;
-    width: 500px;
+    width: 370px;
     height: 440px;
     padding: 0 5px;
     border: 1px solid #b7b7b7;
@@ -207,4 +207,16 @@ h5{
 .img-circle{
     align:left;
 
+}
+
+.chat{
+    position: absolute;
+    background-color:#efefef;
+    width:430px;
+    height:517px;
+    border-radius: 4px;
+    top: 86px;
+    left: 50px;
+    text-align: center;
+    align:left;
 }

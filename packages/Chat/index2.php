@@ -62,6 +62,16 @@
 <br>
 
 <div class="footer">Credu.me &copy; 2016</strong></div>
+
+<div class="chat">
+    <h5>Chat</h5>
+    <div class="list-group">
+        <h6></h6>
+    </div>
+
+</div>
+
+
 <div class="courses">
     <h3>Courses Taken</h3>
     <div class="list-group">
