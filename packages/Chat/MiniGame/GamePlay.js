@@ -28,9 +28,7 @@ function updateHighScore(){
         url:'UpdateHighScoreQuery.php',
         type:'post',
         data: 'bestScore='+bestScore,
-        success: function(output){
-            alert('success, server says' + output);
-        }
+        success: function(output){}
     });
 }
 
