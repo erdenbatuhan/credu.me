@@ -1,0 +1,210 @@
+body{
+    font-family:arial,sans-serif;
+    background-color:#245269;
+}
+
+.footer {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    padding: 0.5rem;
+    background-color: #efefef;
+    text-align: center;
+}
+
+.w3-hide-small{
+    align:right;
+    left:820px;
+    top:2px;
+}
+
+.container{
+    width:260px;
+    height:370px;
+    border-radius: 4px;
+    background-color: #efefef;
+    top: 86px;
+    left: 50px;
+    text-align: center;
+    position: absolute;
+    align:center;
+}
+
+.Friends {
+    background-color:#efefef;
+    position: absolute;
+    width: 47%;
+    height:520px;
+    align:right;
+    text-align: left;
+    left:675px;
+    bottom: 200px;
+    top:85px;
+    border-radius: 4px;
+}
+p{
+    text-decoration:underline;
+}
+h1{
+    position: absolute;
+    bottom: 320px;
+    left: 20px;
+    font-size: 20px;
+}
+
+h2{
+    text-decoration: underline;
+    text-decoration-color: #269abc;
+    font-size: 210%;
+    position: absolute;
+    left: 20px;
+    bottom: 315px;
+
+}
+
+h5{
+    position:absolute;
+    font-size: 25px;
+    top:10px;
+    font-family: "Arial Black";
+    left:20px;
+
+}
+#tfnewsearch{
+    float:right;
+    padding:20px;
+    top: 100px;
+}
+.tfbaseheader{
+    font-family: "Arial Black";
+    margin: 0px;
+    left:320px;
+    top:15px;
+    border-top-left-radius: 5px 5px;
+    border-bottom-left-radius: 5px 5px;
+}
+
+.friendlist{
+    left: 20px;
+    top: 70px;
+    position:absolute;
+
+}
+
+.btn-group-vertical{
+    font-size: x-large;
+    size: 20px;
+}
+
+.tftextinput{
+    margin: 0;
+    padding: 5px 15px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size:14px;
+    position: absolute;
+    left:360px;
+    top: 15px;
+    border:1px solid #0076a3; border-right:0px;
+    border-top-left-radius: 5px 5px;
+    border-bottom-left-radius: 5px 5px;
+}
+.tfbutton {
+    margin: 0;
+    position: absolute;
+    top: 15px;
+    left: 530px;
+    padding: 5px 15px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size:14px;
+    outline: none;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    border: solid 1px #0076a3; border-right:0px;
+    background: #0095cd;
+}
+.tfbutton:hover {
+    text-decoration: none;
+    background: #007ead;
+    background: -webkit-gradient(linear, left top, left bottom, from(#0095cc), to(#00678e));
+    background: -moz-linear-gradient(top,  #0095cc,  #00678e);
+}
+
+.person{
+    position: absolute;
+    bottom: 70px;
+    top: 450px;
+}
+.deneme{
+    position: absolute;
+    left: 580px;
+    bottom: 7px;
+}
+
+.courses{
+    background-color:#efefef;
+    position:absolute;
+    left: 380px;
+    height:520px;
+    width: 270px;
+    top:85px;
+    border-radius: 4px;
+    text-align: center;
+    font-family: "Arial Black";
+}
+
+
+
+
+#bodyDiv {
+    position:absolute;
+    top:0px;
+    bottom:0px;
+    left:45px;
+    right:0px;
+}
+
+#scrollbox3 {
+    overflow: auto;
+    width: 500px;
+    height: 440px;
+    padding: 0 5px;
+    border: 1px solid #b7b7b7;
+    border-radius: 4px;
+}
+
+.track3 {
+    width: 10px;
+    background: rgba(0, 0, 0, 0);
+    margin-right: 2px;
+    border-radius: 10px;
+    -webkit-transition: background 250ms linear;
+    transition: background 250ms linear;
+}
+
+.track3:hover,
+.track3.dragging {
+    background: #d9d9d9;
+    background: rgba(0, 0, 0, 0.15);
+}
+
+.handle3 {
+    width: 7px;
+    right: 0;
+    background: #999;
+    background: rgba(0, 0, 0, 0.4);
+    border-radius: 7px;
+    -webkit-transition: width 250ms;
+    transition: width 250ms;
+}
+
+.track3:hover .handle3,
+.track3.dragging .handle3 {
+    width: 10px;
+}
+
+.img-circle{
+    align:left;
+
+}
