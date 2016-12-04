@@ -85,6 +85,18 @@ h5{
     border-bottom-left-radius: 5px 5px;
 }
 
+.friendlist{
+    left: 20px;
+    top: 70px;
+    position:absolute;
+
+}
+
+.btn-group-vertical{
+    font-size: x-large;
+    size: 20px;
+}
+
 .tftextinput{
     margin: 0;
     padding: 5px 15px;

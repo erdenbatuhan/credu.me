@@ -103,6 +103,18 @@
         <i class="fa fa-linkedin w3-hover-text-indigo"></i>
     </footer>
 
+<div class="friendlist" >
+    <div class="btn-group-vertical " role="group" aria-label="...">
+        <button type="button" class="btn btn-default"><i class="fa fa-user w3-xxlarge"></i>Steve Jobs</button>
+        <button type="button" class="btn btn-default"><i class="fa fa-user w3-xxlarge"></i>Chad Hurley</button>
+        <button type="button" class="btn btn-default"><i class="fa fa-user w3-xxlarge"></i>Steve Chen</button>
+        <button type="button" class="btn btn-default"><i class="fa fa-user w3-xxlarge"></i>Batuhan Erden</button>
+        <button type="button" class="btn btn-default"><i class="fa fa-user w3-xxlarge"></i>Erk Aydoğan</button>
+        <button type="button" class="btn btn-default"><i class="fa fa-user w3-xxlarge"></i>Ekrem Cetinkaya</button>
+        <button type="button" class="btn btn-default"><i class="fa fa-user w3-xxlarge"></i>Barış Ceylan</button>
+        <button type="button" class="btn btn-default"><i class="fa fa-user w3-xxlarge"></i>Ömer Said Bukte</button>
+    </div>
+</div>
 
     <div id="tfheader">
         <form id="tfnewsearch" method="get" action="http://credu.me">
