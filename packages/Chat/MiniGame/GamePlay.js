@@ -10,10 +10,29 @@ floorPosition = 0,
 okbtn,
 frames = 0,
 score = 0,
-bestScore = 0,
 currentState,
+bestScore = 0,
 
 states = {Menu: 0, Game : 1, FinalScreen :2};
+
+function getHighScore(){
+    $.ajax({
+        url:'GetHighScoreQuery.php',
+        dataType:'json'}).done(function(data){
+            bestScore = data;
+    });
+}
+
+function updateHighScore(){
+    $.ajax({
+        url:'UpdateHighScoreQuery.php',
+        type:'post',
+        data: 'bestScore='+bestScore,
+        success: function(output){
+            alert('success, server says' + output);
+        }
+    });
+}
 
 /* eventListener function */
 function onpress(event) {
@@ -21,6 +40,7 @@ function onpress(event) {
         case states.Menu:
             currentState = states.Game;
             bird.jump();
+            getHighScore();
             break;
         case states.Game:
             bird.jump();
@@ -122,7 +142,10 @@ function render() {
         GameOverImage.draw(ctx,(width/2)- GameOverImage.width/2,height-400);
         scoreBoardImage.draw(ctx,(width/2)- scoreBoardImage.width/2,height-340);
         okImage.draw(ctx,okbtn.x,okbtn.y);
-        if(bestScore<score) bestScore=score;
+        if(bestScore < score) {
+            bestScore = score;
+            updateHighScore();
+        }
 
         smallNumberImage.draw(ctx,width/2 - 57,height-299,score,null,10);
         smallNumberImage.draw(ctx,width/2 - 57,height-260,bestScore,null,10);
@@ -156,7 +179,6 @@ function render() {
 
     }
 }
-
 main();
 
 
