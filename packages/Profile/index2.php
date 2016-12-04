@@ -105,14 +105,15 @@
 
 <div class="friendlist" >
     <div class="btn-group-vertical " role="group" aria-label="...">
-        <button type="button" class="btn btn-default"><i class="fa fa-user w3-xxlarge"></i>Steve Jobs</button>
+        <button type="button" class="btn btn-warning"><img src="http://lh6.googleusercontent.com/-HN-2rONuVKg/AAAAAAAAAAI/AAAAAAAAABw/_tdEEPKVtZc/s512-c/photo.jpg" alt="Avatar" style="width:10%">Steve Jobs</button>
         <button type="button" class="btn btn-default"><i class="fa fa-user w3-xxlarge"></i>Chad Hurley</button>
-        <button type="button" class="btn btn-default"><i class="fa fa-user w3-xxlarge"></i>Steve Chen</button>
+        <button type="button" class="btn btn-danger"><i class="fa fa-user w3-xxlarge"></i>Steve Chen</button>
         <button type="button" class="btn btn-default"><i class="fa fa-user w3-xxlarge"></i>Batuhan Erden</button>
-        <button type="button" class="btn btn-default"><i class="fa fa-user w3-xxlarge"></i>Erk Aydoğan</button>
+        <button type="button" class="btn btn-info"><i class="fa fa-user w3-xxlarge"></i>Erk Aydoğan</button>
         <button type="button" class="btn btn-default"><i class="fa fa-user w3-xxlarge"></i>Ekrem Cetinkaya</button>
-        <button type="button" class="btn btn-default"><i class="fa fa-user w3-xxlarge"></i>Barış Ceylan</button>
+        <button type="button" class="btn btn-success"><i class="fa fa-user w3-xxlarge"></i>Barış Ceylan</button>
         <button type="button" class="btn btn-default"><i class="fa fa-user w3-xxlarge"></i>Ömer Said Bukte</button>
+
     </div>
 </div>
 
