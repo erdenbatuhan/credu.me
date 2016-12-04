@@ -62,6 +62,15 @@ h2{
     bottom: 315px;
 
 }
+
+h5{
+    position:absolute;
+    font-size: 25px;
+    top:10px;
+    font-family: "Arial Black";
+    left:20px;
+
+}
 #tfnewsearch{
     float:right;
     padding:20px;
@@ -69,6 +78,11 @@ h2{
 }
 .tfbaseheader{
     font-family: "Arial Black";
+    margin: 0px;
+    left:320px;
+    top:15px;
+    border-top-left-radius: 5px 5px;
+    border-bottom-left-radius: 5px 5px;
 }
 
 .tftextinput{

@@ -57,7 +57,7 @@
         <h4 class="w3-center">Mark Zuckerberg</h4>
         <p class="w3-center"><img src="http://www.waiterrewards.com/waiterpic/user.jpg" class="w3-circle" style="height:106px;width:106px" alt="Avatar"></p>
         <hr>
-        <p><i class="fa fa-home fa-fw w3-margin-right w3-large w3-text-teal"></i>Özyeğin Üniversity</p>
+        <p><i class="fa fa-home fa-fw w3-margin-right w3-large w3-text-teal"></i>Ozyegin University</p>
         <p><i class="fa fa-envelope fa-fw w3-margin-right w3-large w3-text-teal"></i>zuckerberg@ozu.edu.tr</p>
         <p><i class="fa fa-phone fa-fw w3-margin-right w3-large w3-text-teal"></i>05375437754</p>
     </div>
@@ -97,15 +97,12 @@
 </div>
 
 <div class="Friends">
-    <div class="tfbaseheader">
-    <div class="w3-container w3-card-2 w3-white w3-margin-bottom">
-        <h2 class="w3-text-grey w3-padding-16"><i class="fa fa-user w3-xxlarge"></i>Friends</h2>
-    </div>
-    </div>
+   <h5><i class="fa fa-user w3-xxlarge"></i>Friends</h5>
     <footer class="deneme">
         <i class="fa fa-facebook-official w3-hover-text-indigo"></i>
         <i class="fa fa-linkedin w3-hover-text-indigo"></i>
     </footer>
+
 
     <div id="tfheader">
         <form id="tfnewsearch" method="get" action="http://credu.me">
@@ -116,10 +113,8 @@
 
     </div>
 
-    <div class="person">
-        <h1 class="w3-text-grey w3-padding-16"><i class="fa fa-user w3-xxlarge"></i>Eduardo Saverin</h1>
-    </div>
 
+</div>
 
 </body>
 </html>
