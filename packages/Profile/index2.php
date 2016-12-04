@@ -66,22 +66,8 @@
 </div>
 <br>
 
-<div class="w3-card-2 w3-round">
-    <ul class="nav navbar">
-        <li class="dropdown">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Courses Taken <span class="caret"></span></a>
-            <ul class="dropdown-menu">
-                <li><a href="#">CS320</a></li>
-                <li><a href="#">CS321</a></li>
-                <li><a href="#">MATH212</a></li>
-            </ul>
-        </li>
-
-    </ul>
-
-    </div>
 </div>
-</div>
+
 <br>
 
 <div class="footer">Credu.me &copy; 2016</strong></div>
