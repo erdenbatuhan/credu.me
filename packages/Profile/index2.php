@@ -45,7 +45,6 @@
             </ul>
             <ul class="navbar-form navbar-right">
 
-
                 <button type="button" onclick= "/credu.me/packages/Home/index.php"class="btn btn-default btn-sm">
                     <span class="glyphicon glyphicon-log-out"></span> Log Out
                 </button>
