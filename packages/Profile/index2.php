@@ -1,6 +1,5 @@
 <html>
 <head>
-
     <title>Credu.me/Profile</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -123,7 +122,6 @@
         <button type="button" class="btn btn-primary"><img src="http://www.lovemarks.com/wp-content/uploads/profile-avatars/default-avatar-ginger-guy.png"class="img-circle" style="width:10%;float: left;">Erk Aydoğan</button>
         <button type="button" class="btn btn-default"><img src="http://www.lovemarks.com/wp-content/uploads/profile-avatars/default-avatar-ginger-guy.png" class="img-circle" style="width:10%;float: left;"></i>Ekrem Cetinkaya</button>
         <button type="button" class="btn btn-primary"><img src="http://www.lovemarks.com/wp-content/uploads/profile-avatars/default-avatar-ginger-guy.png" class="img-circle" style="width:10%;float: left;"></i>Barış Ceylan</button>
-
     </div>
         </div>
     </div>

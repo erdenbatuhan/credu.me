@@ -43,9 +43,11 @@ body{
     top:85px;
     border-radius: 4px;
 }
+
 p{
     text-decoration:underline;
 }
+
 h1{
     position: absolute;
     bottom: 320px;
@@ -71,11 +73,13 @@ h5{
     left:20px;
 
 }
+
 #tfnewsearch{
     float:right;
     padding:20px;
     top: 100px;
 }
+
 .tfbaseheader{
     font-family: "Arial Black";
     margin: 0px;
@@ -109,6 +113,7 @@ h5{
     border-top-left-radius: 5px 5px;
     border-bottom-left-radius: 5px 5px;
 }
+
 .tfbutton {
     margin: 0;
     position: absolute;
@@ -124,6 +129,7 @@ h5{
     border: solid 1px #0076a3; border-right:0px;
     background: #0095cd;
 }
+
 .tfbutton:hover {
     text-decoration: none;
     background: #007ead;
@@ -153,9 +159,6 @@ h5{
     text-align: center;
     font-family: "Arial Black";
 }
-
-
-
 
 #bodyDiv {
     position:absolute;
