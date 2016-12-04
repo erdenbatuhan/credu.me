@@ -40,7 +40,7 @@
                 </li>
                 <li class="w3-hide-small"><a href="#" class="w3-padding-large w3-hover-white" title="News"><i class="fa fa-globe"></i></a></li>
                 <li class="w3-hide-small"><a href="#" class="w3-padding-large w3-hover-white" title="Account Settings"><i class="fa fa-user"></i></a></li>
-                <li class="w3-hide-small"><a href="#" class="w3-padding-large w3-hover-white" title="Messages"><i class="fa fa-envelope"></i></a></li>
+                <li class="w3-hide-small"><a href="#" class="w3-padding-large w3-hover-white" title="Messages"><i class="fa fa-envelope"><span class="badge">4</span></i></a></li>
             </ul>
             <ul class="navbar-form navbar-right">
 
@@ -85,6 +85,17 @@
 
 <div class="footer">Credu.me &copy; 2016</strong></div>
 
+<div class="courses">
+<h3>Courses Taken</h3>
+    <div class="btn-group-vertical" role="group" aria-label="...">
+        <button type="button" class="btn btn-success">CS320</button>
+        <button type="button" class="btn btn-primary">CS321</button>
+        <button type="button" class="btn btn-primary">ENG320</button>
+        <button type="button" class="btn btn-primary">MATH212</button>
+        <button type="button" class="btn btn-primary">SPA101</button>
+    </div>
+
+</div>
 
 <div class="Friends">
     <div class="w3-container w3-card-2 w3-white w3-margin-bottom">
@@ -108,5 +119,7 @@
     <div class="person">
         <h1 class="w3-text-grey w3-padding-16"><i class="fa fa-user w3-xxlarge"></i>Eduardo Saverin</h1>
     </div>
+
+
 </body>
 </html>

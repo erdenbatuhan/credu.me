@@ -34,12 +34,13 @@ position: absolute;
 .Friends {
     background-color:#efefef;
     position: absolute;
-    width: 50%;
+    width: 47%;
+    height:520px;
     align:right;
-    left:620px;
+    left:675px;
     bottom: 200px;
     top:85px;
-
+    border-radius: 4px;
 }
 p{
     text-decoration:underline;
@@ -108,4 +109,16 @@ h2{
  position: absolute;
     left: 580px;
     bottom: 7px;
+}
+
+.courses{
+    background-color:#efefef;
+    position:absolute;
+    left: 380px;
+    height:520px;
+    width: 270px;
+    top:85px;
+    border-radius: 4px;
+    text-align: center;
+    font-family: "Arial Black";
 }

@@ -40,7 +40,7 @@
                     <input type="text" class="form-control" id="username" placeholder="Username">
                     <input type="password" class="form-control" id="password" placeholder="Password" name="password">
                 </div>
-                <button type="submit" href="/credu.me/packages/Profile/index2.php" class="btn btn-primary">Sign In</button>
+                <button type="submit" href="http://localhost/credu.me/packages/Profile/index2.php" class="btn btn-primary">Sign In</button>
             </form>
         </div>
     </div>
