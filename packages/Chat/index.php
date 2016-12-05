@@ -22,8 +22,8 @@
     <script src="../../includes/js/jquery-3.1.1.min.js"></script>
 </head>
 <?php
-    include "DatabaseConnection.php";
-    include "User.php";
+    include "../DatabaseConnection.php";
+    include "../User.php";
     include "ChatRoom.php";
 
     $chatRoomName = $_GET['chatRoomName'];

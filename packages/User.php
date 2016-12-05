@@ -3,7 +3,7 @@
 class User {
     /** @var DatabaseConnection */
     private $databaseConnection = null;
-
+    /** @var null */
     private $userId = null;
     private $firstName = null;
     private $lastName = null;
@@ -33,6 +33,11 @@ class User {
                       WHERE Users.ID = '" . $this->userId . "'";
         $sql_result = mysqli_query($connection, $sql_query);
 
+        $this->fetchEachRow($sql_result);
+        $this->databaseConnection->killConnection();
+    }
+
+    private function fetchEachRow($sql_result) {
         while ($row = mysqli_fetch_assoc($sql_result)) {
             $this->firstName = $row['FIRST_NAME'];
             $this->lastName = $row['LAST_NAME'];
@@ -41,8 +46,6 @@ class User {
             $this->phoneNumber = $row['PHONE_NO'];
             $this->universityName = $row['NAME'];
         }
-
-        $this->databaseConnection->killConnection();
     }
 
     public function printUserInfo() {

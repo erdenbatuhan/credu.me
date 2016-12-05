@@ -6,7 +6,7 @@ const MAX_AMOUNT_OF_MESSAGES = 100; // Maximum amount of messages to be displaye
 class ChatRoom {
     /** @var DatabaseConnection */
     private $databaseConnection = null;
-
+    /** @var null */
     private $course_id = null;
     private $senders = null;
     private $dates = null;
