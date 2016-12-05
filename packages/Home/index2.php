@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
-    <link rel="stylesheet"  href="homepage.css">
+    <!--- <link rel="stylesheet"  href="homepage.css"> --->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
@@ -46,31 +46,36 @@
     </div>
 </nav>
 
-
-<h2>Sign Up.</h2>
-<h2>Start Chatting with Your Classmates.</h2>
-<h2>Advance Your Network.</h2>
-<div class="container" >
-    <div class = "navbar-left">
-        <br> </br>
-
-    </div>
-    <form class="navbar-form navbar-right" role="search">
-        <div class="form-input">
-            <h1>JOIN US</h1>
-            <input type="text" class="form-control" placeholder="Username" /><br /> <br />
-            <input type="password" class="form-control" placeholder="Password" /><br /> <br />
-            <input type="text" class="form-control" placeholder="Mail" /><br /> <br />
-            <input type="text" class="form-control" placeholder="Phone" /><br /> <br />
-            <button type="submit" class="btn btn-default">Sign Up</button>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-xs-8">
+            <h2>Sign Up.</h2>
+            <h2>Start Chatting with Your Classmates.</h2>
+            <h2>Advance Your Network.</h2>
         </div>
-    </form>
+        <div class="col-xs-2">
+            <div class="jumbotron text-center" style="margin-left: -40px;margin-right: -40px;padding-right: 10px;padding-left: 10px;padding-bottom: 10px;padding-top: 10px;">
+                <form>
+                    <div class="form-input">
+                        <h4 style="color: darkcyan">JOIN US</h4>
+                        <br>
+                        <input type="text" class="form-control" placeholder="Username" />
+                        <br>
+                        <input type="password" class="form-control" placeholder="Password" />
+                        <br>
+                        <input type="text" class="form-control" placeholder="Mail" />
+                        <br>
+                        <input type="text" class="form-control" placeholder="Phone" />
+                        <br>
+                        <button type="submit" class="btn btn-default">Sign Up</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
 </div>
+
 
 <div class="footer">Credu.me &copy; 2016</strong></div>
 </body>
-
-Contact GitHub API Training Shop Blog About
-
-© 2016 GitHub, Inc. Terms Privacy Security Status Help
 
