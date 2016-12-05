@@ -1,25 +1,19 @@
-
 <head>
-
-    <title>Credu.me</title>
+    <title> Home | Credu.me </title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+    <link rel="stylesheet"  href="../../includes/Bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet"  href="HomePage.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="../../includes/js/jquery-3.1.1.min.js"></script>
+    <script src="../../includes/Bootstrap/js/bootstrap.min.js"></script>
 </head>
 
 <body>
 <nav class="navbar navbar-default navbar-inverse">
     <div class="container-fluid">
-
         <div class="navbar-header">
-            <a class="navbar-brand" href="../../../../../../Users/erdenbatuhan/Desktop">credu.me</a>
+            <a class="navbar-brand" href="./">credu.me</a>
         </div>
-
-
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav">
                 <li class="dropdown">
@@ -32,7 +26,6 @@
                         <li><a href="https://github.com/obukte">Ömer Said Bükte</a></li>
                     </ul>
                 </li>
-
             </ul>
             <form class="navbar-form navbar-right">
                 <div class="form-group">
@@ -44,7 +37,9 @@
         </div>
     </div>
 </nav>
+
 <br><br><br>
+
 <div class="container-fluid">
     <div class="row">
         <div class="col-xs-1">
@@ -76,7 +71,6 @@
         </div>
     </div>
 </div>
-
 
 <div class="footer">credu.me &copy; 2016</div>
 </body>
