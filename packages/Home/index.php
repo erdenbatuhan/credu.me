@@ -1,11 +1,14 @@
 <head>
     <title> Home | credu.me </title>
+    <meta name="description" content="index">
+    <meta name="author" content="beobe">
     <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet"  href="../../includes/Bootstrap/css/bootstrap.min.css">
-    <link rel="stylesheet"  href="HomePage.css">
-    <script src="../../includes/js/jquery-3.1.1.min.js"></script>
+    <link href="../../includes/Bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="HomePage.css" rel="stylesheet">
     <script src="../../includes/Bootstrap/js/bootstrap.min.js"></script>
+    <script src="../../includes/js/jquery-3.1.1.min.js"></script>
 </head>
 
 <body>
