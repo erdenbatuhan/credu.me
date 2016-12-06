@@ -4,7 +4,7 @@
     include "../User.php";
 
     $databaseConnection = new DatabaseConnection();
-    $user = new User($databaseConnection, 'S001352');
+    $user = new User($databaseConnection, $_GET['id']);
 
     $user->fetchFriends();
     $user->fetchCoursesTaken();
