@@ -17,4 +17,7 @@
     }
 
     mysqli_fetch_assoc($highScoreUpdateQueryResult);
+
+    $databaseConnection->killConnection();
+
 ?>

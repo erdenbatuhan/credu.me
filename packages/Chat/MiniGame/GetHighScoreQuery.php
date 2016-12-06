@@ -20,4 +20,7 @@
         $highScore = $row["HIGH_SCORE"];
         echo json_encode($highScore);
     }
+
+    $databaseConnection->killConnection();
+
 ?>
