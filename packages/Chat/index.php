@@ -50,7 +50,7 @@
             <hr>
             <!-- DUMP VALUES -->
             <?php for($i = 0; $i < 10; $i++) { ?>
-                <h5><?php /** @var User */ echo $chatRoom->getSenders()[0]->getFullName() ?></h5>
+                <h5><?php echo $chatRoom->getSenders()[0]->getFullName() ?></h5>
             <?php } ?>
             <!-- .DUMP VALUES -->
         </div>
@@ -65,7 +65,7 @@
             <br>
             <?php for($i = 0; $i < count($chatRoom->getMessages()); $i++) { ?>
                 <i><?php echo $chatRoom->getTimeDiff($chatRoom->getDates()[$i]) ?>..</i>
-                <h5><?php /** @var User */ echo $chatRoom->getSenders()[$i]->getFullName() ?></h5>
+                <h5><?php echo $chatRoom->getSenders()[$i]->getFullName() ?></h5>
                 <p><?php echo $chatRoom->getMessages()[$i] ?></p>
                 <br>
             <?php } ?>

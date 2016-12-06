@@ -18,13 +18,10 @@ class User {
         $this->databaseConnection = $databaseConnection;
         $this->userId = $userId;
 
-        $this->friends = array();
-        $this->coursesTaken = array();
-
-        $this->fetchData();
+        $this->fetchUserInformation();
     }
 
-    private function fetchData() {
+    private function fetchUserInformation() {
         $this->databaseConnection->initiateConnection();
         $connection = $this->databaseConnection->getConnection();
 
@@ -33,11 +30,6 @@ class User {
                       WHERE Users.ID = '" . $this->userId . "'";
         $sql_result = mysqli_query($connection, $sql_query);
 
-        $this->fetchEachRow($sql_result);
-        $this->databaseConnection->killConnection();
-    }
-
-    private function fetchEachRow($sql_result) {
         while ($row = mysqli_fetch_assoc($sql_result)) {
             $this->firstName = $row['FIRST_NAME'];
             $this->lastName = $row['LAST_NAME'];
@@ -46,6 +38,34 @@ class User {
             $this->phoneNumber = $row['PHONE_NO'];
             $this->universityName = $row['NAME'];
         }
+    }
+
+    public function fetchFriends() {
+        $this->friends = array();
+
+        $this->databaseConnection->initiateConnection();
+        $connection = $this->databaseConnection->getConnection();
+
+        $sql_query = "SELECT SECOND_USER_ID FROM FRIENDSHIP JOIN USERS 
+                      ON SECOND_USER_ID = ID WHERE FIRST_USER_ID = '" . $this->userId . "' 
+                      ORDER BY FIRST_NAME, LAST_NAME";
+        $sql_result = mysqli_query($connection, $sql_query);
+
+        while ($row = mysqli_fetch_assoc($sql_result))
+            $this->friends[] = new User($this->databaseConnection, $row["SECOND_USER_ID"]);
+    }
+
+    public function fetchCoursesTaken() {
+        $this->coursesTaken = array();
+
+        $this->databaseConnection->initiateConnection();
+        $connection = $this->databaseConnection->getConnection();
+
+        $sql_query = "SELECT COURSE_ID FROM COURSESTAKEN WHERE USER_ID ='" . $this->userId . "' ORDER BY COURSE_ID";
+        $sql_result = mysqli_query($connection, $sql_query);
+
+        while ($row = mysqli_fetch_assoc($sql_result))
+            $this->coursesTaken[] = $row["COURSE_ID"];
     }
 
     public function printUserInfo() {
@@ -73,6 +93,14 @@ class User {
 
     public function joinChatRoom($chatRoomId) {
 
+    }
+
+    public function getFriends() {
+        return $this->friends;
+    }
+
+    public function getCoursesTaken() {
+        return $this->coursesTaken;
     }
 }
 
