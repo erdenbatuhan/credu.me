@@ -1,23 +1,20 @@
 <?php
-    /* DB connection */
-    $hostName = "localhost";
-    $hostUser = "root";
-    $hostPw = "admin";
-    $dbName = "credume";
 
-    $connection = new mysqli($hostName, $hostUser, $hostPw, $dbName);
+    include "../../DatabaseConnection.php";
 
-    if (!$connection)
-        die("Connection Failed!");
-    /**/
+    $databaseConnection = new DatabaseConnection();
+    $databaseConnection->initiateConnection();
+    $connection = $databaseConnection->getConnection();
+
     $profileId = "S001146";  /* TODO This will be changed */
     $bestScore = $_POST['bestScore'];
 
     $highScoreUpdateQuery = "UPDATE USERS SET HIGH_SCORE ='".$bestScore."'WHERE ID = '".$profileId."'";
-    $highScoreUpdateQueryResult = mysqli_query($connection,$highScoreUpdateQuery);
+    $highScoreUpdateQueryResult = mysqli_query($connection, $highScoreUpdateQuery);
 
-    if(!$highScoreUpdateQueryResult){
+    if (!$highScoreUpdateQueryResult) {
         throw new Exception("High score update query error");
     }
+
     mysqli_fetch_assoc($highScoreUpdateQueryResult);
 ?>
