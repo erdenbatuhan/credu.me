@@ -79,10 +79,6 @@ class User {
 
     }
 
-    public function getFullName() {
-        return $this->firstName . ' ' . $this->lastName;
-    }
-
     public function addFriend($username) {
 
     }
@@ -93,6 +89,10 @@ class User {
 
     public function joinChatRoom($chatRoomId) {
 
+    }
+
+    public function getFullName() {
+        return $this->firstName . ' ' . $this->lastName;
     }
 
     public function getFriends() {
