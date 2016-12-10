@@ -2,7 +2,9 @@
 
 http://credu.me/
 
-Current software state => Pre-alpha
+Previous software state => Pre-alpha
+Current software state  => Alpha
+Next software state     => Beta
 
 Coming up:
 * Alpha release on December, 7th

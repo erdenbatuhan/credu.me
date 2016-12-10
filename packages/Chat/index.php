@@ -56,15 +56,13 @@
         </div>
         <div id="DisplayArea" class="col-xs-9">
             <br>
-            <form class="form-inline">
-                <div class="form-group">
-                    <input id="message" type="message" class="form-control" placeholder="Type a message">
-                </div>
-                <button id="send" type="submit" class="btn btn-success"> Send </button>
+            <form name="message_form" action="">
+                <input name="message" type="text" id="message" size="63" />
+                <input name="send" type="submit" id="send" value="Send" />
             </form>
             <br>
             <?php for($i = 0; $i < count($chatRoom->getMessages()); $i++) { ?>
-                <i><?php echo $chatRoom->getTimeDiff($chatRoom->getDates()[$i]) ?>..</i>
+                <i><?php echo $chatRoom->getTimeDiff($chatRoom->getDates()[$i]) ?></i>
                 <h5><?php echo $chatRoom->getSenders()[$i]->getFullName() ?></h5>
                 <p><?php echo $chatRoom->getMessages()[$i] ?></p>
                 <br>
@@ -74,18 +72,13 @@
 </div>
 </body>
 <script>
-    setInterval(reloadChats, 500); // Call reloadChats every 500ms
-
-    // Call reloadChats as soon as the page is loaded
-    $(document).ready(function() {
-        reloadChats();
-    });
-
     // Handle the click
     $("#send").click(function() {
         if($("#message").val().length > 0) {
-            $.post("post.php", {
-                text: $("#message").val()
+            $.post("PostMessage.php", {
+                course_id: 'BUS158',
+                sender_id: 'S001352',
+                message: $("#message").val()
             });
         }
 
@@ -94,8 +87,16 @@
     });
 
     // Load the chat log
-    private function reloadChats() {
-
+    function reloadChats() {
+        $.ajax({
+            url: "log.php",
+            cache: false,
+            success: function(html) {
+                $("#DisplayArea").html(html);
+            }
+        });
     }
+
+    setInterval(reloadChats, 500);
 </script>
 </html>

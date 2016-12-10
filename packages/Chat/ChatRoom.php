@@ -19,7 +19,7 @@ class ChatRoom {
         $this->fetchMessages();
     }
 
-    private function fetchMessages() {
+    public function fetchMessages() {
         $this->clearArrays();
 
         $this->databaseConnection->initiateConnection();
@@ -50,22 +50,27 @@ class ChatRoom {
 
         $timeDiffInSeconds = $currentTime - $messageTime;
         $timeDiffInMinutes = $timeDiffInSeconds / 60;
-        $timeDiffInHours = $timeDiffInSeconds / 3600;
+        $timeDiffInHours = $timeDiffInMinutes / 60;
+        $timeDiffInDays = $timeDiffInHours / 24;
 
-        return $this->getTimeDiffWithMessage($timeDiffInMinutes, $timeDiffInHours);
+        return $this->getTimeDiffWithMessage($timeDiffInMinutes, $timeDiffInHours, $timeDiffInDays);
     }
 
-    private function getTimeDiffWithMessage($timeDiffInMinutes, $timeDiffInHours) {
+    private function getTimeDiffWithMessage($timeDiffInMinutes, $timeDiffInHours, $timeDiffInDays) {
         if (floor($timeDiffInMinutes) < 1)
-            return 'less than a minute ago';
+            return 'less than a minute ago..';
         else if (floor($timeDiffInMinutes) == 1)
-            return 'a minute ago';
+            return 'a minute ago..';
         else if (floor($timeDiffInMinutes) < 60)
-            return floor($timeDiffInMinutes) . ' minutes ago';
-        else if (floor($timeDiffInMinutes) < 120)
-            return 'an hour ago';
+            return floor($timeDiffInMinutes) . ' minutes ago..';
+        else if (floor($timeDiffInHours) < 2)
+            return 'an hour ago..';
+        else if (floor($timeDiffInHours) < 48)
+            return floor($timeDiffInHours) . ' hours ago..';
+        else if (floor($timeDiffInDays) <= 7)
+            return floor($timeDiffInDays) . ' days ago..';
         else
-            return floor($timeDiffInHours) . ' hours ago';
+            return 'more than a week ago..';
     }
 
     public function getSenders() {
