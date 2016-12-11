@@ -1,5 +1,6 @@
 body {
-    background-image: url("../../includes/img/Background.jpeg");
+    background-image: url("../img/Background.jpeg");
+    background-size: cover;
 }
 
 .navbar {

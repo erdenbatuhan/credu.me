@@ -52,7 +52,7 @@ class User {
         $sql_result = mysqli_query($connection, $sql_query);
 
         while ($row = mysqli_fetch_assoc($sql_result))
-            $this->friends[] = new User($this->databaseConnection, $row["SECOND_USER_ID"]);
+            $this->friends[] = new User($this->databaseConnection, $row['SECOND_USER_ID']);
     }
 
     public function fetchCoursesTaken() {

@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="../../includes/Bootstrap/css/bootstrap.min.css" rel="stylesheet">
-    <link href="HomePage.css" rel="stylesheet">
+    <link href="../../includes/css/Home.css" rel="stylesheet">
     <script src="../../includes/Bootstrap/js/bootstrap.min.js"></script>
     <script src="../../includes/js/jquery-3.1.1.min.js"></script>
 </head>
@@ -41,14 +41,15 @@
     </div>
 </nav>
 
-<br><br><br>
+<br><br>
 
 <div class="container-fluid">
     <div class="row">
         <div class="col-xs-1">
 
         </div>
-        <div class="col-xs-7">
+        <div class="col-xs-8">
+            <br><br>
             <h1>Sign Up.</h1>
             <h1>Start Chatting with Your Classmates.</h1>
             <h1>Expand Your Network.</h1>

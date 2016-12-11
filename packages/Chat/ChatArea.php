@@ -3,11 +3,12 @@
 const TIME_DIFF = 1; // Time difference in hours
 const MAX_AMOUNT_OF_MESSAGES = 100; // Maximum amount of messages to be displayed
 
-class ChatRoom {
+class ChatArea {
     /** @var DatabaseConnection */
     private $databaseConnection = null;
     /** @var null */
     private $course_id = null;
+    private $registeredUsers = null;
     private $senders = null;
     private $dates = null;
     private $messages = null;
@@ -15,8 +16,22 @@ class ChatRoom {
     public function __construct($databaseConnection, $course_id) {
         $this->databaseConnection = $databaseConnection;
         $this->course_id = $course_id;
+    }
 
-        $this->fetchMessages();
+    public function fetchRegisteredUsers() {
+        $this->registeredUsers = array();
+
+        $this->databaseConnection->initiateConnection();
+        $connection = $this->databaseConnection->getConnection();
+
+        $sql_query = "SELECT FIRST_NAME, LAST_NAME FROM CoursesTaken JOIN Users 
+                                      ON CoursesTaken.USER_ID = Users.ID WHERE COURSE_ID = '" . $this->course_id . "'";
+        $sql_result = mysqli_query($connection, $sql_query);
+
+        while ($row = mysqli_fetch_assoc($sql_result))
+            $this->registeredUsers[] = $row['FIRST_NAME'] . " " . $row['LAST_NAME'];
+
+        $this->databaseConnection->killConnection();
     }
 
     public function fetchMessages() {
@@ -71,6 +86,10 @@ class ChatRoom {
             return floor($timeDiffInDays) . ' days ago..';
         else
             return 'more than a week ago..';
+    }
+
+    public function getRegisteredUsers() {
+        return $this->registeredUsers;
     }
 
     public function getSenders() {
