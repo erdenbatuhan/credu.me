@@ -1,5 +1,5 @@
 body {
-    background-image: url("../img/Background.jpeg");
+    background-image: url("../img/Background [Home].jpeg");
     background-size: cover;
 }
 
@@ -12,21 +12,11 @@ h1 {
 }
 
 .jumbotron {
-    background-color: rgba(52,73,94,0.7);
+    background-color: rgba(52, 73, 94, 0.7);
     margin-left: -40px;
     margin-right: -40px;
     padding-right: 10px !important;
     padding-left: 10px !important;
     padding-bottom: 10px;
     padding-top: 10px;
-}
-
-.footer {
-    position: absolute;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    padding: 0.5rem;
-    background-color: #efefef;
-    text-align: center;
 }
