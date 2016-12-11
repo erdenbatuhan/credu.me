@@ -30,13 +30,6 @@
                     </ul>
                 </li>
             </ul>
-            <form class="navbar-form navbar-right">
-                <div class="form-group">
-                    <input type="text" class="form-control" id="username" placeholder="Username">
-                    <input type="password" class="form-control" id="password" placeholder="Password" name="password">
-                </div>
-                <button type="submit" formaction="http://localhost/credu.me/packages/Profile/index2.php" class="btn btn-primary">Sign In</button>
-            </form>
         </div>
     </div>
 </nav>
@@ -58,17 +51,13 @@
             <div class="jumbotron text-center">
                 <form>
                     <div class="form-input">
-                        <h3 style="color: white">JOIN US</h3>
+                        <h3 style="color: white">LOG IN</h3>
                         <br>
-                        <input type="text" class="form-control" placeholder="Username" />
+                        <input type="text" class="form-control" placeholder="Email" />
                         <br>
-                        <input type="password" class="form-control" placeholder="Password" />
+                        <input type="text" class="form-control" placeholder="Password" />
                         <br>
-                        <input type="text" class="form-control" placeholder="Mail" />
-                        <br>
-                        <input type="text" class="form-control" placeholder="Phone" />
-                        <br>
-                        <button type="submit" class="btn btn-default">Sign Up</button>
+                        <button type="submit" class="btn btn-default">Sign In</button>
                     </div>
                 </form>
             </div>
