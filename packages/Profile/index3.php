@@ -47,7 +47,7 @@
 
 <div class="container-fluid">
     <div class="profilebox">
-
+<h1></h1>
         <h3 style="color: white">Mark Zuckerberg</h3>
         <br>
         <h2><i class="fa fa-home fa-fw w3-margin-right w3-large w3-text-teal"></i>Ozyegin University</h2>
