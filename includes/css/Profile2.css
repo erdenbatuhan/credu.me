@@ -15,6 +15,13 @@ h3{
     line-height: 0px;
 
 }
+h4{
+    color:white;
+    font-family: "Arial Black";
+    font-size: 20px;
+    line-height: 0px;
+
+}
 .profilebox {
     border-radius: 4px;
     background-color: rgba(52,73,94,0.7);
@@ -27,6 +34,38 @@ h3{
     padding-bottom: 10px;
     padding-top: 10px;
     text-align: center;
+}
+.coursesbox {
+    border-radius: 4px;
+    background-color: rgba(52,73,94,0.7);
+    margin-left: 100px;
+    margin-right: 700px;
+    margin-top: 20px;
+    height:50%;
+    padding-right: 200px !important;
+    padding-left: 200px !important;
+    padding-bottom: 10px;
+    padding-top: 10px;
+    text-align: center;
+
+}
+#bodyDiv {
+
+    margin-top:0px;
+    margin-bottom:0px;
+    margin-left:45px;
+    margin-right:0px;
+}
+
+#scrollbox3 {
+    overflow: auto;
+    width: 500px;
+    height: 270px;
+    margin-top: 25px;
+    margin-left:-220px;
+    padding: 0 5px;
+    border: 1px solid #b7b7b7;
+    border-radius: 4px;
 }
 .footer {
     position: absolute;

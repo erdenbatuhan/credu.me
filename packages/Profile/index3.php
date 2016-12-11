@@ -46,15 +46,40 @@
 </nav>
 
 <div class="container-fluid">
-<div class="profilebox">
+    <div class="profilebox">
 
-            <h3 style="color: white">Mark Zuckerberg</h3>
-            <br>
-            <h2><i class="fa fa-home fa-fw w3-margin-right w3-large w3-text-teal"></i>Ozyegin University</h2>
-            <h2><i class="fa fa-envelope fa-fw w3-margin-right w3-large w3-text-teal"></i>zuckerberg@ozu.edu.tr</h2>
-            <h2><i class="fa fa-phone fa-fw w3-margin-right w3-large w3-text-teal"></i>05369876542</h2>
+        <h3 style="color: white">Mark Zuckerberg</h3>
+        <br>
+        <h2><i class="fa fa-home fa-fw w3-margin-right w3-large w3-text-teal"></i>Ozyegin University</h2>
+        <h2><i class="fa fa-envelope fa-fw w3-margin-right w3-large w3-text-teal"></i>zuckerberg@ozu.edu.tr</h2>
+        <h2><i class="fa fa-phone fa-fw w3-margin-right w3-large w3-text-teal"></i>05369876542</h2>
 
+    </div>
 </div>
+
+<div class="coursesbox">
+    <h4>Courses Taken</h4>
+    <div id="bodyDiv">
+        <div id="scrollbox3">
+            <div class="list-group">
+                <a href="#" class="list-group-item list-group-item">CS320</a>
+                <a href="#" class="list-group-item list-group-item">CS321</a>
+                <a href="#" class="list-group-item list-group-item">ENG320</a>
+                <a href="#" class="list-group-item list-group-item">MATH212</a>
+                <a href="#" class="list-group-item list-group-item">SPA101</a>
+                <a href="#" class="list-group-item list-group-item">CS320</a>
+                <a href="lms.ozyegin.edu.tr" class="list-group-item list-group-item">CS321</a>
+                <a href="#" class="list-group-item list-group-item">ENG320</a>
+                <a href="#" class="list-group-item list-group-item">MATH212</a>
+                <a href="#" class="list-group-item list-group-item">SPA101</a>
+                <a href="#" class="list-group-item list-group-item">CS320</a>
+                <a href="lms.ozyegin.edu.tr" class="list-group-item list-group-item">CS321</a>
+                <a href="#" class="list-group-item list-group-item">ENG320</a>
+                <a href="#" class="list-group-item list-group-item">MATH212</a>
+                <a href="#" class="list-group-item list-group-item">SPA101</a>
+            </div>
+        </div>
+    </div>
 </div>
 
 
