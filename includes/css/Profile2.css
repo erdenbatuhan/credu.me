@@ -69,20 +69,20 @@ h4{
 }
 #scrollbox3 {
     overflow: auto;
-    width: 500px;
     height: 270px;
     margin-top: 25px;
     margin-left:-170px;
+    margin-right: -120px;
     padding: 0 5px;
     border: 1px solid #b7b7b7;
     border-radius: 4px;
 }
 #scrollbox4 {
     overflow: auto;
-    width: 500px;
     height: 270px;
     margin-top: 25px;
     margin-left:-215px;
+    margin-right:-173px;
     padding: 0 5px;
     border: 1px solid #b7b7b7;
     border-radius: 4px;
