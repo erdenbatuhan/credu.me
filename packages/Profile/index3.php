@@ -82,6 +82,32 @@
     </div>
 </div>
 
+<div class="friendsbox">
+    <h4>Friends</h4>
+    <div id="bodyDiv">
+        <div id="scrollbox4">
+            <div class="list-group">
+                <a href="#" class="list-group-item list-group-item">Steve Jobs</a>
+                <a href="#" class="list-group-item list-group-item">Steve Jobs</a>
+                <a href="#" class="list-group-item list-group-item">Steve Jobs</a>
+                <a href="#" class="list-group-item list-group-item">Steve Jobs</a>
+                <a href="#" class="list-group-item list-group-item">Steve Jobs</a>
+                <a href="#" class="list-group-item list-group-item">Steve Jobs</a>
+                <a href="lms.ozyegin.edu.tr" class="list-group-item list-group-item">Steve Jobs</a>
+                <a href="#" class="list-group-item list-group-item">Steve Jobs</a>
+                <a href="#" class="list-group-item list-group-item">Steve Jobs</a>
+                <a href="#" class="list-group-item list-group-item">Steve Jobs</a>
+                <a href="#" class="list-group-item list-group-item">Steve Jobs</a>
+                <a href="lms.ozyegin.edu.tr" class="list-group-item list-group-item">Steve Jobs</a>
+                <a href="#" class="list-group-item list-group-item">Steve Jobs</a>
+                <a href="#" class="list-group-item list-group-item">Steve Jobs</a>
+                <a href="#" class="list-group-item list-group-item">Steve Jobs</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+
 
 <div class="footer">Credu.me &copy; 2016</strong></div>
 </body>
