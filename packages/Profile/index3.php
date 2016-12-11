@@ -42,7 +42,21 @@
     </div>
 </nav>
 
+<div class="container-fluid">
+<div class="profilebox">
 
+            <h3 style="color: white">Mark Zuckerberg</h3>
+            <br>
+            <h2>Ozyegin University</h2>
+            <br>
+            <h2>mark.zuckerberg@ozu.edu.tr</h2>
+            <br>
+            <h2>05369876542</h2>
+
+
+
+</div>
+</div>
 
 
 <div class="footer">Credu.me &copy; 2016</strong></div>
