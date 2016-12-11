@@ -2,16 +2,21 @@ body {
     background-image: url("http://www.wallpaperup.com/uploads/wallpapers/2016/03/02/903508/big_thumb_beea90145feed79452063142a7137050.jpg");
 
 }
+
 h2{
     color:white;
-    height: 10px;
-    margin-top:20px;
+    font-size:20px;
+    line-height: 0px;
 }
 h3{
     color:white;
     font-family: "Arial Black";
+    font-size: 25px;
+    line-height: 0px;
+
 }
 .profilebox {
+    border-radius: 4px;
     background-color: rgba(52,73,94,0.7);
     margin-left: 300px;
     margin-right: 300px;

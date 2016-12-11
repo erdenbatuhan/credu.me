@@ -6,6 +6,9 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
     <link rel="stylesheet"  href="../../includes/css/Profile2.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
@@ -47,13 +50,9 @@
 
             <h3 style="color: white">Mark Zuckerberg</h3>
             <br>
-            <h2>Ozyegin University</h2>
-            <br>
-            <h2>mark.zuckerberg@ozu.edu.tr</h2>
-            <br>
-            <h2>05369876542</h2>
-
-
+            <h2><i class="fa fa-home fa-fw w3-margin-right w3-large w3-text-teal"></i>Ozyegin University</h2>
+            <h2><i class="fa fa-envelope fa-fw w3-margin-right w3-large w3-text-teal"></i>zuckerberg@ozu.edu.tr</h2>
+            <h2><i class="fa fa-phone fa-fw w3-margin-right w3-large w3-text-teal"></i>05369876542</h2>
 
 </div>
 </div>
