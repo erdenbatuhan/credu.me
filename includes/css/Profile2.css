@@ -1,0 +1,14 @@
+body {
+    background-image: url("http://www.wallpaperup.com/uploads/wallpapers/2016/03/02/903508/big_thumb_beea90145feed79452063142a7137050.jpg");
+
+}
+
+.footer {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    padding: 0.5rem;
+    background-color: #efefef;
+    text-align: center;
+}
