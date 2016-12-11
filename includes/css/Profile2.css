@@ -38,8 +38,8 @@ h4{
 .coursesbox {
     border-radius: 4px;
     background-color: rgba(52,73,94,0.7);
-    margin-left: 100px;
-    margin-right: 700px;
+    margin-left: 90px;
+    margin-right: 720px;
     margin-top: 20px;
     height:50%;
     padding-right: 150px !important;
@@ -51,9 +51,9 @@ h4{
 .friendsbox{
     border-radius: 4px;
     background-color: rgba(52,73,94,0.7);
-    margin-left: 700px;
-    margin-right: 300px;
-    margin-top: -20px;
+    margin-left: 720px;
+    margin-right: 90px;
+    margin-top: -332px;
     height:50%;
     padding-right: 200px !important;
     padding-left: 200px !important;
@@ -72,7 +72,7 @@ h4{
     width: 500px;
     height: 270px;
     margin-top: 25px;
-    margin-left:-200px;
+    margin-left:-170px;
     padding: 0 5px;
     border: 1px solid #b7b7b7;
     border-radius: 4px;
@@ -82,7 +82,7 @@ h4{
     width: 500px;
     height: 270px;
     margin-top: 25px;
-    margin-left:-220px;
+    margin-left:-215px;
     padding: 0 5px;
     border: 1px solid #b7b7b7;
     border-radius: 4px;
