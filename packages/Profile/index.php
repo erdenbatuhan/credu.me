@@ -23,6 +23,4 @@
     for($i = 0; $i < count($user->getCoursesTaken()); $i++)
         echo $user->getCoursesTaken()[$i] . "<br>";
 
-    $databaseConnection->killConnection();
-
 ?>

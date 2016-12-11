@@ -2,34 +2,58 @@
     background-color: whitesmoke;
 }
 
-#ChatRoom h3 {
+#ChatRoom #NoPrivate h3 {
     color: green;
 }
 
-#ChatRoom h4 {
+#ChatRoom #NoPrivate h4 {
     color: green;
+}
+
+#ChatRoom #Private h3 {
+    color: darkred;
+}
+
+#ChatRoom #Private h4 {
+    color: darkred;
+}
+
+#ChatRoom #Private p {
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+#ChatRoom #Private a {
+     cursor: pointer;
 }
 
 #ChatRoom hr {
-  border-top-color: darkcyan;
+    border-top-color: darkcyan;
 }
 
-#DisplayArea {
+#ChatRoom #NoPrivate #DisplayArea {
     height: 500px;
     border: 1px solid;
     border-color: darkcyan;
     overflow: auto;
 }
 
-#DisplayArea .form-group {
+#ChatRoom #Private #DisplayArea {
+    height: 300px;
+    border: 1px solid;
+    border-color: darkcyan;
+    overflow: auto;
+}
+
+#ChatRoom #DisplayArea .form-group {
     width: 92% !important;
 }
 
-#DisplayArea .form-group .form-control {
+#ChatRoom #DisplayArea .form-group .form-control {
     width: 100% !important;
     border: 1px solid darkcyan;
 }
 
-#DisplayArea .form-inline .btn.btn-success {
+#ChatRoom #DisplayArea .form-inline .btn.btn-success {
     border-color: darkcyan;
 }

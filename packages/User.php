@@ -38,6 +38,8 @@ class User {
             $this->phoneNumber = $row['PHONE_NO'];
             $this->universityName = $row['NAME'];
         }
+
+        $this->databaseConnection->killConnection();
     }
 
     public function fetchFriends() {
@@ -47,12 +49,14 @@ class User {
         $connection = $this->databaseConnection->getConnection();
 
         $sql_query = "SELECT SECOND_USER_ID FROM FRIENDSHIP JOIN USERS 
-                      ON SECOND_USER_ID = ID WHERE FIRST_USER_ID = '" . $this->userId . "' 
+                      ON FRIENDSHIP.SECOND_USER_ID = USERS.ID WHERE FIRST_USER_ID = '" . $this->userId . "' 
                       ORDER BY FIRST_NAME, LAST_NAME";
         $sql_result = mysqli_query($connection, $sql_query);
 
         while ($row = mysqli_fetch_assoc($sql_result))
             $this->friends[] = new User($this->databaseConnection, $row['SECOND_USER_ID']);
+
+        $this->databaseConnection->killConnection();
     }
 
     public function fetchCoursesTaken() {
@@ -65,7 +69,9 @@ class User {
         $sql_result = mysqli_query($connection, $sql_query);
 
         while ($row = mysqli_fetch_assoc($sql_result))
-            $this->coursesTaken[] = $row["COURSE_ID"];
+            $this->coursesTaken[] = $row['COURSE_ID'];
+
+        $this->databaseConnection->killConnection();
     }
 
     public function printUserInfo() {
@@ -77,6 +83,21 @@ class User {
              'Phone Number:    ' . $this->phoneNumber     . '<br>' .
              'University Name: ' . $this->universityName  . '<br>' ;
 
+    }
+
+    public function getMessageFrom($userId) {
+        $this->databaseConnection->initiateConnection();
+        $connection = $this->databaseConnection->getConnection();
+
+        $sql_query = "SELECT MESSAGE FROM Friendship 
+                      WHERE FIRST_USER_ID = '" . $userId . "' AND SECOND_USER_ID = '" . $this->userId . "'";
+        $sql_result = mysqli_query($connection, $sql_query);
+
+        $row = mysqli_fetch_assoc($sql_result);
+        $message = $row['MESSAGE'];
+
+        $this->databaseConnection->killConnection();
+        return $message;
     }
 
     public function addFriend($username) {
