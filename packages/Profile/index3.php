@@ -53,6 +53,7 @@
         <h2><i class="fa fa-home fa-fw w3-margin-right w3-large w3-text-teal"></i>Ozyegin University</h2>
         <h2><i class="fa fa-envelope fa-fw w3-margin-right w3-large w3-text-teal"></i>zuckerberg@ozu.edu.tr</h2>
         <h2><i class="fa fa-phone fa-fw w3-margin-right w3-large w3-text-teal"></i>05369876542</h2>
+        <a href="editprofile.php">Edit Profile </a>
 
     </div>
 </div>
