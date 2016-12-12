@@ -15,13 +15,13 @@ $user->printUserInfo();
 echo "<br>";
 
 /** ----- PRINTING FRIENDS ----- */
-for($i = 0; $i < count($user->getFriends()); $i++)
+for ($i = 0; $i < count($user->getFriends()); $i++)
     echo $user->getFriends()[$i]->getFullName() . "<br>";
 
 echo "<br>";
 
 /** ----- PRINTING COURSES TAKEN ----- */
-for($i = 0; $i < count($user->getCoursesTaken()); $i++)
+for ($i = 0; $i < count($user->getCoursesTaken()); $i++)
     echo $user->getCoursesTaken()[$i] . "<br>";
 
 ?>

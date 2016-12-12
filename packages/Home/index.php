@@ -98,18 +98,26 @@ session_start();
         $("#email").val("");
         $("#password").val("");
 
-        for (var i = 0; i < 5; i++)
+        var isLogged = false;
+
+        do {
             location.reload(true);
+            isLogged = "<?php echo (isset($_SESSION['loggedUserId']) != null); ?>";
+        } while (!isLogged);
 
         return false;
     });
 
     // Logs out
     $("#logout").click(function () {
-        $.post("ActivateLogout.php");
+        $.post("../Home/ActivateLogout.php");
 
-        for (var i = 0; i < 5; i++)
+        var isLogged = true;
+
+        do {
             location.reload(true);
+            isLogged = "<?php echo (isset($_SESSION['loggedUserId']) != null); ?>";
+        } while (isLogged);
 
         return false;
     });

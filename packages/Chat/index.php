@@ -221,8 +221,12 @@ if (!$chatRoomName || isset($_SESSION['loggedUserId']) == null) {
     $("#logout").click(function () {
         $.post("../Home/ActivateLogout.php");
 
-        for (var i = 0; i < 5; i++)
+        var isLogged = false;
+
+        do {
             location.reload(true);
+            isLogged = "<?php echo isset($_SESSION['loggedUserId']); ?>";
+        } while (!isLogged);
 
         return false;
     });

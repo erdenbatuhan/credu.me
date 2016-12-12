@@ -1,5 +1,8 @@
 <?php
 session_start();
+
+include "../DatabaseConnection.php";
+include "../User.php";
 ?>
 
 <!DOCTYPE html>
@@ -30,7 +33,13 @@ session_start();
     echo '<script type="text/javascript">',
     'window.location.href = "../Home/";',
     '</script>';
-} else { ?>
+} else {
+    $databaseConnection = new DatabaseConnection();
+    $user = new User($databaseConnection, $_SESSION['loggedUserId']);
+
+    $user->fetchFriends();
+    $user->fetchCoursesTaken();
+    ?>
     <body>
     <nav class="navbar navbar-inverse">
         <div class="container-fluid">
@@ -59,11 +68,9 @@ session_start();
             <div class="col-xs-8 col-md-4">
                 <div class="jumbotron">
                     <div class="jumbotron child">
-                        <h3>Batuhan Erden</h3>
-                        <hr>
-                        <h5><i class="fa fa-home"></i> Ozyegin University </h5>
-                        <h5><i class="fa fa-envelope"></i> zuckerberg@ozu.edu.tr </h5>
-                        <h5><i class="fa fa-phone"></i> 05369876542 </h5>
+                        <?php
+                        $user->printUserInfo();
+                        ?>
                     </div>
                 </div>
             </div>
@@ -78,24 +85,20 @@ session_start();
             <div class="col-xs-8 col-md-4">
                 <div class="jumbotron">
                     <div class="jumbotron child">
-                        <h4>Courses Taken</h4>
+                        <h4>Courses Taken [<?php echo count($user->getCoursesTaken()) ?>]</h4>
                         <div id="scrollbox">
                             <div class="list-group">
-                                <a href="#" class="list-group-item list-group-item">CS320</a>
-                                <a href="#" class="list-group-item list-group-item">CS321</a>
-                                <a href="#" class="list-group-item list-group-item">ENG320</a>
-                                <a href="#" class="list-group-item list-group-item">MATH212</a>
-                                <a href="#" class="list-group-item list-group-item">SPA101</a>
-                                <a href="#" class="list-group-item list-group-item">CS320</a>
-                                <a href="lms.ozyegin.edu.tr" class="list-group-item list-group-item">CS321</a>
-                                <a href="#" class="list-group-item list-group-item">ENG320</a>
-                                <a href="#" class="list-group-item list-group-item">MATH212</a>
-                                <a href="#" class="list-group-item list-group-item">SPA101</a>
-                                <a href="#" class="list-group-item list-group-item">CS320</a>
-                                <a href="lms.ozyegin.edu.tr" class="list-group-item list-group-item">CS321</a>
-                                <a href="#" class="list-group-item list-group-item">ENG320</a>
-                                <a href="#" class="list-group-item list-group-item">MATH212</a>
-                                <a href="#" id="last_a" class="list-group-item list-group-item">SPA101</a>
+                                <?php
+                                /** ----- PRINTING COURSES TAKEN ----- */
+                                for ($i = 0; $i < count($user->getCoursesTaken()); $i++) {
+                                    if ($i == count($user->getCoursesTaken()) - 1) { ?>
+                                        <a href="#" id="last_a"
+                                           class="list-group-item list-group-item"><?php echo $user->getCoursesTaken()[$i] ?></a>
+                                    <?php } else { ?>
+                                        <a href="#"
+                                           class="list-group-item list-group-item"><?php echo $user->getCoursesTaken()[$i] ?></a>
+                                    <?php }
+                                } ?>
                             </div>
                         </div>
                     </div>
@@ -110,24 +113,20 @@ session_start();
             <div class="col-xs-8 col-md-4">
                 <div class="jumbotron">
                     <div class="jumbotron child">
-                        <h4>Friends</h4>
+                        <h4>Friends [<?php echo count($user->getFriends()) ?>]</h4>
                         <div id="scrollbox">
                             <div class="list-group">
-                                <a href="#" class="list-group-item list-group-item">Steve Jobs</a>
-                                <a href="#" class="list-group-item list-group-item">Steve Jobs</a>
-                                <a href="#" class="list-group-item list-group-item">Steve Jobs</a>
-                                <a href="#" class="list-group-item list-group-item">Steve Jobs</a>
-                                <a href="#" class="list-group-item list-group-item">Steve Jobs</a>
-                                <a href="#" class="list-group-item list-group-item">Steve Jobs</a>
-                                <a href="lms.ozyegin.edu.tr" class="list-group-item list-group-item">Steve Jobs</a>
-                                <a href="#" class="list-group-item list-group-item">Steve Jobs</a>
-                                <a href="#" class="list-group-item list-group-item">Steve Jobs</a>
-                                <a href="#" class="list-group-item list-group-item">Steve Jobs</a>
-                                <a href="#" class="list-group-item list-group-item">Steve Jobs</a>
-                                <a href="lms.ozyegin.edu.tr" class="list-group-item list-group-item">Steve Jobs</a>
-                                <a href="#" class="list-group-item list-group-item">Steve Jobs</a>
-                                <a href="#" class="list-group-item list-group-item">Steve Jobs</a>
-                                <a href="#" id="last_a" class="list-group-item list-group-item">Last Steve Jobs</a>
+                                <?php
+                                /** ----- PRINTING FRIENDS ----- */
+                                for ($i = 0; $i < count($user->getFriends()); $i++) {
+                                    if ($i == count($user->getFriends()) - 1) { ?>
+                                        <a href="#" id="last_a"
+                                           class="list-group-item list-group-item"><?php echo $user->getFriends()[$i]->getFullName() ?></a>
+                                    <?php } else { ?>
+                                        <a href="#"
+                                           class="list-group-item list-group-item"><?php echo $user->getFriends()[$i]->getFullName() ?></a>
+                                    <?php }
+                                } ?>
                             </div>
                         </div>
                     </div>
@@ -145,8 +144,12 @@ session_start();
     $("#logout").click(function () {
         $.post("../Home/ActivateLogout.php");
 
-        for (var i = 0; i < 5; i++)
+        var isLogged = false;
+
+        do {
             location.reload(true);
+            isLogged = "<?php echo isset($_SESSION['loggedUserId']); ?>";
+        } while (!isLogged);
 
         return false;
     });

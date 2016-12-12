@@ -75,14 +75,11 @@ class User {
     }
 
     public function printUserInfo() {
-        echo 'ID:              ' . $this->userId          . '<br>' .
-             'First Name:      ' . $this->firstName       . '<br>' .
-             'Last Name:       ' . $this->lastName        . '<br>' .
-             'Email:           ' . $this->email           . '<br>' .
-             'Password:        ' . $this->password        . '<br>' .
-             'Phone Number:    ' . $this->phoneNumber     . '<br>' .
-             'University Name: ' . $this->universityName  . '<br>' ;
-
+        echo '<h3>' . $this->getFullName() . '</h3>' .
+             '<hr>' .
+             '<h5><i class="fa fa-home"></i> ' . $this->universityName . '</h5>' .
+             '<h5><i class="fa fa-envelope"></i> ' . $this->email . '</h5>' .
+             '<h5><i class="fa fa-phone"></i> ' . $this->phoneNumber . '</h5>';
     }
 
     public function getMessageFrom($userId) {
