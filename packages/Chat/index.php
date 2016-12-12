@@ -31,12 +31,12 @@ include "ChatArea.php";
     <script src="../../includes/js/jquery-3.1.1.min.js"></script>
 </head>
 <?php
-$chatRoomName = $_GET['chatRoomName'];
-$isPrivate = $_GET['isPrivate'];
+$chatRoomName = $_POST['chatRoomName'];
+$isPrivate = $_POST['isPrivate'];
 $pathToFolder = "./logs/" . $chatRoomName;
 $pathToLog = $pathToFolder . "/log.html";
 
-$user = 'S001352'; // TODO: DUMP..
+$userId = $_SESSION['loggedUserId'];
 
 if (!$chatRoomName || isset($_SESSION['loggedUserId']) == null) {
     echo '<script type="text/javascript">',
@@ -60,7 +60,7 @@ if (!$chatRoomName || isset($_SESSION['loggedUserId']) == null) {
     <?php if ($isPrivate) {
         $databaseConnection = new DatabaseConnection();
 
-        $user1 = new User($databaseConnection, $user);
+        $user1 = new User($databaseConnection, $userId);
         $user2 = new User($databaseConnection, $chatRoomName);
         ?>
         <div id="Private">
@@ -79,7 +79,7 @@ if (!$chatRoomName || isset($_SESSION['loggedUserId']) == null) {
                             </div>
                             <hr>
                             <p><i class="fa fa-share" aria-hidden="true"></i>
-                                <?php echo $user2->getMessageFrom($user); ?></p>
+                                <?php echo $user2->getMessageFrom($userId); ?></p>
                         </div>
                         <br>
                         <form name="message_form" action="">
@@ -170,7 +170,7 @@ if (!$chatRoomName || isset($_SESSION['loggedUserId']) == null) {
     var pathToLog = "<?php echo $pathToLog; ?>";
     var chatRoomName = "<?php echo $chatRoomName; ?>";
     var isPrivate = "<?php echo $isPrivate; ?>";
-    var user = "<?php echo $user; ?>";
+    var user = "<?php echo $userId; ?>";
 
     setInterval(getMessagesSent, 500); // Calls getMessagesSent every 500ms
 

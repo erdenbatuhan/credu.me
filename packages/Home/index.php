@@ -42,21 +42,23 @@ session_start();
         <?php } ?>
     </div>
 </nav>
-
-<br><br>
-
 <div class="container-fluid">
+    <br><br>
+    <br><br>
     <div class="row">
-        <div class="col-xs-1">
-
+        <div class="col-xs-0 col-sm-1">
+            <!-- EMPTY -->
         </div>
-        <div class="col-xs-8">
-            <br><br>
-            <h1>Sign Up.</h1>
+        <div class="col-xs-12 col-sm-8">
+            <h1>Sign In.</h1>
             <h1>Start Chatting with Your Classmates.</h1>
             <h1>Expand Your Network.</h1>
+            <br><br>
         </div>
-        <div class="col-xs-2">
+        <div class="col-xs-2 col-sm-0">
+            <!-- EMPTY -->
+        </div>
+        <div class="col-xs-8 col-sm-2">
             <?php if (isset($_SESSION['loggedUserId']) != null) { ?>
                 <!-- Do nothing.. -->
             <?php } else { ?>
@@ -76,6 +78,9 @@ session_start();
                     </form>
                 </div>
             <?php } ?>
+        </div>
+        <div class="col-xs-2 col-sm-1">
+            <!-- EMPTY -->
         </div>
     </div>
 </div>

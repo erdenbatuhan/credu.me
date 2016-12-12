@@ -1,6 +1,7 @@
 body {
-    background-image: url("../img/Background [Home].jpeg");
-    background-size: cover;
+    background-image: url("../img/Background [Home].jpg");
+    background-position-x: -100px;
+    background-position-y: -100px;
 }
 
 h1 {
