@@ -106,7 +106,16 @@ class User {
     }
 
     public function addFriend($username) {
+        $this->databaseConnection->initiateConnection();
+        $connection = $this->databaseConnection->getConnection();
 
+        $sql_query = "INSERT INTO FRIENDSHIP VALUES (0, '" . $this->userId . "', '" . $userId . "', '');
+                      INSERT INTO FRIENDSHIP VALUES (0, '" . $userId . "', '" . $this->userId . "', '');";
+        $sql_result = mysqli_query($connection, $sql_query);
+
+        mysqli_fetch_assoc($sql_result);
+
+        $this->databaseConnection->killConnection();
     }
 
     public function removeFriend($username) {
