@@ -8,12 +8,13 @@ width,
 height,
 floorPosition = 0,
 okbtn,
+howToPlayButton,
 frames = 0,
 score = 0,
 currentState,
 bestScore = 0,
 
-states = {Menu: 0, Game : 1, FinalScreen :2};
+states = {Menu: 0, Game : 1, FinalScreen :2 , HowToPlay: 3};
 
 function getHighScore(){
     $.ajax({
@@ -36,9 +37,21 @@ function updateHighScore(){
 function onpress(event) {
     switch(currentState){
         case states.Menu:
-            currentState = states.Game;
-            bird.jump();
-            getHighScore();
+            var mx = event.offsetX, my = event.offsetY;
+
+            if(howToPlayButton.x < mx && mx < howToPlayButton.x + howToPlayButton.width &&
+                howToPlayButton.y < my && my < howToPlayButton.y + howToPlayButton.height)
+            {
+
+                currentState = states.HowToPlay;
+                Item.reset();
+                score = 0;
+            }
+            else {
+                currentState = states.Game;
+                bird.jump();
+                getHighScore();
+            }
             break;
         case states.Game:
             bird.jump();
@@ -55,6 +68,12 @@ function onpress(event) {
                 Item.reset();
                 score = 0;
             }
+            break;
+
+        case states.HowToPlay:
+            currentState = states.Menu;
+            Item.reset();
+            score = 0;
             break;
     }
 }
@@ -96,6 +115,14 @@ function main() {
             height: okImage.height
         };
 
+        howToPlayButton = {
+
+            x: (width - howToPlayImage.width)/2,
+            y: height - 200,
+            width: howToPlayImage.width,
+            height: howToPlayImage.height
+        };
+
         run();
     };
 
@@ -133,6 +160,13 @@ function render() {
 
         thugBirdImage.draw(ctx,(width/2)- thugBirdImage.width/2,height-420);
         tapToPlayImage.draw(ctx,(width/2)- tapToPlayImage.width/2,height-330);
+        howToPlayImage.draw(ctx,howToPlayButton.x,howToPlayButton.y);
+    }
+
+    else if(currentState === states.HowToPlay){
+
+        howToPlayShowImage.draw(ctx,(width/2)- howToPlayShowImage.width/2,height-330);
+
     }
 
     else if(currentState === states.FinalScreen){
@@ -148,16 +182,16 @@ function render() {
         smallNumberImage.draw(ctx,width/2 - 57,height-299,score,null,10);
         smallNumberImage.draw(ctx,width/2 - 57,height-260,bestScore,null,10);
 
-        if(score < 10){
+        if(score <= 10){
 
             medalOneImage.draw(ctx,width/2 - 92,height-295);
         }
-        else if(score > 10 && score < 20){
+        else if(score > 10 && score <= 20){
 
             medalTwoImage.draw(ctx,width/2 - 92,height-295);
 
         }
-        else if(score > 20 && score < 30){
+        else if(score > 20 && score <= 30){
 
             medalThreeImage.draw(ctx,width/2 - 92,height-295);
 
@@ -172,9 +206,7 @@ function render() {
     }
 
     else{
-        //need to be fixed in the Environment
         bigNumberImage.draw(ctx,null,20,score,width/2);
-
     }
 }
 main();
