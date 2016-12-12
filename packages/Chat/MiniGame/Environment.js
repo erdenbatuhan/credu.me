@@ -26,6 +26,10 @@ var backgroundImage,
     medalTwoImage,
     medalThreeImage,
     medalFourImage,
+    goldBombImage,
+    redBombImage,
+    blueBombImage,
+    greenBombImage,
     bombImage;
 
 /* This is used for retrieving images from single PNG file */
@@ -60,6 +64,10 @@ function initEnvironment(img) {
     smallNumberImage = new Environment(img, 0, 1157, 12, 15);
     bigNumberImage = new Environment(img, 0, 1179, 14, 22);
 
+    goldBombImage = new Environment(img,154,700,31,31);
+    redBombImage = new Environment(img,185,700,31,31);
+    blueBombImage = new Environment(img,247,700,31,31);
+    greenBombImage = new Environment(img,215,700,31,31);
 
     okImage = new Environment(img,79,1029,83,28);
     rateImage = new Environment(img,0,1001,81,28);
