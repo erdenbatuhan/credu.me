@@ -48,8 +48,8 @@ function initEnvironment(img) {
     backgroundImage = new Environment(img, 0, 0, 320,490);
     floorImage = new Environment(img,0,510,400,161);
     birdImage = new Environment(img,0,701,30,30);
-    redPointImage = new Environment(img,0,701,30,30);
-    tenPointImage = new Environment(img,61,701,30,30);
+    redPointImage = new Environment(img,30,701,30,32);
+    tenPointImage = new Environment(img,61,701,30,32);
     pointImage = new Environment(img,123,701,30,32);
     bombImage = new Environment(img,91,701,31,31);
     thugBirdImage = new Environment(img,6,752,150,50);

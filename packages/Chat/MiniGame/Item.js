@@ -5,10 +5,17 @@ var Item = {
 
     bombs : [],
     points : [],
+    redPoints: [],
+    tenPoints: [],
+    redPoints: [],
+
 
     reset : function() {
         this.bombs = [];
         this.points = [];
+        this.redPoints = [];
+        this.tenPoints = [];
+        this.redPoints = [];
     },
 
     update : function(){
@@ -28,6 +35,20 @@ var Item = {
                 y: pointPosition,
                 width : pointImage.width,
                 height : pointImage.height
+            });
+            var tenPointPosition = 20 + 250 * Math.random();
+            this.tenPoints.push({
+                x: 500 + 100 * Math.random(),
+                y: tenPointPosition,
+                width : tenPointImage.width,
+                height : tenPointImage.height
+            });
+            var redPointPosition = 20 + 250 * Math.random();
+            this.redPoints.push({
+                x: 400 + 100 * Math.random(),
+                y: redPointPosition,
+                width : redPointImage.width,
+                height : redPointImage.height
             });
         }
         /* Clear the items that left the window */
@@ -49,6 +70,30 @@ var Item = {
             point.x -=3;
             if(point.x < -20){
                 this.points.splice(i,1);
+                i--;
+                len--;
+            }
+        }
+
+        for (var i = 0 , len = this.tenPoints.length; i < len; i++) {
+            var tenPoint = this.tenPoints[i];
+            detectTenPointCollision(tenPoint);
+
+            tenPoint.x -= 7;
+            if (tenPoint.x < -20) {
+                this.tenPoints.splice(i, 1);
+                i--;
+                len--;
+            }
+        }
+
+        for (var i = 0 , len = this.redPoints.length; i < len; i++) {
+            var redPoint = this.redPoints[i];
+            detectRedPointCollision(redPoint);
+
+            redPoint.x -= 9;
+            if (redPoint.x < -20) {
+                this.redPoints.splice(i, 1);
                 i--;
                 len--;
             }
@@ -85,6 +130,41 @@ var Item = {
             }
         }
 
+        function detectTenPointCollision(tenPoint){
+            var distanceX = bird.xPos - tenPoint.x;
+            var distanceY = bird.yPos - tenPoint.y;
+
+            var sumRadius = bird.birdRadius + tenPoint.width/2;
+            var sqrRadius = sumRadius * sumRadius;
+
+            var distSqr = (distanceX * distanceX) + (distanceY * distanceY);
+
+            if (distSqr <= sqrRadius) {
+                currentState = states.FinalScreen;
+            }
+        }
+
+        function detectRedPointCollision(redPoint){
+            var distanceX = bird.xPos - redPoint.x;
+            var distanceY = bird.yPos - redPoint.y;
+
+            var sumRadius = bird.birdRadius + redPoint.width/2;
+            var sqrRadius = sumRadius * sumRadius;
+
+            var distSqr = (distanceX * distanceX) + (distanceY * distanceY);
+
+            if (distSqr <= sqrRadius) {
+                if(score == 0)currentState = states.FinalScreen;
+                else{
+                    score -= 1;
+                    Item.redPoints.splice(i,1);
+                    i--;
+                    len--;
+                }
+            }
+        }
+
+
     },
 
     draw : function(ctx){
@@ -95,6 +175,14 @@ var Item = {
         for (var i = 0, len = this.points.length; i < len; i++){
             var point = this.points[i];
             pointImage.draw(ctx,point.x,point.y);
+        }
+        for (var i = 0, len = this.tenPoints.length; i < len; i++){
+            var tenPoint = this.tenPoints[i];
+            tenPointImage.draw(ctx,tenPoint.x,tenPoint.y);
+        }
+        for (var i = 0, len = this.redPoints.length; i < len; i++){
+            var redPoint = this.redPoints[i];
+            redPointImage.draw(ctx,redPoint.x,redPoint.y);
         }
     },
 
