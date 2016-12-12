@@ -17,10 +17,10 @@ var backgroundImage,
     bigNumberImage,
     rateImage,
     scoreImage,
-    menuImage,
+    howToPlayImage,
     startImage,
     shareImage,
-    playButtonImage,
+    closeButtonImage,
     pauseButtonImage,
     medalOneImage,
     medalTwoImage,
@@ -30,6 +30,7 @@ var backgroundImage,
     redBombImage,
     blueBombImage,
     greenBombImage,
+    howToPlayShowImage,
     bombImage;
 
 /* This is used for retrieving images from single PNG file */
@@ -64,6 +65,8 @@ function initEnvironment(img) {
     smallNumberImage = new Environment(img, 0, 1157, 12, 15);
     bigNumberImage = new Environment(img, 0, 1179, 14, 22);
 
+    howToPlayShowImage = new Environment(img,182,1067,265,133);
+
     goldBombImage = new Environment(img,154,700,31,31);
     redBombImage = new Environment(img,185,700,31,31);
     blueBombImage = new Environment(img,247,700,31,31);
@@ -72,10 +75,10 @@ function initEnvironment(img) {
     okImage = new Environment(img,79,1029,83,28);
     rateImage = new Environment(img,0,1001,81,28);
     scoreImage = new Environment(img,0,1029,81,28);
-    menuImage = new Environment(img,79,1001,83,28);
+    howToPlayImage = new Environment(img,79,1001,83,28);
     startImage = new Environment(img,159,1001,83,28);
     shareImage = new Environment(img,159,1029,83,28);
-    playButtonImage = new Environment(img,241,1001,28,28);
+    closeButtonImage = new Environment(img,241,1001,28,28);
     pauseButtonImage = new Environment(img,241,1029,28,28);
 
     medalOneImage = new Environment(img,227,864,45,47);
