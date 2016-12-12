@@ -39,6 +39,11 @@ session_start();
                 <button id="logout" type="submit" class="btn btn-success"><span class="fa fa-sign-out"></span> Log Out
                 </button>
             </form>
+        <?php } else { ?>
+            <form class="navbar-form navbar-right" role="search">
+                <a style="visibility: hidden !important;" type="submit" class="btn btn-success" href="./"><span
+                        class="fa fa-home"></span> Home</a>
+            </form>
         <?php } ?>
     </div>
 </nav>
@@ -86,38 +91,18 @@ session_start();
 </div>
 </body>
 <script>
-    // Handles the click
     $("#sign").click(function () {
         if ($("#email").val().length > 0 && $("#password").val().length > 0) {
-            $.post("ActivateLogin.php", {
-                email: $("#email").val(),
-                password: $("#password").val()
-            });
-        }
-
-        $("#email").val("");
-        $("#password").val("");
-
-        var isLogged = false;
-
-        do {
+            window.location.href = "./ActionPage.php?isLogin=1&error=0&email=" + $("#email").val() + "&password=" + $("#password").val();
+        } else {
             location.reload(true);
-            isLogged = "<?php echo (isset($_SESSION['loggedUserId']) != null); ?>";
-        } while (!isLogged);
+        }
 
         return false;
     });
 
-    // Logs out
     $("#logout").click(function () {
-        $.post("../Home/ActivateLogout.php");
-
-        var isLogged = true;
-
-        do {
-            location.reload(true);
-            isLogged = "<?php echo (isset($_SESSION['loggedUserId']) != null); ?>";
-        } while (isLogged);
+        window.location.href = "./ActionPage.php?isLogin=0";
 
         return false;
     });

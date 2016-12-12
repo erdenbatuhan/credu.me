@@ -26,3 +26,7 @@ h3 {
     background-color: rgba(52, 73, 94, 0.7);
     margin: 0px;
 }
+
+.jumbotron.action {
+    color: white !important;
+}

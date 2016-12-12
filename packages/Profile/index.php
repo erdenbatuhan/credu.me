@@ -140,16 +140,8 @@ include "../User.php";
     </body>
 <?php } ?>
 <script>
-    // Logs out
     $("#logout").click(function () {
-        $.post("../Home/ActivateLogout.php");
-
-        var isLogged = false;
-
-        do {
-            location.reload(true);
-            isLogged = "<?php echo isset($_SESSION['loggedUserId']); ?>";
-        } while (!isLogged);
+        window.location.href = "../Home/ActionPage.php?isLogin=0";
 
         return false;
     });

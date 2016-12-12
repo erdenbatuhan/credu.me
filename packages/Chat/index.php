@@ -172,14 +172,12 @@ if (!$chatRoomName || isset($_SESSION['loggedUserId']) == null) {
     var isPrivate = "<?php echo $isPrivate; ?>";
     var user = "<?php echo $userId; ?>";
 
-    setInterval(getMessagesSent, 500); // Calls getMessagesSent every 500ms
+    setInterval(getMessagesSent, 500);
 
-    // Calls getMessagesSent as soon as the page is loaded
     $(document).ready(function () {
         getMessagesSent();
     });
 
-    // Handles the click
     $("#send").click(function () {
         if ($("#message").val().length > 0) {
             $.post("PostMessage.php", {
@@ -201,7 +199,6 @@ if (!$chatRoomName || isset($_SESSION['loggedUserId']) == null) {
         return false;
     });
 
-    // Loads the chat log
     function getMessagesSent() {
         $.post("StoreMessagesSent.php", {
             pathToLog: pathToLog,
@@ -217,16 +214,8 @@ if (!$chatRoomName || isset($_SESSION['loggedUserId']) == null) {
         });
     }
 
-    // Logs out
     $("#logout").click(function () {
-        $.post("../Home/ActivateLogout.php");
-
-        var isLogged = false;
-
-        do {
-            location.reload(true);
-            isLogged = "<?php echo isset($_SESSION['loggedUserId']); ?>";
-        } while (!isLogged);
+        window.location.href = "../Home/ActionPage.php?isLogin=0";
 
         return false;
     });
