@@ -1,3 +1,8 @@
+<?php
+session_start();
+?>
+
+<!DOCTYPE html>
 <html>
 <head>
     <title> Edit Profile | credu.me </title>
@@ -23,9 +28,8 @@
 <body>
 <nav class="navbar navbar-default navbar-inverse">
     <div class="container-fluid">
-
         <div class="navbar-header">
-            <a class="navbar-brand" href="../Home/">Credu.me</a>
+            <h3 class="navbar-brand" href="../Home/">Credu.me</h3>
         </div>
 
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
@@ -41,11 +45,11 @@
                         <li><a href="https://github.com/obukte">Ömer Said Bükte</a></li>
                     </ul>
                 </li>
-            </ul>
-            <ul class="navbar-form navbar-right">
-                <button type="button" onclick="/credu.me/packages/Home/index.php" class="btn btn-default btn-sm">
-                    <span class="glyphicon glyphicon-log-out"></span> Log Out
-                </button>
+                <li class="navbar-form navbar-right">
+                    <button type="button" class="btn btn-default btn-sm">
+                        <span class="glyphicon glyphicon-log-out"></span> Log Out
+                    </button>
+                </li>
             </ul>
         </div>
     </div>

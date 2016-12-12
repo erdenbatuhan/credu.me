@@ -1,5 +1,13 @@
+<?php
+session_start();
+
+include "../DatabaseConnection.php";
+include "../User.php";
+include "ChatArea.php";
+?>
+
 <!DOCTYPE html>
-<html lang="tr">
+<html>
 <head>
     <title> Chat | credu.me </title>
 
@@ -16,29 +24,40 @@
     <link href="../../includes/Bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <link href="../../includes/Font-Awesome/css/font-awesome.min.css" rel="stylesheet">
     <link href="../../includes/css/Chat.css" rel="stylesheet">
+    <link href="../../includes/css/Navbar.css" rel="stylesheet">
 
     <!-- ========== Javascript Part ========== !-->
     <script src="../../includes/Bootstrap/js/bootstrap.js"></script>
     <script src="../../includes/js/jquery-3.1.1.min.js"></script>
 </head>
 <?php
-    include "../DatabaseConnection.php";
-    include "../User.php";
-    include "ChatArea.php";
+$chatRoomName = $_GET['chatRoomName'];
+$isPrivate = $_GET['isPrivate'];
+$pathToFolder = "./logs/" . $chatRoomName;
+$pathToLog = $pathToFolder . "/log.html";
 
-    $chatRoomName = $_GET['chatRoomName'];
-    $isPrivate = $_GET['isPrivate'];
-    $pathToFolder = "./logs/" . $chatRoomName;
-    $pathToLog = $pathToFolder . "/log.html";
+$user = 'S001352'; // TODO: DUMP..
 
-    $user = 'S001352'; // TODO: DUMP..
-?>
-<body id="ChatRoom">
-    <?php if (!$chatRoomName) {
-        echo '<script type="text/javascript">',
-             'window.location.href = "../../";',
-             '</script>';
-    } else if ($isPrivate) {
+if (!$chatRoomName || isset($_SESSION['loggedUserId']) == null) {
+    echo '<script type="text/javascript">',
+    'window.location.href = "../Home/";',
+    '</script>';
+} else { ?>
+    <body id="ChatRoom">
+    <nav class="navbar navbar-inverse">
+        <div class="container-fluid text-center">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="../Home/"><h3>cred<span>u.me</span></h3></a>
+            </div>
+            <form class="navbar-form navbar-right" role="search">
+                <a type="submit" class="btn btn-success" href="../Home/"><span class="fa fa-home"></span> Home</a>
+                <a type="submit" class="btn btn-success" href="../Profile/"><span class="fa fa-user"></span> Profile</a>
+                <button id="logout" type="submit" class="btn btn-success"><span class="fa fa-sign-out"></span> Log Out
+                </button>
+            </form>
+        </div>
+    </nav>
+    <?php if ($isPrivate) {
         $databaseConnection = new DatabaseConnection();
 
         $user1 = new User($databaseConnection, $user);
@@ -64,8 +83,8 @@
                         </div>
                         <br>
                         <form name="message_form" action="">
-                            <input name="message" type="text" id="message" size="" />
-                            <input name="send" type="submit" id="send" value="Send" />
+                            <input name="message" type="text" id="message" size=""/>
+                            <input name="send" type="submit" id="send" value="Send"/>
                         </form>
                         <br>
                     </div>
@@ -83,7 +102,8 @@
                                 <?php echo $user1->getMessageFrom($chatRoomName); ?></p>
                         </div>
                         <br>
-                        <a onclick="location.reload(true);"> Refresh <i class="fa fa-refresh" aria-hidden="true"></i></a>
+                        <a onclick="location.reload(true);"> Refresh <i class="fa fa-refresh"
+                                                                        aria-hidden="true"></i></a>
                     </div>
                 </div>
             </div>
@@ -108,7 +128,7 @@
 
                             $chatArea->fetchRegisteredUsers();
 
-                            for($i = 0; $i < count($chatArea->getRegisteredUsers()); $i++) {
+                            for ($i = 0; $i < count($chatArea->getRegisteredUsers()); $i++) {
                                 echo '<h5>' . $chatArea->getRegisteredUsers()[$i] . '</h5>';
                             }
                             ?>
@@ -121,8 +141,8 @@
                     <div id="DisplayArea" class="col-xs-10 col-sm-9">
                         <br>
                         <form name="message_form" action="">
-                            <input name="message" type="text" id="message" size="63" />
-                            <input name="send" type="submit" id="send" value="Send" />
+                            <input name="message" type="text" id="message" size="63"/>
+                            <input name="send" type="submit" id="send" value="Send"/>
                         </form>
                         <br>
                         <div id="MessageArea"> <!-- MESSAGES WILL BE DISPLAYED IN THIS DIVISION -->
@@ -144,23 +164,24 @@
         </div>
         <br><br>
     <?php } ?>
-</body>
+    </body>
+<?php } ?>
 <script>
     var pathToLog = "<?php echo $pathToLog; ?>";
     var chatRoomName = "<?php echo $chatRoomName; ?>";
     var isPrivate = "<?php echo $isPrivate; ?>";
     var user = "<?php echo $user; ?>";
 
-    setInterval(getMessagesSent, 500); // Call getMessagesSent every 500ms
+    setInterval(getMessagesSent, 500); // Calls getMessagesSent every 500ms
 
-    // Call getMessagesSent as soon as the page is loaded
-    $(document).ready(function() {
+    // Calls getMessagesSent as soon as the page is loaded
+    $(document).ready(function () {
         getMessagesSent();
     });
 
-    // Handle the click
-    $("#send").click(function() {
-        if($("#message").val().length > 0) {
+    // Handles the click
+    $("#send").click(function () {
+        if ($("#message").val().length > 0) {
             $.post("PostMessage.php", {
                 isPrivate: isPrivate,
                 course_id: chatRoomName,
@@ -180,7 +201,7 @@
         return false;
     });
 
-    // Load the chat log
+    // Loads the chat log
     function getMessagesSent() {
         $.post("StoreMessagesSent.php", {
             pathToLog: pathToLog,
@@ -190,10 +211,20 @@
         $.ajax({
             url: pathToLog,
             cache: false,
-            success: function(html) {
+            success: function (html) {
                 $("#MessageArea").html(html);
             }
         });
     }
+
+    // Logs out
+    $("#logout").click(function () {
+        $.post("../Home/ActivateLogout.php");
+
+        for (var i = 0; i < 5; i++)
+            location.reload(true);
+
+        return false;
+    });
 </script>
 </html>

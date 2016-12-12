@@ -3,22 +3,20 @@
 class Login {
     /** @var DatabaseConnection */
     private $databaseConnection = null;
-    /** @var InputChecker */
-    private $inputChecker = null;
     /** @var null */
+    private $loggedUserId = null;
     private $latestError = null;
 
-    public function __construct($databaseConnection, $inputChecker) {
+    public function __construct($databaseConnection) {
         $this->databaseConnection = $databaseConnection;
-        $this->inputChecker = $inputChecker;
     }
 
     public function login($email, $password) {
         $this->databaseConnection->initiateConnection();
         $connection = $this->databaseConnection->getConnection();
 
-        $email = $this->inputChecker->getProtectedInput($email);
-        $password = $this->inputChecker->getProtectedInput($password);
+        $email = $this->getProtectedInput($email);
+        $password = $this->getProtectedInput($password);
 
         $sql_query   = "SELECT * FROM USERS WHERE EMAIL = '" . $email . "'";
         $sql_result  = mysqli_query($connection, $sql_query);
@@ -26,6 +24,18 @@ class Login {
 
         $this->checkLogin($email, $password, $num_of_rows, $sql_result);
         $this->databaseConnection->killConnection();
+    }
+
+    /** ================ Protection against SQL injection ================ */
+    private function getProtectedInput($input, $formUse = true) {
+        $input = preg_replace("/(from|select|insert|delete|where|drop table|show tables|,|'|#|\*|--|\\\\)/i", "", $input);
+        $input = trim($input);
+        $input = strip_tags($input);
+
+        if (!$formUse || !get_magic_quotes_gpc())
+            $input = addslashes($input);
+
+        return $input;
     }
 
     private function checkLogin($email, $password, $num_of_rows, $sql_result) {
@@ -46,11 +56,15 @@ class Login {
         }
     }
 
-    public function getLatestError() {
-        return $this->latestError;
+    private function processLogin($row) {
+        $this->loggedUserId = $row['ID'];
     }
 
-    private function processLogin($row) {
-        echo "Login succeeded!";
+    public function getLoggedUserId() {
+        return $this->loggedUserId;
+    }
+
+    public function getLatestError() {
+        return $this->latestError;
     }
 }

@@ -40,6 +40,11 @@ a {
     padding-top: 10px;
 }
 
+.jumbotron .child {
+    background-color: rgba(52, 73, 94, 0.7);
+    margin: 0px;
+}
+
 .jumbotron h4 {
     margin-top: 0px;
     margin-bottom: 10px;

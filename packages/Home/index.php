@@ -1,3 +1,9 @@
+<?php
+session_start();
+?>
+
+<!DOCTYPE html>
+<html>
 <head>
     <title> Home | credu.me </title>
 
@@ -14,6 +20,7 @@
     <link href="../../includes/Bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <link href="../../includes/Font-Awesome/css/font-awesome.min.css" rel="stylesheet">
     <link href="../../includes/css/Home.css" rel="stylesheet">
+    <link href="../../includes/css/Navbar.css" rel="stylesheet">
 
     <!-- ========== Javascript Part ========== !-->
     <script src="../../includes/Bootstrap/js/bootstrap.js"></script>
@@ -21,26 +28,18 @@
 </head>
 
 <body>
-<nav class="navbar navbar-default navbar-inverse">
-    <div class="container-fluid">
+<nav class="navbar navbar-inverse">
+    <div class="container-fluid text-center">
         <div class="navbar-header">
-            <a class="navbar-brand" href="./">credu.me</a>
+            <a class="navbar-brand" href="../Home/"><h3>cred<span>u.me</span></h3></a>
         </div>
-        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-            <ul class="nav navbar-nav">
-                <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
-                       aria-expanded="false">Developers <span class="caret"></span></a>
-                    <ul class="dropdown-menu">
-                        <li><a href="https://github.com/barisceylan">Barış Ceylan</a></li>
-                        <li><a href="https://github.com/erdenbatuhan">Batuhan Erden</a></li>
-                        <li><a href="https://github.com/ekremcet">Ekrem Çetinkaya</a></li>
-                        <li><a href="https://github.com/ErkAydogan">Sayım Erk Aydoğan</a></li>
-                        <li><a href="https://github.com/obukte">Ömer Said Bükte</a></li>
-                    </ul>
-                </li>
-            </ul>
-        </div>
+        <?php if (isset($_SESSION['loggedUserId']) != null) { ?>
+            <form class="navbar-form navbar-right" role="search">
+                <a type="submit" class="btn btn-success" href="../Profile/"><span class="fa fa-user"></span> Profile</a>
+                <button id="logout" type="submit" class="btn btn-success"><span class="fa fa-sign-out"></span> Log Out
+                </button>
+            </form>
+        <?php } ?>
     </div>
 </nav>
 
@@ -58,21 +57,56 @@
             <h1>Expand Your Network.</h1>
         </div>
         <div class="col-xs-2">
-            <div class="jumbotron text-center">
-                <form>
-                    <div class="form-input">
-                        <h3 style="color: white">LOG IN</h3>
-                        <br>
-                        <input type="text" class="form-control" placeholder="Email"/>
-                        <br>
-                        <input type="text" class="form-control" placeholder="Password"/>
-                        <br>
-                        <button type="submit" class="btn btn-default">Sign In</button>
-                    </div>
-                </form>
-            </div>
+            <?php if (isset($_SESSION['loggedUserId']) != null) { ?>
+                <!-- Do nothing.. -->
+            <?php } else { ?>
+                <div class="jumbotron text-center">
+                    <form>
+                        <div class="form-input">
+                            <h3> LOG IN </h3>
+                            <br>
+                            <input id="email" type="text" class="form-control" placeholder="Email"/>
+                            <br>
+                            <input id="password" type="text" class="form-control" placeholder="Password"/>
+                            <br>
+                            <button id="sign" type="submit" class="btn btn-success"><span class="fa fa-sign-in"></span>
+                                Sign In
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            <?php } ?>
         </div>
     </div>
 </div>
 </body>
+<script>
+    // Handles the click
+    $("#sign").click(function () {
+        if ($("#email").val().length > 0 && $("#password").val().length > 0) {
+            $.post("ActivateLogin.php", {
+                email: $("#email").val(),
+                password: $("#password").val()
+            });
+        }
 
+        $("#email").val("");
+        $("#password").val("");
+
+        for (var i = 0; i < 5; i++)
+            location.reload(true);
+
+        return false;
+    });
+
+    // Logs out
+    $("#logout").click(function () {
+        $.post("ActivateLogout.php");
+
+        for (var i = 0; i < 5; i++)
+            location.reload(true);
+
+        return false;
+    });
+</script>
+</html>
