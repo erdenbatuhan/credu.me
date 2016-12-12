@@ -82,6 +82,14 @@ class User {
              '<h5><i class="fa fa-phone"></i> ' . $this->phoneNumber . '</h5>';
     }
 
+    public function isFriendOf($userId) {
+        for ($i = 0; $i < count($this->friends); $i++)
+            if ($this->friends[$i]->getUserId() == $userId)
+                return true;
+
+        return false;
+    }
+
     public function getMessageFrom($userId) {
         $this->databaseConnection->initiateConnection();
         $connection = $this->databaseConnection->getConnection();
@@ -107,6 +115,10 @@ class User {
 
     public function joinChatRoom($chatRoomId) {
 
+    }
+
+    public function getUserId() {
+        return $this->userId;
     }
 
     public function getFullName() {

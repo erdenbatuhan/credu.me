@@ -31,8 +31,8 @@ include "ChatArea.php";
     <script src="../../includes/js/jquery-3.1.1.min.js"></script>
 </head>
 <?php
-$chatRoomName = $_POST['chatRoomName'];
-$isPrivate = $_POST['isPrivate'];
+$isPrivate = $_GET['isPrivate'];
+$chatRoomName = $_GET['chatRoomName'];
 $pathToFolder = "./logs/" . $chatRoomName;
 $pathToLog = $pathToFolder . "/log.html";
 
@@ -62,6 +62,14 @@ if (!$chatRoomName || isset($_SESSION['loggedUserId']) == null) {
 
         $user1 = new User($databaseConnection, $userId);
         $user2 = new User($databaseConnection, $chatRoomName);
+
+        $user1->fetchFriends();
+
+        if (!$user1->isFriendOf($chatRoomName)) {
+            echo '<script type="text/javascript">',
+            'window.location.href = "../Home/";',
+            '</script>';
+        }
         ?>
         <div id="Private">
             <div class="text-center">
@@ -126,10 +134,14 @@ if (!$chatRoomName || isset($_SESSION['loggedUserId']) == null) {
                             $databaseConnection = new DatabaseConnection();
                             $chatArea = new ChatArea($databaseConnection, $chatRoomName);
 
-                            $chatArea->fetchRegisteredUsers();
+                            if (!$chatArea->isCourseTakenBy($userId)) {
+                                echo '<script type="text/javascript">',
+                                'window.location.href = "../Home/";',
+                                '</script>';
+                            }
 
                             for ($i = 0; $i < count($chatArea->getRegisteredUsers()); $i++) {
-                                echo '<h5>' . $chatArea->getRegisteredUsers()[$i] . '</h5>';
+                                echo '<h5>' . $chatArea->getRegisteredUsers()[$i]->getFullName() . '</h5>';
                             }
                             ?>
                         </div>
@@ -167,10 +179,10 @@ if (!$chatRoomName || isset($_SESSION['loggedUserId']) == null) {
     </body>
 <?php } ?>
 <script>
-    var pathToLog = "<?php echo $pathToLog; ?>";
-    var chatRoomName = "<?php echo $chatRoomName; ?>";
     var isPrivate = "<?php echo $isPrivate; ?>";
-    var user = "<?php echo $userId; ?>";
+    var chatRoomName = "<?php echo $chatRoomName; ?>";
+    var pathToLog = "<?php echo $pathToLog; ?>";
+    var userId = "<?php echo $userId; ?>";
 
     setInterval(getMessagesSent, 500);
 
@@ -183,7 +195,7 @@ if (!$chatRoomName || isset($_SESSION['loggedUserId']) == null) {
             $.post("PostMessage.php", {
                 isPrivate: isPrivate,
                 course_id: chatRoomName,
-                sender_id: user,
+                sender_id: userId,
                 message: $("#message").val()
             });
         }

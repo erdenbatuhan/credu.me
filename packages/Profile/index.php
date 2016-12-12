@@ -35,7 +35,16 @@ include "../User.php";
     '</script>';
 } else {
     $databaseConnection = new DatabaseConnection();
-    $user = new User($databaseConnection, $_SESSION['loggedUserId']);
+    $userIdFromGet = $_GET['userId'];
+    $user = null;
+    $isOtherUser = false;
+
+    if (!$userIdFromGet || $userIdFromGet == $_SESSION['loggedUserId']) {
+        $user = new User($databaseConnection, $_SESSION['loggedUserId']);
+    } else {
+        $user = new User($databaseConnection, $userIdFromGet);
+        $isOtherUser = true;
+    }
 
     $user->fetchFriends();
     $user->fetchCoursesTaken();
@@ -54,6 +63,7 @@ include "../User.php";
             </form>
             <form class="navbar-form navbar-right" role="search">
                 <a type="submit" class="btn btn-success" href="../Home/"><span class="fa fa-home"></span> Home</a>
+                <a type="submit" class="btn btn-success" href="./"><span class="fa fa-user"></span> Profile</a>
                 <button id="logout" type="submit" class="btn btn-success"><span class="fa fa-sign-out"></span> Log Out
                 </button>
             </form>
@@ -70,7 +80,14 @@ include "../User.php";
                     <div class="jumbotron child">
                         <?php
                         $user->printUserInfo();
-                        ?>
+
+                        if ($isOtherUser) {
+                            if ($user->isFriendOf($_SESSION['loggedUserId'])) { ?>
+                                <a class="link" onclick="sendPrivateMessageTo('<?php echo $user->getUserId(); ?>')"><i class="fa fa-share" aria-hidden="true"></i> Send Private Message </a>
+                            <?php } else { ?>
+                                <a class="link"><i class="fa fa-plus" aria-hidden="true"></i> Add Friend </a><br>
+                            <?php }
+                        } ?>
                     </div>
                 </div>
             </div>
@@ -85,18 +102,18 @@ include "../User.php";
             <div class="col-xs-8 col-md-4">
                 <div class="jumbotron">
                     <div class="jumbotron child">
-                        <h4>Courses Taken [<?php echo count($user->getCoursesTaken()) ?>]</h4>
+                        <h4>Courses Taken [<?php echo count($user->getCoursesTaken()); ?>]</h4>
                         <div id="scrollbox">
                             <div class="list-group">
                                 <?php
                                 /** ----- PRINTING COURSES TAKEN ----- */
                                 for ($i = 0; $i < count($user->getCoursesTaken()); $i++) {
                                     if ($i == count($user->getCoursesTaken()) - 1) { ?>
-                                        <a href="#" id="last_a"
-                                           class="list-group-item list-group-item"><?php echo $user->getCoursesTaken()[$i] ?></a>
+                                        <a class="list-group-item list-group-item last"
+                                           onclick="joinChatRoom('<?php echo $user->getCoursesTaken()[$i]; ?>');"><?php echo $user->getCoursesTaken()[$i]; ?></a>
                                     <?php } else { ?>
-                                        <a href="#"
-                                           class="list-group-item list-group-item"><?php echo $user->getCoursesTaken()[$i] ?></a>
+                                        <a class="list-group-item list-group-item"
+                                           onclick="joinChatRoom('<?php echo $user->getCoursesTaken()[$i]; ?>');"><?php echo $user->getCoursesTaken()[$i]; ?></a>
                                     <?php }
                                 } ?>
                             </div>
@@ -113,18 +130,19 @@ include "../User.php";
             <div class="col-xs-8 col-md-4">
                 <div class="jumbotron">
                     <div class="jumbotron child">
-                        <h4>Friends [<?php echo count($user->getFriends()) ?>]</h4>
+                        <h4>Friends [<?php echo count($user->getFriends()); ?>]</h4>
                         <div id="scrollbox">
                             <div class="list-group">
                                 <?php
                                 /** ----- PRINTING FRIENDS ----- */
                                 for ($i = 0; $i < count($user->getFriends()); $i++) {
                                     if ($i == count($user->getFriends()) - 1) { ?>
-                                        <a href="#" id="last_a"
-                                           class="list-group-item list-group-item"><?php echo $user->getFriends()[$i]->getFullName() ?></a>
+                                        <a class="list-group-item list-group-item last"
+                                           onclick="seeProfileOf('<?php echo $user->getFriends()[$i]->getUserId(); ?>')"><?php echo $user->getFriends()[$i]->getFullName(); ?></a>
                                     <?php } else { ?>
-                                        <a href="#"
-                                           class="list-group-item list-group-item"><?php echo $user->getFriends()[$i]->getFullName() ?></a>
+                                        <a id="UserLink" href="#"
+                                           class="list-group-item list-group-item"
+                                           onclick="seeProfileOf('<?php echo $user->getFriends()[$i]->getUserId(); ?>')"><?php echo $user->getFriends()[$i]->getFullName(); ?></a>
                                     <?php }
                                 } ?>
                             </div>
@@ -145,5 +163,21 @@ include "../User.php";
 
         return false;
     });
+
+    $("#ChatRoomLink").click(function () {
+        alert($("#ChatRoomLink").innerText);
+    });
+
+    function sendPrivateMessageTo(userId) {
+        window.location.href = "../Chat/?isPrivate=1&chatRoomName=" + userId;
+    }
+
+    function joinChatRoom(chatRoomName) {
+        window.location.href = "../Chat/?chatRoomName=" + chatRoomName;
+    }
+
+    function seeProfileOf(userId) {
+        window.location.href = "./?userId=" + userId;
+    }
 </script>
 </html>

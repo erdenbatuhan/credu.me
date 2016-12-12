@@ -24,9 +24,19 @@ h5 {
 
 a {
     color: white;
+    cursor: pointer;
 }
 
-#last_a {
+a:hover {
+   color: white !important;
+}
+
+.link {
+    color: yellowgreen !important;
+}
+
+
+.last {
     margin-bottom: -20px !important;
 }
 

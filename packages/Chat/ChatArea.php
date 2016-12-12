@@ -16,20 +16,22 @@ class ChatArea {
     public function __construct($databaseConnection, $course_id) {
         $this->databaseConnection = $databaseConnection;
         $this->course_id = $course_id;
+
+        $this->fetchRegisteredUsers();
     }
 
-    public function fetchRegisteredUsers() {
+    private function fetchRegisteredUsers() {
         $this->registeredUsers = array();
 
         $this->databaseConnection->initiateConnection();
         $connection = $this->databaseConnection->getConnection();
 
-        $sql_query = "SELECT FIRST_NAME, LAST_NAME FROM CoursesTaken JOIN Users 
+        $sql_query = "SELECT Users.ID FROM CoursesTaken JOIN Users 
                                       ON CoursesTaken.USER_ID = Users.ID WHERE COURSE_ID = '" . $this->course_id . "'";
         $sql_result = mysqli_query($connection, $sql_query);
 
         while ($row = mysqli_fetch_assoc($sql_result))
-            $this->registeredUsers[] = $row['FIRST_NAME'] . " " . $row['LAST_NAME'];
+            $this->registeredUsers[] = new User($this->databaseConnection, $row['ID']);
 
         $this->databaseConnection->killConnection();
     }
@@ -86,6 +88,14 @@ class ChatArea {
             return floor($timeDiffInDays) . ' days ago..';
         else
             return 'more than a week ago..';
+    }
+
+    public function isCourseTakenBy($userId) {
+        for ($i = 0; $i < count($this->getRegisteredUsers()); $i++)
+            if ($this->getRegisteredUsers()[$i]->getUserId() == $userId)
+                return true;
+
+        return false;
     }
 
     public function getRegisteredUsers() {
