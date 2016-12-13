@@ -26,8 +26,8 @@ class ChatArea {
         $this->databaseConnection->initiateConnection();
         $connection = $this->databaseConnection->getConnection();
 
-        $sql_query = "SELECT Users.ID FROM CoursesTaken JOIN Users 
-                                      ON CoursesTaken.USER_ID = Users.ID WHERE COURSE_ID = '" . $this->course_id . "'";
+        $sql_query = "SELECT USERS.ID FROM COURSESTAKEN JOIN USERS 
+                                      ON COURSESTAKEN.USER_ID = USERS.ID WHERE COURSE_ID = '" . $this->course_id . "'";
         $sql_result = mysqli_query($connection, $sql_query);
 
         while ($row = mysqli_fetch_assoc($sql_result))

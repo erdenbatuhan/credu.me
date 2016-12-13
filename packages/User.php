@@ -42,9 +42,9 @@ class User {
         $this->databaseConnection->initiateConnection();
         $connection = $this->databaseConnection->getConnection();
 
-        $sql_query = "SELECT * FROM Users JOIN Universities 
-                      ON Users.UNIVERSITY_ID = Universities.ID
-                      WHERE Users.ID = '" . $this->userId . "'";
+        $sql_query = "SELECT * FROM USERS JOIN UNIVERSITIES 
+                      ON USERS.UNIVERSITY_ID = UNIVERSITIES.ID
+                      WHERE USERS.ID = '" . $this->userId . "'";
         $sql_result = mysqli_query($connection, $sql_query);
 
         while ($row = mysqli_fetch_assoc($sql_result)) {
@@ -111,7 +111,7 @@ class User {
         $this->databaseConnection->initiateConnection();
         $connection = $this->databaseConnection->getConnection();
 
-        $sql_query = "SELECT MESSAGE FROM Friendship 
+        $sql_query = "SELECT MESSAGE FROM FRIENDSHIP 
                       WHERE FIRST_USER_ID = '" . $userId . "' AND SECOND_USER_ID = '" . $this->userId . "'";
         $sql_result = mysqli_query($connection, $sql_query);
 
