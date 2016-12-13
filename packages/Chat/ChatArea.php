@@ -1,6 +1,5 @@
 <?php
 
-const TIME_DIFF = 2; // Time difference in hours
 const MAX_AMOUNT_OF_MESSAGES = 100; // Maximum amount of messages to be displayed
 
 class ChatArea {
@@ -63,7 +62,7 @@ class ChatArea {
 
     public function getTimeDiff($date) {
         $messageTime = strtotime($date);
-        $currentTime = strtotime(date('Y-m-d H:i:s', strtotime('+' . TIME_DIFF . 'hour')));
+        $currentTime = strtotime(date('Y-m-d H:i:s'));
 
         $timeDiffInSeconds = $currentTime - $messageTime;
         $timeDiffInMinutes = $timeDiffInSeconds / 60;
