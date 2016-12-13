@@ -3,7 +3,7 @@
 class DatabaseConnection {
 
     private $connection = null;
-    private $hostName = "localhost:8888";
+    private $hostName = "localhost";
     private $hostUser = "root";
     private $hostPassword = "orbor&zlfdy";
     private $databaseName = "credu.me";
