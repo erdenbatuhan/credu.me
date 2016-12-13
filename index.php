@@ -17,8 +17,6 @@
 
     $sql_query = "SELECT * FROM USERS";
     $sql_result = mysqli_query($connection, $sql_query);
-    $c = mysqli_num_rows($sql_result);
-    echo $c;
 
     while ($row = mysqli_fetch_assoc($sql_result)) {
         echo $row["FIRST_NAME"] . " " . $row["LAST_NAME"] . "<br>";
