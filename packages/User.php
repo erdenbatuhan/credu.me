@@ -150,6 +150,18 @@ class User {
         $this->databaseConnection->killConnection();
     }
 
+    public function setPhoneNumber($newPhoneNumber) {
+        if (!$newPhoneNumber) {
+
+        }
+    }
+
+    public function setPassword($newPassword) {
+        if (!$newPassword) {
+            
+        }
+    }
+
     public function getUserId() {
         return $this->userId;
     }

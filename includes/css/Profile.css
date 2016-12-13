@@ -22,6 +22,10 @@ h5 {
     color: white;
 }
 
+p {
+    color: white;
+}
+
 a {
     color: white;
     cursor: pointer;
@@ -31,10 +35,13 @@ a:hover {
    color: white !important;
 }
 
+.green {
+    color: greenyellow !important;
+}
+
 .link {
     color: yellowgreen !important;
 }
-
 
 .last {
     margin-bottom: -20px !important;

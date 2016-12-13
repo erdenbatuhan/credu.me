@@ -29,8 +29,7 @@ include "../User.php";
     <script src="../../includes/Bootstrap/js/bootstrap.js"></script>
     <script src="../../includes/js/jquery-3.1.1.min.js"></script>
 </head>
-<?php
-if (isset($_SESSION['loggedUserId']) == null) {
+<?php if (isset($_SESSION['loggedUserId']) == null) {
     echo '<script type="text/javascript">',
     'window.location.href = "../Home/";',
     '</script>';
@@ -137,7 +136,11 @@ if (isset($_SESSION['loggedUserId']) == null) {
                                            href="./?isAddingFriend=1&userId=<?php echo $user->getUserId(); ?>"><i
                                                 class="fa fa-plus" aria-hidden="true"></i> Add as Friend </a><br>
                                     <?php }
-                                } ?>
+                                } else { ?>
+                                    <a class="link" href="./EditProfilePage.php"><i class="fa fa-pencil-square-o"
+                                                                                    aria-hidden="true"></i> Edit Profile
+                                    </a><br>
+                                <?php } ?>
                             </div>
                         </div>
                     </div>
@@ -152,7 +155,7 @@ if (isset($_SESSION['loggedUserId']) == null) {
                     <div class="col-xs-8 col-md-4">
                         <div class="jumbotron">
                             <div class="jumbotron child">
-                                <h4>Courses Taken [<?php echo count($user->getCoursesTaken()); ?>]</h4>
+                                <h4> Courses Taken [<?php echo count($user->getCoursesTaken()); ?>]</h4>
                                 <div id="scrollbox">
                                     <div class="list-group">
                                         <?php

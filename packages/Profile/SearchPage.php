@@ -8,7 +8,7 @@ include "../User.php";
 <!DOCTYPE html>
 <html>
 <head>
-    <title> Search Page | credu.me </title>
+    <title> Search | credu.me </title>
 
     <!-- ========== META Part ========== !-->
     <meta charset="utf-8">

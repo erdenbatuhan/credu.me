@@ -73,7 +73,7 @@ if (!$chatRoomName || isset($_SESSION['loggedUserId']) == null) {
         ?>
         <div id="Private">
             <div class="text-center">
-                <h3> Private Chat Room </h3>
+                <h3><i class="fa fa-lock" aria-hidden="true"></i> Private Chat Room </h3>
                 <hr>
             </div>
             <br>
@@ -120,7 +120,7 @@ if (!$chatRoomName || isset($_SESSION['loggedUserId']) == null) {
     <?php } else { ?>
         <div id="NoPrivate">
             <div class="text-center">
-                <h3>Chat Room: <?php echo $chatRoomName ?></h3>
+                <h3><i class="fa fa-users" aria-hidden="true"></i> Chat Room: <?php echo $chatRoomName ?></h3>
                 <hr>
             </div>
             <br>
