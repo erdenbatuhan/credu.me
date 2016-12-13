@@ -36,7 +36,7 @@ include "../User.php";
 } else {
     $isChanging = $_GET['isChanging'];
     $newPhoneNumber = $_GET['newPhoneNumber'];
-    $newPassword = $_GET['newEmail'];
+    $newPassword = $_GET['newPassword'];
 
     $canProceed = true;
 
@@ -45,7 +45,7 @@ include "../User.php";
             $canProceed = false;
 
             echo '<script type="text/javascript">',
-            'window.location.href = "./EditProfilePage.php";',
+            'window.location.href = "../Home/";',
             '</script>';
         }
     }
@@ -77,19 +77,19 @@ include "../User.php";
                 <div class="col-xs-8 col-md-4">
                     <div class="jumbotron">
                         <div class="jumbotron child">
-                            <form>
-                                <div class="form-input">
-                                    <?php if ($isChanging) {
-                                        $databaseConnection = new DatabaseConnection();
-                                        $user = new User($databaseConnection, $_SESSION['loggedUserId']);
+                            <?php if ($isChanging) {
+                                $databaseConnection = new DatabaseConnection();
+                                $user = new User($databaseConnection, $_SESSION['loggedUserId']);
 
-                                        $user->setPhoneNumber($newPhoneNumber);
-                                        $user->setPassword($newPassword);
+                                $user->setPhoneNumber($newPhoneNumber);
+                                $user->setPassword($newPassword);
 
-                                        echo '<script type="text/javascript">',
-                                        'window.location.href = "./;"',
-                                        '</script>';
-                                    } else { ?>
+                                echo '<script type="text/javascript">',
+                                'window.location.href = "./";',
+                                '</script>';
+                            } else { ?>
+                                <form>
+                                    <div class="form-input">
                                         <h3 class="green"> EDIT YOUR PROFILE </h3>
                                         <p> Leave empty if you don't want it to change! </p>
                                         <input id="NewPhoneNumber" type="text" class="form-control"
@@ -98,13 +98,13 @@ include "../User.php";
                                         <input id="NewPassword" type="text" class="form-control"
                                                placeholder="Password"/>
                                         <br>
-                                        <button id="Edit" type="submit" class="btn btn-success"><span
+                                        <button id="EditsButton" type="submit" class="btn btn-success"><span
                                                 class="fa fa-pencil-square-o"></span>
                                             Edit
                                         </button>
-                                    <?php } ?>
-                                </div>
-                            </form>
+                                    </div>
+                                </form>
+                            <?php } ?>
                         </div>
                     </div>
                 </div>
@@ -117,6 +117,17 @@ include "../User.php";
     <?php }
 } ?>
 <script>
+    $("#EditsButton").click(function () {
+        if ($("#NewPhoneNumber").val().length > 0 || $("#NewPassword").val().length > 0) {
+            var newPhoneNumber = $("#NewPhoneNumber").val();
+            var newPassword = $("#NewPassword").val();
+
+            window.location.href = "./EditProfilePage.php?isChanging=1&newPhoneNumber=" + newPhoneNumber + "&newPassword=" + newPassword;
+        }
+
+        return false;
+    });
+
     $("#logout").click(function () {
         window.location.href = "../Home/ActionPage.php?isLogin=0";
 

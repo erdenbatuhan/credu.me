@@ -151,27 +151,31 @@ class User {
     }
 
     public function setPhoneNumber($newPhoneNumber) {
+        if (!$newPhoneNumber)
+            return;
+
         $this->databaseConnection->initiateConnection();
         $connection = $this->databaseConnection->getConnection();
 
-        if (!$newPhoneNumber) {
-            $sql_query = "UPDATE USERS SET PHONE_NO = '" . $newPhoneNumber . "'WHERE ID = '" . $this->userId . "'";
-            $sql_result = mysqli_query($connection, $sql_query);
-            mysqli_fetch_assoc($sql_result);
-        }
+        $sql_query = "UPDATE USERS SET PHONE_NO = '" . $newPhoneNumber . "' WHERE ID = '" . $this->userId . "'";
+        $sql_result = mysqli_query($connection, $sql_query);
+
+        mysqli_fetch_assoc($sql_result);
 
         $this->databaseConnection->killConnection();
     }
 
     public function setPassword($newPassword) {
+        if (!$newPassword)
+            return;
+
         $this->databaseConnection->initiateConnection();
         $connection = $this->databaseConnection->getConnection();
 
-        if (!$newPassword) {
-            $sql_query = "UPDATE USERS SET PASSWORD = '".$newPassword."'WHERE ID = '".$this->userId."'";
-            $sql_result = mysqli_query($connection, $sql_query);
-            mysqli_fetch_assoc($sql_result);
-        }
+        $sql_query = "UPDATE USERS SET PASSWORD = '" . $newPassword . "' WHERE ID = '" . $this->userId . "'";
+        $sql_result = mysqli_query($connection, $sql_query);
+
+        mysqli_fetch_assoc($sql_result);
 
         $this->databaseConnection->killConnection();
     }
