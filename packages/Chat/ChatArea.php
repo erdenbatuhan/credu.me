@@ -1,6 +1,6 @@
 <?php
 
-const TIME_DIFF = 1; // Time difference in hours
+const TIME_DIFF = 2; // Time difference in hours
 const MAX_AMOUNT_OF_MESSAGES = 100; // Maximum amount of messages to be displayed
 
 class ChatArea {
