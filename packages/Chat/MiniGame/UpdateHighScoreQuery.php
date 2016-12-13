@@ -6,7 +6,8 @@
     $databaseConnection->initiateConnection();
     $connection = $databaseConnection->getConnection();
 
-    $profileId = "S001146";  /* TODO This will be changed */
+    session_start();
+    $profileId = $_SESSION['loggedUserId'];
     $bestScore = $_POST['bestScore'];
 
     $highScoreUpdateQuery = "UPDATE USERS SET HIGH_SCORE ='".$bestScore."'WHERE ID = '".$profileId."'";

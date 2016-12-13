@@ -6,7 +6,8 @@
     $databaseConnection->initiateConnection();
     $connection = $databaseConnection->getConnection();
 
-    $profileId = "S001146"; /* TODO This will be changed */
+    session_start();
+    $profileId = $_SESSION['loggedUserId'];
     $highScore;
 
     $highScoreQuery = "SELECT HIGH_SCORE FROM USERS WHERE ID = '".$profileId."'";
