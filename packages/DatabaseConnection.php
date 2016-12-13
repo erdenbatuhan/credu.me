@@ -5,8 +5,8 @@ class DatabaseConnection {
     private $connection = null;
     private $hostName = "localhost";
     private $hostUser = "root";
-    private $hostPassword = "admin";
-    private $databaseName = "credume";
+    private $hostPassword = "orbor&zlfdy";
+    private $databaseName = "credu.me";
 
     public function __construct() {
 
