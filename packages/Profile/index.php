@@ -29,135 +29,189 @@ include "../User.php";
     <script src="../../includes/Bootstrap/js/bootstrap.js"></script>
     <script src="../../includes/js/jquery-3.1.1.min.js"></script>
 </head>
-<?php if (isset($_SESSION['loggedUserId']) == null) {
+<?php
+if (isset($_SESSION['loggedUserId']) == null) {
     echo '<script type="text/javascript">',
     'window.location.href = "../Home/";',
     '</script>';
 } else {
     $databaseConnection = new DatabaseConnection();
     $userIdFromGet = $_GET['userId'];
+    $isAddingFriend = $_GET['isAddingFriend'];
+
     $user = null;
     $isOtherUser = false;
+    $canProceed = true;
 
-    if (!$userIdFromGet || $userIdFromGet == $_SESSION['loggedUserId']) {
-        $user = new User($databaseConnection, $_SESSION['loggedUserId']);
-    } else {
-        $user = new User($databaseConnection, $userIdFromGet);
-        $isOtherUser = true;
+    if ($userIdFromGet) {
+        $tempUser = new User($databaseConnection, $userIdFromGet);
+
+        if (!$tempUser->doesUserExist()) {
+            $canProceed = false;
+
+            echo '<script type="text/javascript">',
+            'window.location.href = "./";',
+            '</script>';
+        }
     }
 
-    $user->fetchFriends();
-    $user->fetchCoursesTaken();
-    ?>
-    <body>
-    <nav class="navbar navbar-inverse">
-        <div class="container-fluid">
-            <div class="navbar-header">
-                <a class="navbar-brand" href="../Home/"><h3>cred<span>u.me</span></h3></a>
-            </div>
-            <form class="navbar-form navbar-left" role="search">
-                <div class="form-group">
-                    <input type="text" class="form-control" placeholder="John Smith">
-                </div>
-                <button type="submit" class="btn btn-success"><span class="fa fa-search"></span> Search</button>
-            </form>
-            <form class="navbar-form navbar-right" role="search">
-                <a type="submit" class="btn btn-success" href="../Home/"><span class="fa fa-home"></span> Home</a>
-                <a type="submit" class="btn btn-success" href="./"><span class="fa fa-user"></span> Profile</a>
-                <button id="logout" type="submit" class="btn btn-success"><span class="fa fa-sign-out"></span> Log Out
-                </button>
-            </form>
-        </div>
-    </nav>
+    if ($canProceed) {
+        if ((!$userIdFromGet || $userIdFromGet == $_SESSION['loggedUserId']) && $isAddingFriend) {
+            echo '<script type="text/javascript">',
+            'window.location.href = "./";',
+            '</script>';
+        } else {
+            if (!$userIdFromGet || $userIdFromGet == $_SESSION['loggedUserId']) {
+                $user = new User($databaseConnection, $_SESSION['loggedUserId']);
+            } else {
+                $user = new User($databaseConnection, $userIdFromGet);
+                $isOtherUser = true;
+            }
 
-    <div class="container">
-        <div class="row">
-            <div class="col-xs-2 col-md-4">
-                <!-- EMPTY -->
-            </div>
-            <div class="col-xs-8 col-md-4">
-                <div class="jumbotron">
-                    <div class="jumbotron child">
-                        <?php
-                        $user->printUserInfo();
-
-                        if ($isOtherUser) {
-                            if ($user->isFriendOf($_SESSION['loggedUserId'])) { ?>
-                                <a class="link" onclick="sendPrivateMessageTo('<?php echo $user->getUserId(); ?>')"><i class="fa fa-share" aria-hidden="true"></i> Send Private Message </a>
-                            <?php } else { ?>
-                                <a class="link"><i class="fa fa-plus" aria-hidden="true"></i> Add Friend </a><br>
-                            <?php }
-                        } ?>
+            $user->fetchFriends();
+            $user->fetchCoursesTaken();
+            ?>
+            <body>
+            <nav class="navbar navbar-inverse">
+                <div class="container-fluid">
+                    <div class="navbar-header">
+                        <a class="navbar-brand" href="../Home/"><h3>cred<span>u.me</span></h3></a>
                     </div>
+                    <form class="navbar-form navbar-left" role="search">
+                        <div class="form-group">
+                            <input id="SearchedUser" type="text" class="form-control" placeholder="John Smith">
+                        </div>
+                        <button id="SearchUser" type="submit" class="btn btn-success"><span class="fa fa-search"></span>
+                            Search
+                        </button>
+                    </form>
+                    <form class="navbar-form navbar-right" role="search">
+                        <a type="submit" class="btn btn-success" href="../Home/"><span class="fa fa-home"></span>
+                            Home</a>
+                        <a type="submit" class="btn btn-success" href="./"><span class="fa fa-user"></span> Profile</a>
+                        <button id="logout" type="submit" class="btn btn-success"><span class="fa fa-sign-out"></span>
+                            Log
+                            Out
+                        </button>
+                    </form>
                 </div>
-            </div>
-            <div class="col-xs-2 col-md-4">
-                <!-- EMPTY -->
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-xs-2 col-md-1">
-                <!-- EMPTY -->
-            </div>
-            <div class="col-xs-8 col-md-4">
-                <div class="jumbotron">
-                    <div class="jumbotron child">
-                        <h4>Courses Taken [<?php echo count($user->getCoursesTaken()); ?>]</h4>
-                        <div id="scrollbox">
-                            <div class="list-group">
+            </nav>
+
+            <div class="container">
+                <div class="row">
+                    <div class="col-xs-2 col-md-4">
+                        <!-- EMPTY -->
+                    </div>
+                    <div class="col-xs-8 col-md-4">
+                        <div class="jumbotron">
+                            <div class="jumbotron child">
                                 <?php
-                                /** ----- PRINTING COURSES TAKEN ----- */
-                                for ($i = 0; $i < count($user->getCoursesTaken()); $i++) {
-                                    if ($i == count($user->getCoursesTaken()) - 1) { ?>
-                                        <a class="list-group-item list-group-item last"
-                                           onclick="joinChatRoom('<?php echo $user->getCoursesTaken()[$i]; ?>');"><?php echo $user->getCoursesTaken()[$i]; ?></a>
+                                $user->printUserInfo();
+                                $loggedUser = new User($databaseConnection, $_SESSION['loggedUserId']);
+
+                                if ($isAddingFriend) {
+                                    $loggedUser->addFriend($user->getUserId());
+
+                                    echo '<script type="text/javascript">',
+                                        'window.location.href = "./?userId=' . $user->getUserId() . '";',
+                                    '</script>';
+                                } else if ($isOtherUser) {
+                                    if ($user->isFriendOf($loggedUser->getUserId())) { ?>
+                                        <a class="link"
+                                           onclick="sendPrivateMessageTo('<?php echo $user->getUserId(); ?>');"><i
+                                                class="fa fa-share" aria-hidden="true"></i> Send Private Message </a>
                                     <?php } else { ?>
-                                        <a class="list-group-item list-group-item"
-                                           onclick="joinChatRoom('<?php echo $user->getCoursesTaken()[$i]; ?>');"><?php echo $user->getCoursesTaken()[$i]; ?></a>
+                                        <a class="link"
+                                           href="./?isAddingFriend=1&userId=<?php echo $user->getUserId(); ?>"><i
+                                                class="fa fa-plus" aria-hidden="true"></i> Add Friend </a><br>
                                     <?php }
                                 } ?>
                             </div>
                         </div>
                     </div>
+                    <div class="col-xs-2 col-md-4">
+                        <!-- EMPTY -->
+                    </div>
                 </div>
-            </div>
-            <div class="col-xs-12 col-md-1">
-                <!-- EMPTY -->
-            </div>
-            <div class="col-xs-2 col-md-1">
-                <!-- EMPTY -->
-            </div>
-            <div class="col-xs-8 col-md-4">
-                <div class="jumbotron">
-                    <div class="jumbotron child">
-                        <h4>Friends [<?php echo count($user->getFriends()); ?>]</h4>
-                        <div id="scrollbox">
-                            <div class="list-group">
-                                <?php
-                                /** ----- PRINTING FRIENDS ----- */
-                                for ($i = 0; $i < count($user->getFriends()); $i++) {
-                                    if ($i == count($user->getFriends()) - 1) { ?>
-                                        <a class="list-group-item list-group-item last"
-                                           onclick="seeProfileOf('<?php echo $user->getFriends()[$i]->getUserId(); ?>')"><?php echo $user->getFriends()[$i]->getFullName(); ?></a>
-                                    <?php } else { ?>
-                                        <a id="UserLink" href="#"
-                                           class="list-group-item list-group-item"
-                                           onclick="seeProfileOf('<?php echo $user->getFriends()[$i]->getUserId(); ?>')"><?php echo $user->getFriends()[$i]->getFullName(); ?></a>
-                                    <?php }
-                                } ?>
+                <div class="row">
+                    <div class="col-xs-2 col-md-1">
+                        <!-- EMPTY -->
+                    </div>
+                    <div class="col-xs-8 col-md-4">
+                        <div class="jumbotron">
+                            <div class="jumbotron child">
+                                <h4>Courses Taken [<?php echo count($user->getCoursesTaken()); ?>]</h4>
+                                <div id="scrollbox">
+                                    <div class="list-group">
+                                        <?php
+                                        /** ----- PRINTING COURSES TAKEN ----- */
+                                        for ($i = 0; $i < count($user->getCoursesTaken()); $i++) {
+                                            if ($i == count($user->getCoursesTaken()) - 1) { ?>
+                                                <a class="list-group-item list-group-item last"
+                                                   onclick="joinChatRoom('<?php echo $user->getCoursesTaken()[$i]; ?>');"><?php echo $user->getCoursesTaken()[$i]; ?></a>
+                                            <?php } else { ?>
+                                                <a class="list-group-item list-group-item"
+                                                   onclick="joinChatRoom('<?php echo $user->getCoursesTaken()[$i]; ?>');"><?php echo $user->getCoursesTaken()[$i]; ?></a>
+                                            <?php }
+                                        } ?>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
+                    <div class="col-xs-12 col-md-1">
+                        <!-- EMPTY -->
+                    </div>
+                    <div class="col-xs-2 col-md-1">
+                        <!-- EMPTY -->
+                    </div>
+                    <div class="col-xs-8 col-md-4">
+                        <div class="jumbotron">
+                            <div class="jumbotron child">
+                                <h4>Friends [<?php echo count($user->getFriends()); ?>]</h4>
+                                <div id="scrollbox">
+                                    <div class="list-group">
+                                        <?php
+                                        /** ----- PRINTING FRIENDS ----- */
+                                        for ($i = 0; $i < count($user->getFriends()); $i++) {
+                                            if ($i == count($user->getFriends()) - 1) { ?>
+                                                <a class="list-group-item list-group-item last"
+                                                   onclick="seeProfileOf('<?php echo $user->getFriends()[$i]->getUserId(); ?>')"><?php echo $user->getFriends()[$i]->getFullName(); ?></a>
+                                            <?php } else { ?>
+                                                <a id="UserLink" href="#"
+                                                   class="list-group-item list-group-item"
+                                                   onclick="seeProfileOf('<?php echo $user->getFriends()[$i]->getUserId(); ?>')"><?php echo $user->getFriends()[$i]->getFullName(); ?></a>
+                                            <?php }
+                                        } ?>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xs-2 col-md-1">
+                        <!-- EMPTY -->
+                    </div>
                 </div>
             </div>
-            <div class="col-xs-2 col-md-1">
-                <!-- EMPTY -->
-            </div>
-        </div>
-    </div>
-    </body>
-<?php } ?>
+            </body>
+        <?php }
+    }
+} ?>
 <script>
+    $("#SearchUser").click(function () {
+        if ($("#SearchedUser").val().length > 0) {
+            var fullName = $("#SearchedUser").val();
+            var names = fullName.split(" ");
+
+            if (names.length == 2)
+                window.location.href = "./SearchPage.php?firstName=" + names[0] + "&lastName=" + names[1];
+        }
+
+        $("#SearchedUser").val("");
+
+        return false;
+    });
+
     $("#logout").click(function () {
         window.location.href = "../Home/ActionPage.php?isLogin=0";
 

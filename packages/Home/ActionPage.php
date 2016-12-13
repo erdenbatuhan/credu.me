@@ -50,58 +50,58 @@ $error = $_GET['error'];
     <br><br>
     <div class="row">
 
-    </div>
-    <div class="col-xs-2 col-sm-4">
-        <!-- EMPTY -->
-    </div>
-    <div class="col-xs-8 col-sm-4">
-        <div class="jumbotron action text-center">
-            <?php if (!$error) { ?>
-                <p><?php echo ($isLogin) ? "Login" : "Logout" ?> action in progress, please wait.. </p>
-            <?php } else { ?>
-                <p><?php echo $error ?></p>
-                <script type="text/javascript">
-                    setTimeout(function () {
-                        window.location.href = "./";
-                    }, 3000);
-                </script>
-            <?php } ?>
+        <div class="col-xs-2 col-sm-4">
+            <!-- EMPTY -->
         </div>
-        <?php
-        if (!$error) { // Check if there is no error occured in the previous session..
-            if ($isLogin) {
-                $databaseConnection = new DatabaseConnection();
-                $login = new Login($databaseConnection);
+        <div class="col-xs-8 col-sm-4">
+            <div class="jumbotron action text-center">
+                <?php if (!$error) { ?>
+                    <p><?php echo ($isLogin) ? "Login" : "Logout" ?> action in progress, please wait.. </p>
+                <?php } else { ?>
+                    <p><?php echo $error ?></p>
+                    <script type="text/javascript">
+                        setTimeout(function () {
+                            window.location.href = "./";
+                        }, 3000);
+                    </script>
+                <?php } ?>
+            </div>
+            <?php
+            if (!$error) { // Check if there is no error occured in the previous session..
+                if ($isLogin) {
+                    $databaseConnection = new DatabaseConnection();
+                    $login = new Login($databaseConnection);
 
-                $email = $_GET['email'];
-                $password = $_GET['password'];
+                    $email = $_GET['email'];
+                    $password = $_GET['password'];
 
-                $login->login($email, $password);
+                    $login->login($email, $password);
 
-                if (!$login->getLatestError()) {
-                    $_SESSION['loggedUserId'] = $login->getLoggedUserId();
+                    if (!$login->getLatestError()) {
+                        $_SESSION['loggedUserId'] = $login->getLoggedUserId();
+
+                        echo '<script type="text/javascript">',
+                        'window.location.href = "./";',
+                        '</script>';
+                    } else {
+                        echo '<script type="text/javascript">',
+                            'window.location.href = "./ActionPage.php?error=' . $login->getLatestError() . '";',
+                        '</script>';
+                    }
+                } else {
+                    session_unset();
+                    session_destroy();
 
                     echo '<script type="text/javascript">',
                     'window.location.href = "./";',
                     '</script>';
-                } else {
-                    echo '<script type="text/javascript">',
-                    'window.location.href = "./ActionPage.php?error=' . $login->getLatestError() . '";',
-                    '</script>';
                 }
-            } else {
-                session_unset();
-                session_destroy();
-
-                echo '<script type="text/javascript">',
-                'window.location.href = "./";',
-                '</script>';
             }
-        }
-        ?>
-    </div>
-    <div class="col-xs-2 col-sm-4">
-        <!-- EMPTY -->
+            ?>
+        </div>
+        <div class="col-xs-2 col-sm-4">
+            <!-- EMPTY -->
+        </div>
     </div>
 </div>
 </body>

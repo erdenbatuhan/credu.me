@@ -39,11 +39,6 @@ session_start();
                 <button id="logout" type="submit" class="btn btn-success"><span class="fa fa-sign-out"></span> Log Out
                 </button>
             </form>
-        <?php } else { ?>
-            <form class="navbar-form navbar-right" role="search">
-                <a style="visibility: hidden !important;" type="submit" class="btn btn-success" href="./"><span
-                        class="fa fa-home"></span> Home</a>
-            </form>
         <?php } ?>
     </div>
 </nav>

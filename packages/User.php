@@ -18,7 +18,24 @@ class User {
         $this->databaseConnection = $databaseConnection;
         $this->userId = $userId;
 
-        $this->fetchUserInformation();
+        if ($this->doesUserExist())
+            $this->fetchUserInformation();
+    }
+
+    public function doesUserExist() {
+        $this->databaseConnection->initiateConnection();
+        $connection = $this->databaseConnection->getConnection();
+
+        $sql_query = "SELECT ID FROM USERS WHERE ID = '" . $this->userId . "'";
+        $sql_result = mysqli_query($connection, $sql_query);
+        $num_of_rows = mysqli_num_rows($sql_result);
+
+        $this->databaseConnection->killConnection();
+
+        if (!$num_of_rows)
+            return false;
+
+        return true;
     }
 
     private function fetchUserInformation() {
@@ -105,24 +122,22 @@ class User {
         return $message;
     }
 
-    public function addFriend($username) {
+    public function addFriend($userId) {
+        $this->friends[] = new User($this->databaseConnection, $userId);
+
         $this->databaseConnection->initiateConnection();
         $connection = $this->databaseConnection->getConnection();
 
         $sql_query = "INSERT INTO FRIENDSHIP VALUES (0, '" . $this->userId . "', '" . $userId . "', '');
                       INSERT INTO FRIENDSHIP VALUES (0, '" . $userId . "', '" . $this->userId . "', '');";
-        $sql_result = mysqli_query($connection, $sql_query);
+        $sql_result = mysqli_multi_query($connection, $sql_query);
 
         mysqli_fetch_assoc($sql_result);
 
         $this->databaseConnection->killConnection();
     }
 
-    public function removeFriend($username) {
-
-    }
-
-    public function joinChatRoom($chatRoomId) {
+    public function removeFriend($userId) {
 
     }
 
