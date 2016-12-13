@@ -2,14 +2,8 @@
 
 http://credu.me/
 
-Software states:
-* Previous software state => Pre-alpha
-* Current software state  => Alpha
-* Next software state     => Beta
-
-Coming up:
-* Alpha release on December, 7th
-* Beta release on December, 14th
+* Previous software state => Alpha
+* Current software state  => Beta
 
 Developers:
 * Batuhan Erden
