@@ -113,6 +113,10 @@ include "../User.php";
                                     $loggedUser->addFriend($user->getUserId());
 
                                     echo '<script type="text/javascript">',
+                                    'alert("You successfully added friend");',
+                                    '</script>';
+
+                                    echo '<script type="text/javascript">',
                                         'window.location.href = "./?userId=' . $user->getUserId() . '";',
                                     '</script>';
                                 } else if ($isRemovingFriend) {
