@@ -27,7 +27,7 @@ include "ChatArea.php";
     <link href="../../includes/css/Navbar.css" rel="stylesheet">
 
     <!-- ========== Javascript Part ========== !-->
-    <script src="../../includes/Bootstrap/js/bootstrap.js"></script>
+    <script src="../../includes/Bootstrap/js/bootstrap.min.js"></script>
     <script src="../../includes/js/jquery-3.1.1.min.js"></script>
 </head>
 <?php
@@ -49,6 +49,11 @@ if (!$chatRoomName || isset($_SESSION['loggedUserId']) == null) {
             <div class="navbar-header">
                 <a class="navbar-brand" href="../Home/"><h3>cred<span>u.me</span></h3></a>
             </div>
+            <form class="navbar-form navbar-left" role="search">
+                <a type="submit" class="btn btn-danger"
+                   href="./MiniGame?isPrivate=<?php echo $isPrivate; ?>&chatRoomName=<?php echo $chatRoomName; ?>"><i
+                        class="fa fa-bomb" aria-hidden="true"></i> Thug Bird </a>
+            </form>
             <form class="navbar-form navbar-right" role="search">
                 <a type="submit" class="btn btn-success" href="../Home/"><span class="fa fa-home"></span> Home</a>
                 <a type="submit" class="btn btn-success" href="../Profile/"><span class="fa fa-user"></span> Profile</a>

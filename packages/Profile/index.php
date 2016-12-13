@@ -26,7 +26,7 @@ include "../User.php";
     <link href="../../includes/css/Navbar.css" rel="stylesheet">
 
     <!-- ========== Javascript Part ========== !-->
-    <script src="../../includes/Bootstrap/js/bootstrap.js"></script>
+    <script src="../../includes/Bootstrap/js/bootstrap.min.js"></script>
     <script src="../../includes/js/jquery-3.1.1.min.js"></script>
 </head>
 <?php if (isset($_SESSION['loggedUserId']) == null) {

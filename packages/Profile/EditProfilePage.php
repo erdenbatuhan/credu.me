@@ -26,7 +26,7 @@ include "../User.php";
     <link href="../../includes/css/Navbar.css" rel="stylesheet">
 
     <!-- ========== Javascript Part ========== !-->
-    <script src="../../includes/Bootstrap/js/bootstrap.js"></script>
+    <script src="../../includes/Bootstrap/js/bootstrap.min.js"></script>
     <script src="../../includes/js/jquery-3.1.1.min.js"></script>
 </head>
 <?php if (isset($_SESSION['loggedUserId']) == null) {
@@ -93,10 +93,10 @@ include "../User.php";
                                         <h3 class="green"> EDIT YOUR PROFILE </h3>
                                         <p> Leave empty if you don't want it to change! </p>
                                         <input id="NewPhoneNumber" type="text" class="form-control"
-                                               placeholder="Phone Number"/>
+                                               placeholder="Phone Number" maxlength="18"/>
                                         <br>
                                         <input id="NewPassword" type="text" class="form-control"
-                                               placeholder="Password"/>
+                                               placeholder="Password" maxlength="18"/>
                                         <br>
                                         <button id="EditsButton" type="submit" class="btn btn-success"><span
                                                 class="fa fa-pencil-square-o"></span>
