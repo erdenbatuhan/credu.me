@@ -38,6 +38,7 @@ if (isset($_SESSION['loggedUserId']) == null) {
     $databaseConnection = new DatabaseConnection();
     $userIdFromGet = $_GET['userId'];
     $isAddingFriend = $_GET['isAddingFriend'];
+    $isRemovingFriend = $_GET['isRemovingFriend'];
 
     $user = null;
     $isOtherUser = false;
@@ -56,7 +57,7 @@ if (isset($_SESSION['loggedUserId']) == null) {
     }
 
     if ($canProceed) {
-        if ((!$userIdFromGet || $userIdFromGet == $_SESSION['loggedUserId']) && $isAddingFriend) {
+        if ((!$userIdFromGet || $userIdFromGet == $_SESSION['loggedUserId']) && ($isAddingFriend || $isRemovingFriend)) {
             echo '<script type="text/javascript">',
             'window.location.href = "./";',
             '</script>';
@@ -115,15 +116,26 @@ if (isset($_SESSION['loggedUserId']) == null) {
                                     echo '<script type="text/javascript">',
                                         'window.location.href = "./?userId=' . $user->getUserId() . '";',
                                     '</script>';
+                                } else if ($isRemovingFriend) {
+                                    $loggedUser->removeFriend($user->getUserId());
+
+                                    echo '<script type="text/javascript">',
+                                        'window.location.href = "./?userId=' . $user->getUserId() . '";',
+                                    '</script>';
                                 } else if ($isOtherUser) {
                                     if ($user->isFriendOf($loggedUser->getUserId())) { ?>
                                         <a class="link"
                                            onclick="sendPrivateMessageTo('<?php echo $user->getUserId(); ?>');"><i
                                                 class="fa fa-share" aria-hidden="true"></i> Send Private Message </a>
+                                        <br>
+                                        <a class="link"
+                                           href="./?isRemovingFriend=1&userId=<?php echo $user->getUserId(); ?>"><i
+                                                class="fa fa-close" aria-hidden="true"></i> Remove Friend
+                                        </a>
                                     <?php } else { ?>
                                         <a class="link"
                                            href="./?isAddingFriend=1&userId=<?php echo $user->getUserId(); ?>"><i
-                                                class="fa fa-plus" aria-hidden="true"></i> Add Friend </a><br>
+                                                class="fa fa-plus" aria-hidden="true"></i> Add as Friend </a><br>
                                     <?php }
                                 } ?>
                             </div>

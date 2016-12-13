@@ -138,7 +138,16 @@ class User {
     }
 
     public function removeFriend($userId) {
+        $this->databaseConnection->initiateConnection();
+        $connection = $this->databaseConnection->getConnection();
 
+        $sql_query = "DELETE FROM FRIENDSHIP WHERE FIRST_USER_ID = '" . $this->userId . "' AND SECOND_USER_ID = '" . $userId . "';
+                      DELETE FROM FRIENDSHIP WHERE FIRST_USER_ID = '" . $userId . "' AND SECOND_USER_ID = '" . $this->userId . "'";
+        $sql_result = mysqli_multi_query($connection, $sql_query);
+
+        mysqli_fetch_assoc($sql_result);
+
+        $this->databaseConnection->killConnection();
     }
 
     public function getUserId() {
