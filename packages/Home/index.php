@@ -69,7 +69,7 @@ session_start();
                             <br>
                             <input id="email" type="text" class="form-control" placeholder="Email"/>
                             <br>
-                            <input id="password" type="text" class="form-control" placeholder="Password"/>
+                            <input id="password" type="password" class="form-control" placeholder="Password"/>
                             <br>
                             <button id="sign" type="submit" class="btn btn-success"><span class="fa fa-sign-in"></span>
                                 Sign In
