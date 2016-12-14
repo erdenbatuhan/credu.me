@@ -113,7 +113,7 @@ include "../User.php";
                                     $loggedUser->addFriend($user->getUserId());
 
                                     echo '<script type="text/javascript">',
-                                    'alert("You successfully added friend");',
+                                    'alert("You successfully added a friend..");',
                                     '</script>';
 
                                     echo '<script type="text/javascript">',
