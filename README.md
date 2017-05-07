@@ -7,7 +7,7 @@ Developers:
 * Ekrem Çetinkaya
 * Ömer Said Bukte
 * Barış Ceylan		
--* Sayım Erk Aydoğan
+* Sayım Erk Aydoğan
 
 Test User: (You can test our system with this user)
 * Email: charles.knight@ozu.edu.tr
